@@ -1,3 +1,6 @@
+baseurl: /warc-specifications
+markdown: kramdown
+
 defaults:
   -
     scope:
