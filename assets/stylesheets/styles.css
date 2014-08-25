@@ -101,7 +101,7 @@ header {
   position:fixed;
 }
 
-header ul {
+header ul.downloads {
   list-style:none;
   height:40px;
   
@@ -121,14 +121,14 @@ header ul {
   width:270px;
 }
 
-header li {
+header ul.downloads li {
   width:89px;
   float:left;
   border-right:1px solid #d2d2d2;
   height:40px;
 }
 
-header ul a {
+header ul.downloads a {
   line-height:1;
   font-size:11px;
   color:#999;
@@ -143,17 +143,17 @@ strong {
   font-weight:700;
 }
 
-header ul li + li {
+header ul.downloads li + li {
   width:88px;
   border-left:1px solid #fff;
 }
 
-header ul li + li + li {
+header ul.downloads li + li + li {
   border-right:none;
   width:89px;
 }
 
-header ul a strong {
+header ul.downloads a strong {
   font-size:14px;
   display:block;
   color:#222;
@@ -253,3 +253,25 @@ footer {
     color:#444;
   }
 }
+
+
+@font-face {
+font-family: 'Glyphicons Halflings';
+src: url('../fonts/glyphicons-halflings-regular.eot');
+src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+.glyphicon {
+position: relative;
+top: 1px;
+display: inline-block;
+font-family: 'Glyphicons Halflings';
+-webkit-font-smoothing: antialiased;
+font-style: normal;
+font-weight: normal;
+line-height: 1;
+}
+
+.glyphicon-pencil:before {
+content: "\270f";
+}
+
