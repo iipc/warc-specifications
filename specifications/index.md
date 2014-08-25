@@ -1,6 +1,6 @@
 ---
 ---
 
-* [WARC](warc-format)
-* [Deduplication](warc-deduplication)
-* [Rendered Targets](warc-rendered-targets)
+* [WARC Format](warc-format)
+* [Deduplication WARC Records](warc-deduplication)
+* [Rendered Target WARC Records](warc-rendered-targets)
