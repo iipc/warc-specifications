@@ -17,15 +17,15 @@ It is important that web archives be able to record varied use of the same conte
 Background
 ==========
 
-The issue of time-based duplicates[1], i.e. where the same URI contains the same data at different points in time, has been addressed for some time now. This was reflected when the WARC File Format specification was written, namely in the ‘revisit’ record (see further in Appendix A).
+The issue of time-based duplicates[^1], i.e. where the same URI contains the same data at different points in time, has been addressed for some time now. This was reflected when the WARC File Format specification was written, namely in the ‘revisit’ record (see further in Appendix A).
 
-Such duplicates are easier to handle than spatial duplicates[2], as it is implicit that the URI of original and duplicate is the same. There is a need to resolve the time of the original’s capture, but that can typically be done by seeking out the latest, non-revisit, record of the URL with a date prior to the revisit record in question. This makes it fairly easy for playback tools (e.g. the Wayback Machine) to deal with collections with time-based deduplication.
+Such duplicates are easier to handle than spatial duplicates[^2], as it is implicit that the URI of original and duplicate is the same. There is a need to resolve the time of the original’s capture, but that can typically be done by seeking out the latest, non-revisit, record of the URL with a date prior to the revisit record in question. This makes it fairly easy for playback tools (e.g. the Wayback Machine) to deal with collections with time-based deduplication.
 
 During the 2012 IIPC General Assembly, in the Harvesting Working Group meeting, a report on the amount of duplication in Bibliotheca Alexandrina's web archive suggested the 1-PB collection could be reduced by about 14 percent given full deduplication. The Internet Archive and the French Institut National de l'Audiovisuel (INA) both suggested possibly even higher rates of reduction through deduplication. It is clear that the current, limited ability to handle spatial duplicates is a serious issue.
 
-While the WARC File Format does recognize the need for deduplication by providing for the 'revisit' record type, which "describes the revisitation of content already archived...for when benefits of reduced storage size or improved cross-referencing of material are desired,"[3] it does not adequately address “spatial” duplicates.
+While the WARC File Format does recognize the need for deduplication by providing for the 'revisit' record type, which "describes the revisitation of content already archived...for when benefits of reduced storage size or improved cross-referencing of material are desired,"[^3] it does not adequately address “spatial” duplicates.
 
-Where content is identical, the specification provides for the 'identical-payload-digest'[4] profile for 'revisit' records. Using this profile, WARC-Payload-Digest is the "value of the digest that was calculated on the payload," and WARC-Refers-To is optionally the record ID of the original record.
+Where content is identical, the specification provides for the 'identical-payload-digest'[^4] profile for 'revisit' records. Using this profile, WARC-Payload-Digest is the "value of the digest that was calculated on the payload," and WARC-Refers-To is optionally the record ID of the original record.
 
 Keeping in mind that most playback tools use an index whereby a URI+timestamp are used to look up specific records, it is clear that the current specification does not make it easy to do “spatial” deduplication, especially as the dataset increases in size. It would be necessary to have, in addition to the usual index, either an index of digests or of WARC record IDs. Neither is typically the case.
 
@@ -34,7 +34,7 @@ The Proposal
 
 Based on discussion at the HWG meeting at the 2013 GA, the HWG recommends that the IIPC adopt the following recommendation for extending the WARC File Format.
 
-For WARC ‘revisit’ records with WARC-Profile set to ‘identical-payload-digest’[5], the following fields should be viewed as strongly recommended:
+For WARC ‘revisit’ records with WARC-Profile set to ‘identical-payload-digest’[^5], the following fields should be viewed as strongly recommended:
 
 WARC-Refers-To-Target-URI
 This value should be equal to the WARC-Target-URI in the WARC record that the current record is considered a duplicate of.
@@ -79,12 +79,12 @@ Using a WARC-Refers-To header to identify a specific prior record from which the
 
 * * * * *
 
-[1]: Also often reffered to as “URL based” duplicates
+[^1]: Also often reffered to as “URL based” duplicates
 
-[2]: Also often referred to as “URL agnostic” duplicates
+[^2]: Also often referred to as “URL agnostic” duplicates
 
-[3]: WARC File Format specification, section 6.7
+[^3]: WARC File Format specification, section 6.7
 
-[4]: See Appendix A
+[^4]: See Appendix A
 
-[5]: Formally: http://netpreserve.org/warc/1.0/revisit/identical-payload-digest. See further in Appendix A.
+[^5]: Formally: http://netpreserve.org/warc/1.0/revisit/identical-payload-digest. See further in Appendix A.
