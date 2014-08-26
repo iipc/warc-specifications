@@ -38,6 +38,13 @@
         </ul>
       </header>
       <section>
+
+{% if page.status %}
+<div class="spec-status">
+{{ page.status | capitalize }}
+</div>
+{% endif %}
+
 <span style="float:right; padding: 0.25em 0.5em; background: #f8f8f8;">
 <a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
 title="Edit this page on GitHub." class="btn btn-default" id="edit_button">
@@ -48,7 +55,14 @@ title="Edit this page on GitHub." class="btn btn-default" id="edit_button">
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>{{ page.title }}</h3>
 
+
 {{content}}
+
+{% if page.status %}
+<div class="spec-status">
+{{ page.status | capitalize }}
+</div>
+{% endif %}
 
       </section>
       <footer>

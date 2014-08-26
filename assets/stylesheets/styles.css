@@ -275,3 +275,11 @@ line-height: 1;
 content: "\270f";
 }
 
+.spec-status {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em 1em;
+  background-color: #ffffee;
+  margin-bottom: 1em;
+}
+

@@ -1,5 +1,6 @@
 ---
 title: Proposal for Standardizing the Recording Rendered Targets
+status: proposed
 ---
 International Internet Preservation Consortium<br/>
 Harvesting Working Group

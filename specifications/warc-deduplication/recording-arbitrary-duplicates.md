@@ -1,5 +1,6 @@
 ---
 title: Proposal for Standardizing the Recording of Arbitrary Duplicates in WARC Files
+status: adopted
 ---
 International Internet Preservation Consortium<br/>
 Harvesting Working Group
