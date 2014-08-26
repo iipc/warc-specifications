@@ -37,10 +37,10 @@ Based on discussion at the HWG meeting at the 2013 GA, the HWG recommends that t
 
 For WARC ‘revisit’ records with WARC-Profile set to ‘identical-payload-digest’[^5], the following fields should be viewed as strongly recommended:
 
-WARC-Refers-To-Target-URI
+**WARC-Refers-To-Target-URI**  
 This value should be equal to the WARC-Target-URI in the WARC record that the current record is considered a duplicate of.
 
-WARC-Refers-To-Date
+**WARC-Refers-To-Date**  
 This value should be equal to the WARC-Date in the WARC record that the current record is considered a duplicate of.
 
 Additionally, the use of fields specifying the actual WARC file name and offsets where the record can be found should be discouraged as it is potentially very brittle.
