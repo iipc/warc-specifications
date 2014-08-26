@@ -283,3 +283,7 @@ content: "\270f";
   margin-bottom: 1em;
 }
 
+.spec-status-adopted {
+  background-color: #eeffff;
+}
+
