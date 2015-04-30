@@ -50,6 +50,7 @@ Proposed Revised Spec
 
 Alternative Proposed Revised Spec (Not Preferred)
 -------------------------------------------------
+
 #### Discussion
 
 There has been discussion of allowing timestamps with reduced precision as well. This could be useful in the case of archived urls whose precise capture date is not known.
