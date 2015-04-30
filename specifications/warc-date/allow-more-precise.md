@@ -22,6 +22,10 @@ Current (2009) Spec
 > 
 > All records shall have a WARC-Date field.
 
+Problem
+-------
+
+
 
 Proposed Revised Spec
 ---------------------
@@ -38,19 +42,23 @@ Proposed Revised Spec
 > 1 digit and a maximum of 9 digits. WARC-Date should be specified with as
 > much precision as is accurately known.
 > 
->     WARC-Date   = "WARC-Date" ":" w3c-iso8601
->     w3c-iso8601 = <YYYY-MM-DDThh:mm:ss.sZ> | <YYYY-MM-DDThh:mm:ssZ>
+>     WARC-Date       = "WARC-Date" ":" (w3c-iso8601-14+ | w3c-iso8601-14)
+>     w3c-iso8601-14+ = <YYYY-MM-DDThh:mm:ss.sZ>
+>     w3c-iso8601-14  = <YYYY-MM-DDThh:mm:ssZ>
 >
 > All records shall have a WARC-Date field.
 
 
 Alternative Proposed Revised Spec (Not Preferred)
 -------------------------------------------------
-Not preferred because it's unclear what the correct behavior at replay time
-should be, when a specific timestamp is requested and an approximate timestamp is
-available. and implementing the correct behavior may be complex. In the absence
-of specific known use cases, better not to force tools to tackle this
-potentially hard problem. (Are there specific known use cases?)
+#### Discussion
+
+There has been discussion of allowing timestamps with reduced precision as well. This could be useful in the case of archived urls whose precise capture date is not known.
+
+The idea makes plenty of sense. However I'm hesitant because it's unclear what the correct behavior at replay time
+should be, when a specific timestamp is requested, and an approximate timestamp is available. Implementing the correct behavior may be complex. If the standard allows timestamps with reduced precision, it forces replay tools to tackle a potentially difficult problem.
+
+Moreover, while I can certainly imagine theoretical use cases, I'm not aware of concrete ones. Do we know of any? If we do, it would help to discuss them.
 
 > #### 5.4 WARC-Date (mandatory)
 > 
