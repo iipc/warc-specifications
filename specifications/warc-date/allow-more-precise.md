@@ -24,8 +24,7 @@ Current (2009) Spec
 
 Problem
 -------
-
-
+It is very possible to capture the same url more than once in the same second. It happens often when browsing through warcprox, for example. Such a situation poses a practical problem for deduplication, because `WARC-Refers-To-Target-URI` and `WARC-Refers-To-Date` are insufficient to uniquely specify a capture.
 
 Proposed Revised Spec
 ---------------------
