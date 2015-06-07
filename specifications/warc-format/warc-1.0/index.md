@@ -2,14 +2,18 @@
 title: The WARC Format
 ---
 
-The WARC Format
-===============
+{::options parse_block_html="true" /}
+<div class="row">
+<div class="col-xs-12 col-sm-4">
 
 Contents
 --------
 
 * auto-gen TOC:
 {:toc}
+
+</div>
+<div class="col-xs-12 col-sm-8">
 
 Introduction
 ------------
@@ -1840,4 +1844,5 @@ WARC file, containing a ‘warcinfo’ record.
   Metadata describing the migration process are added (e.g. tool used)
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+</div>
+</div>

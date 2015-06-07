@@ -1,43 +1,79 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>WARC Specifications</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{site.baseurl}}/assets/favicon.ico">
 
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/stylesheets/styles.css">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>{{ page.title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{site.baseurl}}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{site.baseurl}}/assets/stylesheets/styles.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="{{site.baseurl}}/assets/bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>WARC Specifications</h1>
-        <p>Centralised repository for WARC usage specifications.</p>
 
-        <ul>
-          <li><a href="{{ site.baseurl }}/specifications/warc-format"/>WARC format specifications</li></li>
-          <li><a href="{{ site.baseurl }}/specifications/warc-deduplication"/>Deduplication WARC Records</li></li>
-          <li><a href="{{ site.baseurl }}/specifications/warc-rendered-targets"/>Rendered Targets WARC Records</li></li>
-        </ul>
-        <p>
-          &nbsp;
-        </p>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ site.baseurl }}/">WARC Specifications</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
+            <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Standards <span class="caret"></span></a>
+             <ul class="dropdown-menu" role="menu">
+              <li><a href="{{ site.baseurl }}/specifications/warc-format">The WARC Format</a></li>
+             </ul>
+            </li>
+            <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Guidelines <span class="caret"></span></a>
+             <ul class="dropdown-menu" role="menu">
+              <li><a href="{{ site.baseurl }}/specifications/warc-deduplication">Deduplication WARC Records</a></li>
+              <li><a href="{{ site.baseurl }}/specifications/warc-rendered-targets">Rendered Targets WARC Records</a></li>
+             </ul>
+            </li>
+            <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contribute <span class="caret"></span></a>
+             <ul class="dropdown-menu" role="menu">
+              <li><a href="{{ site.baseurl }}">How To... [TBA]</a></li>
+              <li class="divider"></li>
+              <li><a href="https://github.com/iipc/warc-specifications/issues">Issues</a></li>
+              <li><a href="https://github.com/iipc/warc-specifications/pulls">Pull Requests</a></li>
+              <li class="divider"></li>
+              <li><a href="https://github.com/iipc/warc-specifications">GitHub Homepage</a></li>
+             </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-
-        <p class="view"><a href="https://github.com/iipc/warc-specifications">View the Project on GitHub <small>iipc/warc-specifications</small></a></p>
-
-
-        <ul class="downloads">
-          <li><a href="https://github.com/iipc/warc-specifications/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/iipc/warc-specifications/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/iipc/warc-specifications">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+    <div class="container">
 
 {% if page.status %}
 <div class="spec-status spec-status-{{ page.status }}">
@@ -45,18 +81,16 @@
 </div>
 {% endif %}
 
-<span style="float:right; padding: 0.25em 0.5em; background: #f8f8f8;">
+<span style="float:right; padding: 0.25em 0.5em;">
 <a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
 title="Edit this page on GitHub." class="btn btn-default" id="edit_button">
 <span class="glyphicon glyphicon-pencil"></span>
 </a>
 </span>
 
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>{{ page.title }}</h3>
+<h1>{{ page.title }}</h1>
 
-
-{{content}}
+{{ content }}
 
 {% if page.status %}
 <div class="spec-status">
@@ -64,13 +98,20 @@ title="Edit this page on GitHub." class="btn btn-default" id="edit_button">
 </div>
 {% endif %}
 
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/iipc">IIPC</a></p>
-        <p><small>Hosted on GitHub Pages.</small></p>
+      <footer class="well">
+        This project is maintained by <a href="https://github.com/iipc">IIPC</a><small class="pull-right">Hosted on GitHub Pages.</small>
       </footer>
-    </div>
-    <script src="assets/javascripts/scale.fix.js"></script>
-    
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{{site.baseurl}}/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{site.baseurl}}/assets/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
