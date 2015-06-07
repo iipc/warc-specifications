@@ -1364,7 +1364,7 @@ A.  (informative)\
     \
     Compression recommendations
 
-B.  General {#general-7 .a2}
+B.  General 
     -------
 
 The WARC format defines no internal compression. Whether and how WARC
@@ -1385,7 +1385,7 @@ packages and operating systems.
 This section documents recommended, but optional, practices for
 compressing WARC files with GZIP.
 
-Record-at-time compression {#record-at-time-compression .a2}
+Record-at-time compression 
 --------------------------
 
 Per section 2.2 of the GZIP specification, a valid GZIP file consists of
@@ -1403,7 +1403,7 @@ records.
 Note that the application of this convention causes no change to the
 uncompressed contents of an individual WARC record.
 
-GZIP WARC file name suffix {#gzip-warc-file-name-suffix .a2}
+GZIP WARC file name suffix 
 --------------------------
 
 A gzip compressed WARC file should have the customary ".gz" appended to
@@ -1447,7 +1447,7 @@ A.  \
     \
     Examples of WARC records
 
-B.  Example of 'warcinfo' record {#example-of-warcinfo-record .a2}
+B.  Example of 'warcinfo' record 
     ----------------------------
 
 WARC/1.0
@@ -1484,7 +1484,7 @@ conformsTo:
 
 http://www.archive.org/documents/WarcFileFormat-1.0.html
 
-Example of 'request' record {#example-of-request-record .a2}
+Example of 'request' record 
 ---------------------------
 
 WARC/1.0
@@ -1520,7 +1520,7 @@ Host: www.archive.org
 
 Cookie: PHPSESSID=009d7bb11022f80605aa87e18224d824
 
-Example of 'response' record {#example-of-response-record .a2}
+Example of 'response' record 
 ----------------------------
 
 WARC/1.0
@@ -1567,7 +1567,7 @@ Content-Type: image/jpeg
 
 \[image/jpeg binary data here\]
 
-Example of 'resource' record {#example-of-resource-record .a2}
+Example of 'resource' record 
 ----------------------------
 
 WARC/1.0
@@ -1590,7 +1590,7 @@ Content-Length: 1662
 
 \[image/jpeg binary data here\]
 
-Example of 'metadata' record {#example-of-metadata-record .a2}
+Example of 'metadata' record 
 ----------------------------
 
 WARC/1.0
@@ -1618,7 +1618,7 @@ hopsFromSeed: E
 
 fetchTimeMs: 565
 
-Example of 'revisit' record {#example-of-revisit-record .a2}
+Example of 'revisit' record 
 ---------------------------
 
 WARC/1.0
@@ -1651,7 +1651,7 @@ Keep-Alive: timeout=15, max=100
 
 Etag: "3e45-67e-2ed02ec0"
 
-Example of 'conversion' record {#example-of-conversion-record .a2}
+Example of 'conversion' record 
 ------------------------------
 
 WARC/1.0
@@ -1674,7 +1674,7 @@ Content-Length: 934
 
 \[image/neoimg binary data here\]
 
-Example of segmentation ('continuation' record) {#example-of-segmentation-continuation-record .a2}
+Example of segmentation ('continuation' record) 
 -----------------------------------------------
 
 Let us take the example of the 'response' record given earlier, and
