@@ -1,3 +1,7 @@
+---
+title: The WARC Format
+---
+
 The WARC Format
 ===============
 
