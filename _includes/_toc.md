@@ -1,6 +1,6 @@
   <div class="panel panel-default" id="toc_panel">
     <div class="panel-heading">
-      <h3 class="panel-title">
+      <h3 class="panel-title nocount">
         Contents
       </h3>
     </div>
