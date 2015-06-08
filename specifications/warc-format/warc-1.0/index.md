@@ -1590,18 +1590,18 @@ document.
 Note: we suppose these WARC records are written in an already opened
 WARC file, containing a ‘warcinfo’ record.
 
-<table class="table table-responsive table-bordered">
+<table class="table table-responsive table-bordered force-wrap">
 <tbody>
 <tr>
 <th colspan="2">
-Use case one: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/<br/>iipc2007conference.pdf</a> from the World Wide Web and writes it in a WARC file.<br/>
+Use case one: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/iipc2007conference.pdf</a> from the World Wide Web and writes it in a WARC file.<br/>
 <br/>
 Date: 2007-10-24 at 10:14:22 GMT
 </th>
 </tr>
 <tr>
 <td>
-A request is sent by the crawler to the server hosting <http://netpreserve.org/reports/iipc2007conference.pdf>
+A request is sent by the crawler to the server hosting http://netpreserve.org/reports/iipc2007conference.pdf
 </td>
 <td>
 **WARC record created:**
