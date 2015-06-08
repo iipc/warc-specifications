@@ -1591,6 +1591,7 @@ Note: we suppose these WARC records are written in an already opened
 WARC file, containing a ‘warcinfo’ record.
 
 <table class="table table-responsive table-bordered">
+<tbody>
 <tr>
 <th colspan="2">
 Use case one: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/<br/>iipc2007conference.pdf</a> from the World Wide Web and writes it in a WARC file.<br/>
@@ -1608,16 +1609,21 @@ A request is sent by the crawler to the server hosting <http://netpreserve.org/r
 </tr>
 <tr><td>
 A response is received by the crawler from the server
-</td><td></td></tr>
+</td><td>
+**WARC record created:**
+</td></tr>
 <tr><td>
 Metadata further describing the harvesting process / the harvested record are added (e.g. information coming from the log files)
-</td><td></td></tr>
+</td><td>
+**WARC record created:**
+</td></tr>
 <tr><td>
 If the file harvested on the web is too big to be contained in a single WARC file (e.g. 1,5 GB), the WARC record is segmented and a second record is created
-</td><td></td></tr>
+</td><td>
+**WARC record created:**
+</td></tr>
+</tbody>
 </table>
-
-</div>
   
 
 
