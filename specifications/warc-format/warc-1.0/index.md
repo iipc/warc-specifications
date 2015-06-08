@@ -1590,6 +1590,7 @@ document.
 Note: we suppose these WARC records are written in an already opened
 WARC file, containing a ‘warcinfo’ record.
 
+<div style="overflow:hidden">
 <table border="1">
 <tr>
 <th colspan="2">
@@ -1617,8 +1618,7 @@ If the file harvested on the web is too big to be contained in a single WARC fil
 </td><td></td></tr>
 </table>
 
-
-
+</div>
   
 
 
@@ -1635,7 +1635,7 @@ If the file harvested on the web is too big to be contained in a single WARC fil
   **Use case three: An archiving crawler fetches** [**http://netpreserve.org/reports/iipc2007conference.pdf**](http://netpreserve.org/reports/iipc2007conference.pdf) **from the World Wide Web that has not changed since the latest harvest\
   Date: 2007-11-24 at 18:28:24 GMT**
   ------------------------------------------
-  A request is sent by the crawler to the server hosting <http://netpreserve.org/reports/iipc2007conference.pdf>
+  A request is sent by the crawler to the server hosting http://netpreserve.org/reports/iipc2007conference.pdf
 
   The crawler detects that the file is the same as previously archived and that it has not changed. The entire file is not recorded to avoid duplicates and reduce storage redundancy
   -----------------------------------------
