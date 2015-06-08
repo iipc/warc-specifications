@@ -1605,62 +1605,203 @@ Date: 2007-10-24 at 10:14:22 GMT
 A request is sent by the crawler to the server hosting http://netpreserve.org/reports/iipc2007conference.pdf
 </td>
 <td>
-**WARC record created:**
+<b>WARC record created:</b>
+<pre>
+WARC-Type: request
+WARC-Date: 2007-10-24T10:14:22Z
+WARC-Concurrent-To: <i>WARC-Record ID of 
+        the following ‘response’ record</i>
+</pre>
 </td>
 </tr>
 <tr><td>
 A response is received by the crawler from the server
 </td><td>
-**WARC record created:**
+<b>WARC record created:</b>
+<pre>
+WARC-Type: response
+WARC-Date: 2007-10-24T10:14:22Z
+</pre>
 </td></tr>
 <tr><td>
 Metadata further describing the harvesting process / the harvested record are added (e.g. information coming from the log files)
 </td><td>
-**WARC record created:**
+<b>WARC record created:</b>
+<pre>
+WARC-Type: metadata
+WARC-Date: 2007-10-24T10:14:22Z
+WARC-Concurrent-To: <i>WARC-Record ID of 
+        the previous ‘response’ record</i>
+</pre>
 </td></tr>
 <tr><td>
 If the file harvested on the web is too big to be contained in a single WARC file (e.g. 1,5 GB), the WARC record is segmented and a second record is created
 </td><td>
-**WARC record created:**
+<b>Second WARC record created:</b>
+<pre>
+WARC-Type: continuation
+WARC-Date: 2007-10-24T10:14:22Z
+</pre>
 </td></tr>
 </tbody>
 </table>
 </div>
-  
 
 
-  **Use case two: the XML version of the French Gazette of 2007-11-01 has been transferred to the National Library of France (via FTP or email). This file is archived in a WARC file.**
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th colspan="2">
+Use case two: the XML version of the French Gazette of 2007-11-01 has been transferred to the National Library of France (via FTP or email). This file is archived in a WARC file.<br/>
+<br/>
+Date: 2007-11-02 at 15:20:44 GMT
+</th>
+</tr>
+<tr>
+<td>
+The resource is archived
+</td>
+<td>
+<b>WARC record created:</b>
+<pre>
+WARC-Type: resource
+WARC-Date: 2007-11-02T15:20:44Z
+</pre>
+</td>
+</tr>
+<tr>
+<td>
+Metadata further describing the archiving process / the archived record are added (e.g. information about the transfer)
+</td>
+<td>
+<b>WARC record created:</b>
+<pre>
+WARC-Type: metadata
+WARC-Date: 2007-11-02T15:20:44Z
+WARC-Concurrent-To: <i>WARC-Record ID of 
+        the previous ‘resource’ record</i>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-  **Date: 2007-11-02 at 15:20:44 GMT**
 
-  The resource is archived
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th colspan="2">
+Use case three: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/iipc2007conference.pdf</a>from the World Wide Web that has not changed since the latest harvest<br/>
+<br/>
+Date: 2007-11-24 at 18:28:24 GMT
+</th>
+</tr>
+<tr>
+<td>
+A request is sent by the crawler to the server hosting http://netpreserve.org/reports/iipc2007conference.pdf
+</td>
+<td>
+<b>WARC record created:</b>
+<pre>
+WARC-Type: request
+WARC-Date: 2007-11-24T18:28:24Z
+WARC-Concurrent-To: <i>WARC-Record ID of 
+        the following ‘revisit’ record</i>
+</pre>
+</td>
+</tr>
+<tr>
+<td>
+The crawler detects that the file is the same as previously archived and that it has not changed. The entire file is not recorded to avoid duplicates and reduce storage redundancy
+</td>
+<td>
+<b>WARC record created:</b>
+<pre>
+WARC-Type: revisit
+WARC-Date: 2007-11-24T18:28:24Z
+WARC-Refers-To: <i>WARC-Record ID of
+        the already written record</i>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-  Metadata further describing the archiving process / the archived record are added (e.g. information about the transfer)
-  --------------------------------------------
 
-  -------------------------------------------
-  **Use case three: An archiving crawler fetches** [**http://netpreserve.org/reports/iipc2007conference.pdf**](http://netpreserve.org/reports/iipc2007conference.pdf) **from the World Wide Web that has not changed since the latest harvest\
-  Date: 2007-11-24 at 18:28:24 GMT**
-  ------------------------------------------
-  A request is sent by the crawler to the server hosting http://netpreserve.org/reports/iipc2007conference.pdf
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th colspan="2">
+Use case four: After the end of the harvest, Jhove is used to validate the format of <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/iipc2007conference.pdf</a>. It produces validation results that have to be stored in a WARC file and linked to the corresponding record.<br/>
+<br/>
+Date: 2007-11-01 at 20:54:02 GMT
+</th>
+</tr>
+<tr>
+<td>
+Results of the validation process are added in another WARC file
+</td>
+<td>
+<b>WARC record created:</b>
+<pre>
+WARC-Type: metadata
+Date: 2007-11-01T20:54:02Z
+WARC-Refers-To: <i>WARC-Record ID of 
+        the described WARC record</i>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>  
 
-  The crawler detects that the file is the same as previously archived and that it has not changed. The entire file is not recorded to avoid duplicates and reduce storage redundancy
-  -----------------------------------------
 
-  ----------------------------------------
-  **Use case four: After the end of the harvest, Jhove is used to validate the format of** [**http://netpreserve.org/reports/iipc2007conference.pdf**](http://netpreserve.org/reports/iipc2007conference.pdf)**. It produces validation results that have to be stored in a WARC file and linked to the corresponding record.**
+<div class="table-responsive">
+<table class="table table-bordered">
+<tbody>
+<tr>
+<th colspan="2">
+Use case five: <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/iipc2007conference.pdf)</a> file format has become obsolete as it cannot be read anymore by the existing rendering tools. It is necessary to migrate this file from the obsolete format to a new format.<br/>
+<br/>
+Date: 2020-01-23 at 16:14:32 GMT
+</th>
+</tr>
+<tr>
+<td>
+A file in the new format is generated
+</td>
+<td>
+<b>WARC record created:</b>
+<pre>
+WARC-Type: conversion
+WARC-Date: 2020-01-23T16:14:32Z
+WARC-Refers-To: <i>WARC-Record ID of 
+        the WARC record whose payload
+        has been migrated</i>
+</pre>
+</td>
+</tr>
+<tr>
+<td>
+Metadata describing the migration process are added (e.g. tool used)
+</td>
+<td>
+<b>WARC record created:</b>
+<pre>
+WARC-Type: metadata
+WARC-Date: 2020-01-23T16:14:32Z
+WARC-Refers-To: <i>WARC-Record ID of 
+        the previous conversion record</i>
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>  
 
-  **Date: 2007-11-01 at 20:54:02 GMT**
-  ---------------------------------------
-  Results of the validation process are added in another WARC file
-  --------------------------------------
-
-  -------------------------------------
-  **Use case five:** [**http://netpreserve.org/reports/iipc2007conference.pdf**](http://netpreserve.org/reports/iipc2007conference.pdf) **file format has become obsolete as it cannot be read anymore by the existing rendering tools. It is necessary to migrate this file from the obsolete format to a new format.\
-  Date: 2020-01-23 at 16:14:32 GMT**
-  ------------------------------------
-  A file in the new format is generated
-
-  Metadata describing the migration process are added (e.g. tool used)
-  -----------------------------------------
 
