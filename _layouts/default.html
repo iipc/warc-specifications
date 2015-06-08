@@ -75,18 +75,23 @@
 
     <div class="container">
 
+       <div class="col-xs-12 col-sm-4 col-md-4" id="sidebar" role="navigation">
+{% capture toc %}{% include _toc.md %}{% endcapture %}
+{{ toc | markdownify | split:"<!-- CUT -->" | first }}
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-8">
+
 {% if page.status %}
 <div class="spec-status spec-status-{{ page.status }}">
-{{ page.status | capitalize }}
-</div>
-{% endif %}
-
-<span style="float:right; padding: 0.25em 0.5em;">
 <a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
-title="Edit this page on GitHub." class="btn btn-default" id="edit_button">
+title="Edit this document on GitHub." class="pull-right" id="edit_button">
 <span class="glyphicon glyphicon-pencil"></span>
 </a>
-</span>
+{{ page.status | capitalize }}
+<div class="clearfix"></div>
+</div>
+{% endif %}
 
 <h1>{{ page.title }}</h1>
 
@@ -98,10 +103,15 @@ title="Edit this page on GitHub." class="btn btn-default" id="edit_button">
 </div>
 {% endif %}
 
-      <footer class="well">
-        This project is maintained by <a href="https://github.com/iipc">IIPC</a><small class="pull-right">Hosted on GitHub Pages.</small>
-      </footer>
 
+      </div>
+    </div><!-- /.container -->
+
+
+    <div class="container">
+      <footer class="well">
+        This project is maintained by members of the <a href="http://netpreserve.org/">IIPC</a>.
+      </footer>
     </div><!-- /.container -->
 
 

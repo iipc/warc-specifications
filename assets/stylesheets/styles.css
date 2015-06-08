@@ -2,14 +2,21 @@ body {
   padding-top: 50px;
 }
 
+#sidebar {
+  margin-top: 1em;
+}
+
 .spec-status {
   font-weight: bold;
   text-align: center;
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   background-color: #ffffee;
-  margin-bottom: 1em;
 }
 
 .spec-status-adopted {
   background-color: #eeffee;
+}
+
+.spec-status-standard {
+  background-color: #eeeeff;
 }
