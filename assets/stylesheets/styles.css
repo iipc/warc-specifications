@@ -22,13 +22,21 @@ body {
   background-color: #ffffee;
   margin: 0.5em;
 }
-
 .spec-status-adopted {
   background-color: #eeffee;
 }
-
 .spec-status-standard {
   background-color: #eeeeff;
+}
+
+.spec-badge-status-proposed {
+  background-color: #F0AD4E;
+}
+.spec-badge-status-adopted {
+  background-color: #5CB85C;
+}
+.spec-badge-status-standard {
+  background-color: #337AB7;
 }
 
 body {counter-reset: h1}
@@ -42,3 +50,11 @@ h4 {counter-reset: h5}
 .numbered-headers h4:before {counter-increment: h4; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " "}
 .numbered-headers h5:before {counter-increment: h5; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "}
 h1.nocount:before, h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before { content: ""; counter-increment: none } 
+
+dd {
+  margin-bottom: 0.25em;
+}
+
+dd:before {
+  content: "\2014  ";
+}
