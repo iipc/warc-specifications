@@ -11,6 +11,10 @@ body {
   list-style-type: none;
 }
 
+#edit_button {
+  margin-top: 1.5em;
+}
+
 #toc UL { counter-reset: item }
 #toc LI { display: block }
 #toc .numbered-headers LI:before { content: counters(item, "."); counter-increment: item; padding-right:0.5em; margin-left:-1em;}

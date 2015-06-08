@@ -97,6 +97,12 @@ title="Edit this document on GitHub." class="pull-right" id="edit_button">
 
         <div class="col-xs-12 col-sm-8 col-md-8">
 
+{% if page.status == None %}
+<a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
+title="Edit this document on GitHub." class="pull-right" id="edit_button">
+<span class="glyphicon glyphicon-pencil"></span>
+</a>
+{% endif %}
 <h1 class="nocount">{{ page.title }}{%if page.version %} v.{{ page.version }}{% endif %}</h1>
 
 {% if page.numbered == true %}
@@ -123,6 +129,8 @@ title="Edit this document on GitHub." class="pull-right" id="edit_button">
 {% endif %}
 
       <footer class="well">
+      <a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
+title="Edit this document on GitHub." class="pull-right"><span class="glyphicon glyphicon-pencil"></span></a>
         This project is maintained by members of the <a href="http://netpreserve.org/">IIPC</a>.
       </footer>
     </div><!-- /.container -->
