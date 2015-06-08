@@ -30,7 +30,7 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -93,9 +93,17 @@ title="Edit this document on GitHub." class="pull-right" id="edit_button">
 </div>
 {% endif %}
 
-<h1>{{ page.title }}</h1>
+<h1 class="nocount">{{ page.title }}</h1>
+
+{% if page.numbered == true %}
+<div class="numbered-headers">
+{% endif %}
 
 {{ content }}
+
+{% if page.numbered == true %}
+</div>
+{% endif %}
 
 {% if page.status %}
 <div class="spec-status">

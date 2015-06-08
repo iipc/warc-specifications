@@ -2,10 +2,8 @@
 title: The WARC Format
 status: standard
 version: 1.0
+numbered: true
 ---
-
-Introduction
-------------
 
 Web sites and web pages emerge and disappear from the world wide web
 every day. For the past ten years, memory organizations have tried to
@@ -75,7 +73,7 @@ the WARC format.
 Information and documentation — The WARC File Format
 
 Scope 
-======
+=====
 
 This international standard specifies the WARC file format:
 
@@ -104,7 +102,7 @@ This international standard specifies the WARC file format:
     segmentation where desired.
 
 Normative references
-==========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+====================
 
 The following referenced documents are indispensable for the application
 of this document. For dated references, only the edition cited applies.
@@ -132,72 +130,72 @@ Architecture,” RFC 1884, December 1995.
 Specification version 3.3,” RFC 1950, May 1996 (TXT, PS, PDF).
 <http://www.faqs.org/rfcs/rfc1950.html>
 
-> \[RFC1951\] Deutsch, P., “DEFLATE Compressed Data Format Specification
-> version 1.3,” RFC 1951, May 1996 (TXT, PS, PDF).
-> <http://www.faqs.org/rfcs/rfc1951.html>
->
-> \[RFC1952\] Deutsch, P... “GZIP file format specification version
-> 4.3,” RFC 1952, May 1996 (TXT, PS, PDF).
-> <http://www.faqs.org/rfcs/rfc1952.html>
->
-> \[RFC2045\] Freed, N. ; Borenstein, N. “Multipurpose Internet Mail
-> Extensions (MIME) Part One: Format of Internet Message Bodies,” RFC
-> 2045, November 1996. <http://www.faqs.org/rfcs/rfc2045>
->
-> \[RFC2047\] Moore, K.. “MIME (Multipurpose Internet Mail Extensions)
-> Part Three: Message Header Extensions for Non-ASCII Text,” RFC 2047,
-> November 1996 (TXT, HTML, XML). <http://www.faqs.org/rfcs/rfc2047>
->
-> \[RFC2048\] Freed, N.; Klensin, J.,; Postel, J. “Multipurpose Internet
-> Mail Extensions (MIME) Part Four: Registration Procedures,” BCP 13,
-> RFC 2048, November 1996 (TXT, HTML, XML).
-> <http://www.faqs.org/rfcs/rfc2048>
->
-> \[RFC2119\] Bradner, S., “Key words for use in RFCs to Indicate
-> Requirement Levels,” BCP 14, RFC 2119, March 1997 (TXT, HTML, XML).
-> <http://www.faqs.org/rfcs/rfc2119.html>
->
-> \[RFC2540\] Eastlake, D., “Detached Domain Name System (DNS)
-> Information,” RFC 2540, March 1999.
-> <http://www.faqs.org/rfcs/rfc2540.html>
->
-> \[RFC2616\] Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.;
-> Masinter, L.; Leach, P.; Berners-Lee, T. “Hypertext Transfer Protocol
-> -- HTTP/1.1,” RFC 2616, June 1999 (TXT, PS, PDF, HTML, XML).
-> <http://www.faqs.org/rfcs/rfc2540.html>
->
-> \[RFC2822\] Resnick, P., “Internet Message Format,” RFC 2822, April
-> 2001. <http://www.faqs.org/rfcs/rfc2822>
->
-> \[RFC3548\] Josefsson, S., “The Base16, Base32, and Base64 Data
-> Encodings,” RFC 3548, July 2003.
-> <http://www.faqs.org/rfcs/rfc3548.html>
->
-> \[RFC3629\] Yergeau, F., “UTF-8, a transformation format of ISO
-> 10646”, STD 63, RFC 3629, November 2003.
-> <http://www.faqs.org/rfcs/rfc3629.html>
->
-> \[RFC3986\] Berners-Lee, T.; Fielding, R.; Masinter, L. “Uniform
-> Resource Identifier (URI): Generic Syntax,” STD 66, RFC 3986, January
-> 2005 (TXT, HTML, XML). <http://www.faqs.org/rfcs/rfc3986.html>
->
-> \[RFC4027\] Josefsson, S., “Domain Name System Media Types,” RFC 4027,
-> April 2005. <http://www.faqs.org/rfcs/rfc4027.html>
->
-> \[RFC4501\] Josefsson, S., “Domain Name System Uniform Resource
-> Identifiers,” RFC 4501, May 2006.
-> <http://www.rfc-archive.org/getrfc.php?rfc=4501>
+\[RFC1951\] Deutsch, P., “DEFLATE Compressed Data Format Specification
+version 1.3,” RFC 1951, May 1996 (TXT, PS, PDF).
+<http://www.faqs.org/rfcs/rfc1951.html>
 
-1.  Terms, definitions and acronyms
-    ===============================
+\[RFC1952\] Deutsch, P... “GZIP file format specification version
+4.3,” RFC 1952, May 1996 (TXT, PS, PDF).
+<http://www.faqs.org/rfcs/rfc1952.html>
 
-    1.  Terms and definitions
-        ---------------------
+\[RFC2045\] Freed, N. ; Borenstein, N. “Multipurpose Internet Mail
+Extensions (MIME) Part One: Format of Internet Message Bodies,” RFC
+2045, November 1996. <http://www.faqs.org/rfcs/rfc2045>
 
-        1.  ### WARC record 
+\[RFC2047\] Moore, K.. “MIME (Multipurpose Internet Mail Extensions)
+Part Three: Message Header Extensions for Non-ASCII Text,” RFC 2047,
+November 1996 (TXT, HTML, XML). <http://www.faqs.org/rfcs/rfc2047>
 
-> Basic constituent of a WARC file, consisting of a sequence of WARC
-> records.
+\[RFC2048\] Freed, N.; Klensin, J.,; Postel, J. “Multipurpose Internet
+Mail Extensions (MIME) Part Four: Registration Procedures,” BCP 13,
+RFC 2048, November 1996 (TXT, HTML, XML).
+<http://www.faqs.org/rfcs/rfc2048>
+
+\[RFC2119\] Bradner, S., “Key words for use in RFCs to Indicate
+Requirement Levels,” BCP 14, RFC 2119, March 1997 (TXT, HTML, XML).
+<http://www.faqs.org/rfcs/rfc2119.html>
+
+\[RFC2540\] Eastlake, D., “Detached Domain Name System (DNS)
+Information,” RFC 2540, March 1999.
+<http://www.faqs.org/rfcs/rfc2540.html>
+
+\[RFC2616\] Fielding, R.; Gettys, J.; Mogul, J.; Frystyk, H.;
+Masinter, L.; Leach, P.; Berners-Lee, T. “Hypertext Transfer Protocol
+-- HTTP/1.1,” RFC 2616, June 1999 (TXT, PS, PDF, HTML, XML).
+<http://www.faqs.org/rfcs/rfc2540.html>
+
+\[RFC2822\] Resnick, P., “Internet Message Format,” RFC 2822, April
+2001. <http://www.faqs.org/rfcs/rfc2822>
+
+\[RFC3548\] Josefsson, S., “The Base16, Base32, and Base64 Data
+Encodings,” RFC 3548, July 2003.
+<http://www.faqs.org/rfcs/rfc3548.html>
+
+\[RFC3629\] Yergeau, F., “UTF-8, a transformation format of ISO
+10646”, STD 63, RFC 3629, November 2003.
+<http://www.faqs.org/rfcs/rfc3629.html>
+
+\[RFC3986\] Berners-Lee, T.; Fielding, R.; Masinter, L. “Uniform
+Resource Identifier (URI): Generic Syntax,” STD 66, RFC 3986, January
+2005 (TXT, HTML, XML). <http://www.faqs.org/rfcs/rfc3986.html>
+
+\[RFC4027\] Josefsson, S., “Domain Name System Media Types,” RFC 4027,
+April 2005. <http://www.faqs.org/rfcs/rfc4027.html>
+
+\[RFC4501\] Josefsson, S., “Domain Name System Uniform Resource
+Identifiers,” RFC 4501, May 2006.
+<http://www.rfc-archive.org/getrfc.php?rfc=4501>
+
+Terms, definitions and acronyms
+===============================
+
+Terms and definitions
+---------------------
+
+### WARC record 
+
+Basic constituent of a WARC file, consisting of a sequence of WARC 
+records.
 
 ### WARC record content block 
 
@@ -228,23 +226,33 @@ multiple segments, each represented by a WARC record.
 Acronyms
 --------
 
-ABNF Augmented Backus-Naur Form
+ABNF
+: Augmented Backus-Naur Form
 
-ARC ARChive
+ARC
+: ARChive
 
-CRLF Carriage Return Line Feed
+CRLF
+: Carriage Return Line Feed
 
-HTTP HyperText Transport Protocol
+HTTP
+: HyperText Transport Protocol
 
-IANA Internet Assigned Numbers Authority
+IANA
+: Internet Assigned Numbers Authority
 
-IESG Internet Engineering Steering Group
+IESG
+: Internet Engineering Steering Group
 
-RFC Request For Comments
+RFC
+: Request For Comments
 
-UR(I/L/N) Uniform Resource (Identifier/Locator/Name)
+UR(I/L/N)
+: Uniform Resource (Identifier/Locator/Name)
 
-WARC Web ARChive
+WARC
+: Web ARChive
+
 
 File and record model
 =====================
@@ -257,114 +265,80 @@ hostname lookup results, standalone files, etc. — or is synthesized
 material (e.g., metadata, transformed content) that provides additional
 information about archived content.
 
-> A WARC record shall consist of a record header followed by a record
-> content block and two newlines. The WARC record header shall consist
-> of one first line declaring the record to be in the WARC format with a
-> given version number, then a variable number of line-oriented named
-> fields terminated by a blank line. With one major exception, allowing
-> UTF-8 \[RFC3629\], the WARC record header format largely follows the
-> tradition of HTTP/1.1 \[RFC2616\] and \[RFC2822\] headers.
->
-> The top-level view of a WARC file can be expressed in an augmented
-> Backus-Naur Form (BNF) grammar, reusing the augmented constructs
-> defined in section 2.1 of HTTP/1.1 \[RFC2616\]. (In particular, note
-> that to avoid the risk of confusion, where any WARC rule has the same
-> name as an RFC2616 rule, the definition here has been made the same,
-> except in the case of the CHAR rule, which in WARC includes multibyte
-> UTF-8 characters.)
->
-> warc-file = 1\*warc-record
->
-> warc-record = header CRLF
->
-> block CRLF CRLF
->
-> header = version warc-fields
->
-> version = "WARC/1.0" CRLF
->
-> warc-fields = \*named-field CRLF
->
-> block = \*OCTET
->
-> The record version shall appear first in every record and hence also
-> shall begin the WARC file itself.
->
-> The WARC record relies heavily on named fields. Each named field
-> consists of a name followed by a colon (":") and the field value.
-> Field names are case-insensitive. The field value may be preceded by
-> any amount of linear whitespace (LWS), though a single space is
-> preferred. Header fields can be extended over multiple lines by
-> preceding each extra line with at least one space or tab character.
->
-> Named fields may appear in any order and field values may contain any
-> UTF-8 character. Both defined-fields and extension-fields follow the
-> generic named-field format. Extension fields may be used in extensions
-> of the core format.
->
-> named-field = field-name ":" \[ field-value \]
->
-> field-name = token
->
-> field-value = \*( field-content | LWS ) ; further qualified
->
-> ; by field
->
-> ; definitions
->
-> field-content = &lt;the OCTETs making up the field-value
->
-> and consisting of either \*TEXT or combinations
->
-> of token, separators, and quoted-string&gt;
->
-> OCTET = &lt;any 8-bit sequence of data&gt;
->
-> token = 1\*&lt;any US-ASCII character
->
-> except CTLs or separators&gt;
->
-> separators = "(" | ")" | "&lt;" | "&gt;" | "@"
->
-> | "," | ";" | ":" | "\\" | &lt;"&gt;
->
-> | "/" | "\[" | "\]" | "?" | "="
->
-> | "{" | "}" | SP | HT
->
-> TEXT = &lt;any OCTET except CTLs,
->
-> but including LWS&gt;
->
-> CHAR = &lt;UTF-8 characters; RFC3629&gt; ; (0-191, 194-244)
->
-> DIGIT = &lt;any US-ASCII digit "0".."9"&gt;
->
-> CTL = &lt;any US-ASCII control character
->
-> (octets 0 - 31) and DEL (127)&gt;
->
-> CR = &lt;ASCII CR, carriage return&gt; ; (13)
+WARC record shall consist of a record header followed by a record
+content block and two newlines. The WARC record header shall consist
+of one first line declaring the record to be in the WARC format with a
+given version number, then a variable number of line-oriented named
+fields terminated by a blank line. With one major exception, allowing
+UTF-8 \[RFC3629\], the WARC record header format largely follows the
+tradition of HTTP/1.1 \[RFC2616\] and \[RFC2822\] headers.
 
-LF = &lt;ASCII LF, linefeed&gt; ; (10)
+The top-level view of a WARC file can be expressed in an augmented
+Backus-Naur Form (BNF) grammar, reusing the augmented constructs
+defined in section 2.1 of HTTP/1.1 \[RFC2616\]. (In particular, note
+that to avoid the risk of confusion, where any WARC rule has the same
+name as an RFC2616 rule, the definition here has been made the same,
+except in the case of the CHAR rule, which in WARC includes multibyte
+UTF-8 characters.)
 
-> SP = &lt;ASCII SP, space&gt; ; (32)
->
-> HT = &lt;ASCII HT, horizontal-tab&gt; ; (9)
->
-> CRLF = CR LF
->
-> LWS = \[CRLF\] 1\*( SP | HT ) ; semantics same as
->
-> ; single SP
->
-> quoted-string = ( &lt;"&gt; \*(qdtext | quoted-pair ) &lt;"&gt; )
->
-> qdtext = &lt;any TEXT except &lt;"&gt;&gt;
->
-> quoted-pair = "\\" CHAR ; single-character quoting
->
-> uri = "&lt;" &lt;'URI' per RFC3986&gt; "&gt;"
+~~~
+warc-file   = 1*warc-record
+warc-record = header CRLF
+              block CRLF CRLF
+header      = version warc-fields
+version     = "WARC/1.0" CRLF
+warc-fields = *named-field CRLF
+block       = *OCTET
+~~~
+
+The record version shall appear first in every record and hence also
+shall begin the WARC file itself.
+
+The WARC record relies heavily on named fields. Each named field
+consists of a name followed by a colon (":") and the field value.
+Field names are case-insensitive. The field value may be preceded by
+any amount of linear whitespace (LWS), though a single space is
+preferred. Header fields can be extended over multiple lines by
+preceding each extra line with at least one space or tab character.
+Named fields may appear in any order and field values may contain any
+UTF-8 character. Both defined-fields and extension-fields follow the
+generic named-field format. Extension fields may be used in extensions
+of the core format.
+
+~~~
+named-field    = field-name ":" [ field-value ]
+field-name     = token
+field-value    = *( field-content | LWS )    ; further qualified
+                                             ; by field
+                                             ; definitions
+field-content  = <the OCTETs making up the field-value
+                 and consisting of either *TEXT or combinations
+                 of token, separators, and quoted-string>
+OCTET          = <any 8-bit sequence of data>
+token          = 1*<any US-ASCII character
+                   except CTLs or separators>
+separators     = "(" | ")" | "&lt;" | "&gt;" | "@"
+                     | "," | ";" | ":" | "\" | &lt;"&gt;
+                     | "/" | "[" | "]" | "?" | "="
+                     | "{" | "}" | SP | HT
+TEXT           = <any OCTET except CTLs,
+                 but including LWS>
+CHAR           = <UTF-8 characters; RFC3629> ; (0-191, 194-244)
+DIGIT          = <any US-ASCII digit "0".."9">
+CTL            = <any US-ASCII control character
+                 (octets 0 - 31) and DEL (127)>
+CR             = <ASCII CR, carriage return>  ; (13)
+LF             = <ASCII LF, linefeed>         ; (10)
+SP             = <ASCII SP, space>            ; (32)
+HT             = <ASCII HT, horizontal-tab>   ; (9)
+CRLF           = CR LF
+LWS            = [CRLF] 1*( SP | HT )         ; semantics same as
+                                              ; single SP
+quoted-string  = ( <"> *(qdtext | quoted-pair ) <"> )
+qdtext         = <any TEXT except <">>
+quoted-pair    = "\" CHAR                     ; single-character quoting
+uri            = "<" <'URI' per RFC3986> ">"
+~~~
 
 Although UTF-8 characters are allowed, the 'encoded-word' mechanism of
 \[RFC2047\] may also be used when writing WARC fields and shall also be
@@ -374,43 +348,27 @@ The rest of the WARC record grammar concerns defined-field parameters
 such as record identifier, record type, creation time, content length,
 and content type.
 
+~~~
 defined-field = WARC-Type
-
-| WARC-Record-ID
-
-| WARC-Date
-
-| Content-Length
-
-| Content-Type
-
-| WARC-Concurrent-To
-
-| WARC-Block-Digest
-
-| WARC-Payload-Digest
-
-| WARC-IP-Address
-
-| WARC-Refers-To
-
-| WARC-Target-URI
-
-| WARC-Truncated
-
-| WARC-Warcinfo-ID
-
-| WARC-Filename ; warcinfo only
-
-| WARC-Profile ; revisit only
-
-| WARC-Identified-Payload-Type
-
-| WARC-Segment-Origin-ID ; continuation only
-
-| WARC-Segment-Number
-
-| WARC-Segment-Total-Length ; continuation only
+              | WARC-Record-ID
+              | WARC-Date
+              | Content-Length
+              | Content-Type
+              | WARC-Concurrent-To
+              | WARC-Block-Digest
+              | WARC-Payload-Digest
+              | WARC-IP-Address
+              | WARC-Refers-To
+              | WARC-Target-URI
+              | WARC-Truncated
+              | WARC-Warcinfo-ID
+              | WARC-Filename                ; warcinfo only
+              | WARC-Profile                 ; revisit only
+              | WARC-Identified-Payload-Type
+              | WARC-Segment-Origin-ID       ; continuation only
+              | WARC-Segment-Number
+              | WARC-Segment-Total-Length    ; continuation only
+~~~
 
 Every WARC record shall have a type, reported in the WARC-Type field.
 There are eight WARC record types: 'warcinfo', 'response', 'resource',
@@ -437,9 +395,9 @@ records shall not have a payload.
 Content matching the warc-file rule shall have the MIME content-type
 "application/warc", registered below in section 8.2.
 
-> Content matching only the warc-fields rule is useful as a simple
-> descriptive format, and has MIME content-type
-> "application/warc-fields", registered below in section 8.3.
+Content matching only the warc-fields rule is useful as a simple
+descriptive format, and has MIME content-type
+"application/warc-fields", registered below in section 8.3.
 
 Named fields
 ================
@@ -447,85 +405,80 @@ Named fields
 General
 -------
 
-> Named fields within a WARC record provide information about the
-> current record, and allow additional per-record information. WARC both
-> reuses appropriate headers from other standards and defines new
-> headers, all beginning "WARC-", for WARC-specific purposes.
->
-> WARC named fields of the same type shall not be repeated in the same
-> WARC record (for example, a WARC record shall not have several
-> WARC-Date or several WARC-Target-URI), except as noted (e.g.,
-> WARC-Concurrent-To).
->
-> Because new fields may be defined in extensions to the core WARC
-> format, WARC processing software shall ignore fields with unrecognized
-> names.
+Named fields within a WARC record provide information about the
+current record, and allow additional per-record information. WARC both
+reuses appropriate headers from other standards and defines new
+headers, all beginning "WARC-", for WARC-specific purposes.
+
+WARC named fields of the same type shall not be repeated in the same
+WARC record (for example, a WARC record shall not have several
+WARC-Date or several WARC-Target-URI), except as noted (e.g.,
+WARC-Concurrent-To).
+
+Because new fields may be defined in extensions to the core WARC
+format, WARC processing software shall ignore fields with unrecognized
+names.
 
 WARC-Record-ID (mandatory)
 --------------------------
 
-> An identifier assigned to the current record that is globally unique
-> for its period of intended use. No identifier scheme is mandated by
-> this specification, but each record-id shall be a legal URI and
-> clearly indicate a documented and registered scheme to which it
-> conforms (e.g., via a URI scheme prefix such as "http:" or "urn:").
-> Care should be taken to ensure that this value is written with no
-> internal whitespace.
->
-> WARC-Record-ID = "WARC-Record-ID" ":" uri
->
-> All records shall have a WARC-Record-ID field.
+An identifier assigned to the current record that is globally unique
+for its period of intended use. No identifier scheme is mandated by
+this specification, but each record-id shall be a legal URI and
+clearly indicate a documented and registered scheme to which it
+conforms (e.g., via a URI scheme prefix such as "http:" or "urn:").
+Care should be taken to ensure that this value is written with no
+internal whitespace.
+
+    WARC-Record-ID = "WARC-Record-ID" ":" uri
+
+All records shall have a WARC-Record-ID field.
 
 Content-Length (mandatory)
 --------------------------
 
-> The number of octets in the block, similar to \[RFC2616\]. If no block
-> is present, a value of '0' (zero) shall be used.
->
-> Content-Length = "Content-Length" ":" 1\*DIGIT
->
-> All records shall have a Content-Length field.
+The number of octets in the block, similar to \[RFC2616\]. If no block
+is present, a value of '0' (zero) shall be used.
+
+    Content-Length = "Content-Length" ":" 1\*DIGIT
+
+All records shall have a Content-Length field.
 
 WARC-Date (mandatory)
 ---------------------
 
-> A 14-digit UTC timestamp formatted according to YYYY-MM-DDThh:mm:ssZ,
-> described in the W3C profile of ISO8601 \[W3CDTF\]. The timestamp
-> shall represent the instant that data capture for record creation
-> began. Multiple records written as part of a single capture event (see
-> section 5.7) shall use the same WARC-Date, even though the times of
-> their writing will not be exactly synchronized.
->
-> WARC-Date = "WARC-Date" ":" w3c-iso8601
->
-> w3c-iso8601 = &lt;YYYY-MM-DDThh:mm:ssZ&gt;
->
-> All records shall have a WARC-Date field.
+A 14-digit UTC timestamp formatted according to YYYY-MM-DDThh:mm:ssZ,
+described in the W3C profile of ISO8601 \[W3CDTF\]. The timestamp
+shall represent the instant that data capture for record creation
+began. Multiple records written as part of a single capture event (see
+section 5.7) shall use the same WARC-Date, even though the times of
+their writing will not be exactly synchronized.
+
+    WARC-Date = "WARC-Date" ":" w3c-iso8601
+    w3c-iso8601 = <YYYY-MM-DDThh:mm:ssZ>
+
+All records shall have a WARC-Date field.
 
 WARC-Type (mandatory)
 ---------------------
 
-> The type of WARC record: one of 'warcinfo', 'response', 'resource',
-> 'request', 'metadata', 'revisit', 'conversion', or 'continuation'.
-> Other types of WARC records may be defined in extensions of the core
-> format. Types are further described in WARC Record Types.
->
-> A WARC file needs not contain any particular record types, though
-> starting all WARC files with a "warcinfo" record is recommended.
->
-> WARC-Type = "WARC-Type" ":" record-type
->
-> record-type = "warcinfo" | "response" | "resource"
->
-> | "request" | "metadata" | "revisit"
->
-> | "conversion" | "continuation" | future-type
->
-> future-type = token
->
-> All records shall have a WARC-Type field.
->
-> WARC processing software shall ignore records of unrecognized type.
+The type of WARC record: one of 'warcinfo', 'response', 'resource',
+'request', 'metadata', 'revisit', 'conversion', or 'continuation'.
+Other types of WARC records may be defined in extensions of the core
+format. Types are further described in WARC Record Types.
+
+A WARC file needs not contain any particular record types, though
+starting all WARC files with a "warcinfo" record is recommended.
+
+    WARC-Type   = "WARC-Type" ":" record-type
+    record-type = "warcinfo" | "response" | "resource"
+                | "request" | "metadata" | "revisit"
+                | "conversion" | "continuation" | future-type
+    future-type = token
+
+All records shall have a WARC-Type field.
+
+WARC processing software shall ignore records of unrecognized type.
 
 Content-Type
 ------------
@@ -539,19 +492,13 @@ the value of the HTTP Content-Type header in an HTTP response but a MIME
 type to describe the full archived HTTP message (hence
 'application/http' if the block contains request or response headers).
 
-Content-Type = "Content-Type" ":" media-type
-
-media-type = type "/" subtype \*( ";" parameter )
-
-type = token
-
-subtype = token
-
-parameter = attribute "=" value
-
-attribute = token
-
-value = token | quoted-string
+    Content-Type = "Content-Type" ":" media-type
+    media-type   = type "/" subtype *( ";" parameter )
+    type         = token
+    subtype      = token
+    parameter    = attribute "=" value
+    attribute    = token
+    value        = token | quoted-string
 
 All records with a non-empty block (non-zero Content-Length), except
 'continuation' records, should have a Content-Type field. Only if the
@@ -570,7 +517,7 @@ automatically gathered by a retrieval against a single target-URI; for
 example, it might be represented by a 'response' or 'revisit' record
 plus its associated 'request' record.
 
-WARC-Concurrent-To = "WARC-Concurrent-To" ":" uri
+    WARC-Concurrent-To = "WARC-Concurrent-To" ":" uri
 
 This field may be used to associate records of types 'request',
 'response', 'resource', 'metadata', and 'revisit' with one another when
@@ -589,17 +536,14 @@ WARC-Block-Digest
 An optional parameter indicating the algorithm name and calculated value
 of a digest applied to the full block of the record.
 
-WARC-Block-Digest = "WARC-Block-Digest" ":" labelled-digest
-
-labelled-digest = algorithm ":" digest-value
-
-algorithm = token
-
-digest-value = token
+    WARC-Block-Digest = "WARC-Block-Digest" ":" labelled-digest
+    labelled-digest   = algorithm ":" digest-value
+    algorithm         = token
+    digest-value      = token
 
 An example is a SHA-1 labelled Base32 (\[RFC3548\]) value:
 
-WARC-Block-Digest: sha1:AB2CD3EF4GH5IJ6KL7MN8OPQ
+    WARC-Block-Digest: sha1:AB2CD3EF4GH5IJ6KL7MN8OPQ
 
 This document recommends no particular algorithm.
 
@@ -612,11 +556,11 @@ An optional parameter indicating the algorithm name and calculated value
 of a digest applied to the payload referred to or contained by the
 record - which is not necessarily equivalent to the record block.
 
-WARC-Payload-Digest = "WARC-Payload-Digest" ":" labelled-digest
+    WARC-Payload-Digest = "WARC-Payload-Digest" ":" labelled-digest
 
 An example is a SHA-1 labelled Base32 (\[RFC3548\]) value:
 
-WARC-Payload-Digest: sha1:3EF4GH5IJ6KL7MN8OPQAB2CD
+    WARC-Payload-Digest: sha1:3EF4GH5IJ6KL7MN8OPQAB2CD
 
 This document recommends no particular algorithm.
 
@@ -641,11 +585,9 @@ shall be written as per \[RFC1884\]. For an HTTP retrieval, this will be
 the IP address used at retrieval time corresponding to the hostname in
 the record's target-Uri.
 
-WARC-IP-Address = "WARC-IP-Address" ":" (ipv4 | ipv6)
-
-ipv4 = &lt;"dotted quad"&gt;
-
-ipv6 = &lt;per section 2.2 of RFC1884&gt;
+    WARC-IP-Address = "WARC-IP-Address" ":" (ipv4 | ipv6)
+    ipv4            = <"dotted quad">
+    ipv6            = <per section 2.2 of RFC1884>
 
 The WARC-IP-Address field may be used on 'response', 'resource',
 'request', 'metadata', and 'revisit' records, but shall not be used on
@@ -657,7 +599,7 @@ WARC-Refers-To
 The WARC-Record-ID of a single record for which the present record holds
 additional content.
 
-WARC-Refers-To = "WARC-Refers-To" ":" uri
+    WARC-Refers-To = "WARC-Refers-To" ":" uri
 
 The WARC-Refers-To field may be used to associate a 'metadata' record to
 another record it describes. The WARC-Refers-To field may also be used
@@ -678,7 +620,7 @@ WARC-Target-URI appearing in the original record to which the newer
 record pertains. The URI in this value shall be properly escaped
 according to \[RFC3986\] and written with no internal whitespace.
 
-WARC-Target-URI = "WARC-Target-URI" ":" uri
+    WARC-Target-URI = "WARC-Target-URI" ":" uri
 
 All 'response', 'resource', 'request', 'revisit', ‘conversion’ and
 'continuation' records shall have a WARC-Target-URI field. A 'metadata'
@@ -696,21 +638,14 @@ available for saving into a WARC record.
 Any record may indicate that truncation of its content block has
 occurred and give the reason with a 'WARC-Truncated' field.
 
-WARC-Truncated = "WARC-Truncated" ":" reason-token
-
-reason-token = "length" ; exceeds configured max
-
-; length
-
-| "time" ; exceeds configured max time
-
-| "disconnect" ; network disconnect
-
-| "unspecified" ; other/unknown reason
-
-| future-reason
-
-future-reason = token
+    WARC-Truncated = "WARC-Truncated" ":" reason-token
+    reason-token   = "length"          ; exceeds configured max
+                                       ; length
+                   | "time"            ; exceeds configured max time
+                   | "disconnect"      ; network disconnect
+                   | "unspecified"     ; other/unknown reason
+                   | future-reason
+    future-reason  = token
 
 For example, if the capture of what appeared to be a multi-gigabyte
 resource was cut short after a transfer time limit was reached, the
@@ -730,7 +665,7 @@ such as after distributing single records into separate WARC files. WARC
 writing applications (such web crawlers) may choose to always record
 this parameter.
 
-WARC-Warcinfo-ID = "WARC-Warcinfo-ID" ":" uri
+    WARC-Warcinfo-ID = "WARC-Warcinfo-ID" ":" uri
 
 The WARC-Warcinfo-ID field value overrides any association with a
 previously occurring (in the WARC) 'warcinfo' record, thus providing a
@@ -745,7 +680,7 @@ WARC-Filename
 
 The filename containing the current 'warcinfo' record.
 
-WARC-Filename = "WARC-Filename" ":" ( TEXT | quoted-string )
+    WARC-Filename = "WARC-Filename" ":" ( TEXT | quoted-string )
 
 The WARC-Filename field may be used in 'warcinfo' type records and shall
 not be used for other record types.
@@ -759,7 +694,7 @@ return human-readable or machine-readable documentation.) If reading
 software does not recognize the given URI as a supported kind of
 handling, it shall not attempt to interpret the associated record block.
 
-WARC-Profile = "WARC-Profile" ":" uri
+    WARC-Profile = "WARC-Profile" ":" uri
 
 The section 'revisit' defines two initial profile options for the
 WARC-Profile header for 'revisit' records.
@@ -775,9 +710,8 @@ check. This string shall not be arrived at by blindly promoting an HTTP
 Content-Type value up from a record block into the WARC header without
 direct analysis of the payload, as such values may often be unreliable.
 
-WARC-Identified-Payload-Type = "WARC-Identified-Payload-Type" ":"
-
-media-type
+    WARC-Identified-Payload-Type = "WARC-Identified-Payload-Type" ":" 
+                                   media-type
 
 The WARC-Identified-Payload-Type field may be used on WARC records with
 a well-defined payload and shall not be used on records without a
@@ -789,7 +723,7 @@ WARC-Segment-Number
 Reports the current record's relative ordering in a sequence of
 segmented records.
 
-WARC-Segment-Number = "WARC-Segment-Number" ":" 1\*DIGIT
+    WARC-Segment-Number = "WARC-Segment-Number" ":" 1*DIGIT
 
 In the first segment of any record that is completed in one or more
 later 'continuation' WARC records, this parameter is mandatory. Its
@@ -807,7 +741,7 @@ Identifies the starting record in a series of segmented records whose
 content blocks are reassembled to obtain a logically complete content
 block.
 
-WARC-Segment-Origin-ID = "WARC-Segment-Origin-ID" ":" uri
+    WARC-Segment-Origin-ID = "WARC-Segment-Origin-ID" ":" uri
 
 This field is mandatory on all 'continuation' records, and shall not be
 used in other records. See the section below, Record segmentation, for
@@ -819,9 +753,8 @@ WARC-Segment-Total-Length
 In the final record of a segmented series, reports the total length of
 all segment content blocks when concatenated together.
 
-WARC-Segment-Total-Length = "WARC-Segment-Total-Length" ":"
-
-1\*DIGIT
+    WARC-Segment-Total-Length = "WARC-Segment-Total-Length" ":"
+                                1*DIGIT
 
 This field is mandatory on the last 'continuation' record of a series,
 and shall not be used elsewhere.
@@ -829,11 +762,11 @@ and shall not be used elsewhere.
 See the section below, Record segmentation, for full details on the use
 of WARC record segmentation.
 
-1.  WARC Record Types
-    =================
+WARC Record Types
+=================
 
-    1.  General
-        -------
+General
+-------
 
 The purpose and use of each defined record type is described below.
 
@@ -856,43 +789,36 @@ fields include, but are not limited to, all \[DCMI\] plus the following
 field definitions. All fields are optional.
 
 'operator'
-
-> Contact information for the operator who created this WARC resource. A
-> name or name and email address is recommended.
+: Contact information for the operator who created this WARC resource. A
+name or name and email address is recommended.
 
 'software'
-
-The software and software version used to create this WARC resource. For
+: The software and software version used to create this WARC resource. For
 example, "heritrix/1.12.0".
 
 'robots'
-
-> The robots policy followed by the harvester creating this WARC
-> resource. The string 'classic' indicates the 1994 web robots exclusion
-> standard rules are being obeyed.
+: The robots policy followed by the harvester creating this WARC
+resource. The string 'classic' indicates the 1994 web robots exclusion
+standard rules are being obeyed.
 
 'hostname'
-
-The hostname of the machine that created this WARC resource, such as
+: The hostname of the machine that created this WARC resource, such as
 "crawling17.archive.org".
 
 'ip'
-
-The IP address of the machine that created this WARC resource, such as
+: The IP address of the machine that created this WARC resource, such as
 "123.2.3.4".
 
 'http-header-user-agent'
-
-> The HTTP 'user-agent' header usually sent by the harvester along with
-> each request. Note that if 'request' records are used to save verbatim
-> requests, this information is redundant. (If a 'request' or 'metadata'
-> record reports a different 'user-agent' for a specific request, the
-> more specific information should be considered more reliable.)
+: The HTTP 'user-agent' header usually sent by the harvester along with
+each request. Note that if 'request' records are used to save verbatim
+requests, this information is redundant. (If a 'request' or 'metadata'
+record reports a different 'user-agent' for a specific request, the
+more specific information should be considered more reliable.)
 
 'http-header-from'
-
-> The HTTP 'From' header usually sent by the harvester along with each
-> request. (The same considerations as for 'user-agent' apply.)
+: The HTTP 'From' header usually sent by the harvester along with each
+request. (The same considerations as for 'user-agent' apply.)
 
 So that multiple record excerpts from inside WARC files are also valid
 WARC files, it is optional that the first record of a legal WARC be a
@@ -902,10 +828,10 @@ appear in the middle of a WARC file.
 
 See annex C.1 below for an example of a ‘warcinfo’ record.
 
-1.  'response'
-    ----------
+'response'
+----------
 
-    1.  ### General
+### General
 
 A 'response' record should contain a complete scheme-specific response,
 including network protocol information where possible. The exact
@@ -958,10 +884,10 @@ exchanged, consulted, or verified.
 This document does not specify the contents of the 'response' record for
 other URI schemes.
 
-1.  'resource'
-    ----------
+'resource'
+----------
 
-    1.  ### General
+### General
 
 A 'resource' record contains a resource, without full protocol response
 information. For example: a file directly retrieved from a locally
@@ -1001,10 +927,10 @@ results of a single DNS lookup as described by the target-URI.
 This document does not specify the contents of the 'resource' record for
 other URI schemes.
 
-1.  'request'
-    ---------
+'request'
+---------
 
-    1.  ### General
+### General
 
 A 'request' record holds the details of a complete scheme-specific
 request, including network protocol information where possible. The
@@ -1065,17 +991,14 @@ Allowable fields include all \[DCMI\] plus the following field
 definitions. All fields are optional.
 
 'via'
-
-The referring URI from which the archived URI was discovered.
+: The referring URI from which the archived URI was discovered.
 
 'hopsFromSeed'
-
-A symbolic string describing the type of each hop from a starting 'seed'
+: A symbolic string describing the type of each hop from a starting 'seed'
 URI to the current URI.
 
 'fetchTimeMs'
-
-Time in milliseconds that it took to collect the archived URI, starting
+: Time in milliseconds that it took to collect the archived URI, starting
 from the initiation of network traffic.
 
 A 'metadata' record may be associated with other records derived from
@@ -1085,10 +1008,10 @@ WARC-Refers-To header.
 
 See annex C.5 below for an example of a ‘metadata’ record.
 
-1.  'revisit'
-    ---------
+'revisit'
+---------
 
-    1.  ### General
+### General
 
 A 'revisit' record describes the revisitation of content already
 archived, and might include only an abbreviated content body which has
@@ -1122,7 +1045,7 @@ as SHA-1, indicates is identical to a previously recorded version.
 
 To indicate this profile, use the URI:
 
-http://netpreserve.org/warc/1.0/revisit/identical-payload-digest
+<http://netpreserve.org/warc/1.0/revisit/identical-payload-digest>
 
 To report the payload digest used for comparison, a 'revisit' record
 using this profile shall include a WARC-Payload-Digest field, with a
@@ -1150,7 +1073,7 @@ content has not changed, such as an HTTP "304 Not Modified" response.
 
 To indicate this profile, use the URI:
 
-http://netpreserve.org/warc/1.0/revisit/server-not-modified
+<http://netpreserve.org/warc/1.0/revisit/server-not-modified>
 
 A 'revisit' record using this profile may have no content body, in which
 case a Content-Length of zero shall be written. If a content body is
@@ -1354,12 +1277,11 @@ IANA considerations
 After IESG approval, IANA is expected to register the WARC type
 "application/warc" using the application provided in this document.
 
-A.  (informative)\
-    \
-    Compression recommendations
+Annex A. *(informative)* Compression recommendations
+====================================================
 
-B.  General 
-    -------
+General 
+-------
 
 The WARC format defines no internal compression. Whether and how WARC
 files should be compressed is an external decision.
@@ -1403,9 +1325,8 @@ GZIP WARC file name suffix
 A gzip compressed WARC file should have the customary ".gz" appended to
 it, making the complete suffix, ".warc.gz".
 
-A.  (informative)\
-    \
-    WARC file size and name recommendations
+Annex B: *(informative)* WARC file size and name recommendations
+================================================================
 
 1GB (10\^9 bytes) is recommended as a practical target size for WARC
 files, when record sizes allow. Oversized records may be truncated,
@@ -1436,237 +1357,149 @@ practice, but conventions similar to the above are recommended within
 WARC-creating institutions. The file name prefix "iipc" should not be
 used unless participating in a future IIPC naming registry.
 
-A.  \
-    (informative)\
-    \
-    Examples of WARC records
 
-B.  Example of 'warcinfo' record 
-    ----------------------------
 
-WARC/1.0
+Annex C: *(informative)* Examples of WARC records
+=================================================
 
-WARC-Type: warcinfo
 
-WARC-Date: 2006-09-19T17:20:14Z
+Example of 'warcinfo' record 
+----------------------------
 
-WARC-Record-ID: &lt;urn:uuid:d7ae5c10-e6b3-4d27-967d-34780c58ba39&gt;
-
-Content-Type: application/warc-fields
-
-Content-Length: 381
-
-software: Heritrix 1.12.0 http://crawler.archive.org
-
-hostname: crawling017.archive.org
-
-ip: 207.241.227.234
-
-isPartOf: testcrawl-20050708
-
-description: testcrawl with WARC output
-
-operator: IA\_Admin
-
-http-header-user-agent:
-
-Mozilla/5.0 (compatible; heritrix/1.4.0 +http://crawler.archive.org)
-
-format: WARC file version 1.0
-
-conformsTo:
-
-http://www.archive.org/documents/WarcFileFormat-1.0.html
+    WARC/1.0
+    WARC-Type: warcinfo
+    WARC-Date: 2006-09-19T17:20:14Z
+    WARC-Record-ID: <urn:uuid:d7ae5c10-e6b3-4d27-967d-34780c58ba39>
+    Content-Type: application/warc-fields
+    Content-Length: 381
+    
+    software: Heritrix 1.12.0 http://crawler.archive.org
+    hostname: crawling017.archive.org
+    ip: 207.241.227.234
+    isPartOf: testcrawl-20050708
+    description: testcrawl with WARC output
+    operator: IA\_Admin
+    http-header-user-agent:
+     Mozilla/5.0 (compatible; heritrix/1.4.0 +http://crawler.archive.org)
+    format: WARC file version 1.0
+    conformsTo:
+     http://www.archive.org/documents/WarcFileFormat-1.0.html
 
 Example of 'request' record 
 ---------------------------
 
-WARC/1.0
-
-WARC-Type: request
-
-WARC-Target-URI: http://www.archive.org/images/logoc.jpg
-
-WARC-Warcinfo-ID: &lt;urn:uuid:d7ae5c10-e6b3-4d27-967d-34780c58ba39&gt;
-
-WARC-Date: 2006-09-19T17:20:24Z
-
-Content-Length: 236
-
-WARC-Record-ID: &lt;urn:uuid:4885803b-eebd-4b27-a090-144450c11594&gt;
-
-Content-Type: application/http;msgtype=request
-
-WARC-Concurrent-To:
-&lt;urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0&gt;
-
-GET /images/logoc.jpg HTTP/1.0
-
-User-Agent: Mozilla/5.0 (compatible; heritrix/1.10.0)
-
-From: stack@example.org
-
-Connection: close
-
-Referer: http://www.archive.org/
-
-Host: www.archive.org
-
-Cookie: PHPSESSID=009d7bb11022f80605aa87e18224d824
+    WARC/1.0
+    WARC-Type: request
+    WARC-Target-URI: http://www.archive.org/images/logoc.jpg
+    WARC-Warcinfo-ID: <urn:uuid:d7ae5c10-e6b3-4d27-967d-34780c58ba39>
+    WARC-Date: 2006-09-19T17:20:24Z
+    Content-Length: 236
+    WARC-Record-ID: <urn:uuid:4885803b-eebd-4b27-a090-144450c11594>
+    Content-Type: application/http;msgtype=request
+    WARC-Concurrent-To: <urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0>
+    
+    GET /images/logoc.jpg HTTP/1.0
+    User-Agent: Mozilla/5.0 (compatible; heritrix/1.10.0)
+    From: stack@example.org
+    Connection: close
+    Referer: http://www.archive.org/
+    Host: www.archive.org
+    Cookie: PHPSESSID=009d7bb11022f80605aa87e18224d824
 
 Example of 'response' record 
 ----------------------------
 
-WARC/1.0
-
-WARC-Type: response
-
-WARC-Target-URI: http://www.archive.org/images/logoc.jpg
-
-WARC-Warcinfo-ID: &lt;urn:uuid:d7ae5c10-e6b3-4d27-967d-34780c58ba39&gt;
-
-WARC-Date: 2006-09-19T17:20:24Z
-
-WARC-Block-Digest: sha1:UZY6ND6CCHXETFVJD2MSS7ZENMWF7KQ2
-
-WARC-Payload-Digest: sha1:CCHXETFVJD2MUZY6ND6SS7ZENMWF7KQ2
-
-WARC-IP-Address: 207.241.233.58
-
-WARC-Record-ID: &lt;urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0&gt;
-
-Content-Type: application/http;msgtype=response
-
-WARC-Identified-Payload-Type: image/jpeg
-
-Content-Length: 1902
-
-HTTP/1.1 200 OK
-
-Date: Tue, 19 Sep 2006 17:18:40 GMT
-
-Server: Apache/2.0.54 (Ubuntu)
-
-Last-Modified: Mon, 16 Jun 2003 22:28:51 GMT
-
-ETag: "3e45-67e-2ed02ec0"
-
-Accept-Ranges: bytes
-
-Content-Length: 1662
-
-Connection: close
-
-Content-Type: image/jpeg
-
-\[image/jpeg binary data here\]
+    WARC/1.0
+    WARC-Type: response
+    WARC-Target-URI: http://www.archive.org/images/logoc.jpg
+    WARC-Warcinfo-ID: <urn:uuid:d7ae5c10-e6b3-4d27-967d-34780c58ba39>
+    WARC-Date: 2006-09-19T17:20:24Z
+    WARC-Block-Digest: sha1:UZY6ND6CCHXETFVJD2MSS7ZENMWF7KQ2
+    WARC-Payload-Digest: sha1:CCHXETFVJD2MUZY6ND6SS7ZENMWF7KQ2
+    WARC-IP-Address: 207.241.233.58
+    WARC-Record-ID: <urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0>
+    Content-Type: application/http;msgtype=response
+    WARC-Identified-Payload-Type: image/jpeg
+    Content-Length: 1902
+    
+    HTTP/1.1 200 OK
+    Date: Tue, 19 Sep 2006 17:18:40 GMT
+    Server: Apache/2.0.54 (Ubuntu)
+    Last-Modified: Mon, 16 Jun 2003 22:28:51 GMT
+    ETag: "3e45-67e-2ed02ec0"
+    Accept-Ranges: bytes
+    Content-Length: 1662
+    Connection: close
+    Content-Type: image/jpeg
+    
+    [image/jpeg binary data here]
 
 Example of 'resource' record 
 ----------------------------
 
-WARC/1.0
+    WARC/1.0
+    WARC-Type: resource
+    WARC-Target-URI: file://var/www/htdoc/images/logoc.jpg
+    WARC-Date: 2006-09-30T16:40:32Z
+    WARC-Record-ID: <urn:uuid:23200706-de3e-3c61-a131-g65d7fd80cc1>
+    Content-Type: image/jpeg
+    WARC-Payload-Digest: sha1:DBXHDRBXLF4OMUZ5DN4JJ2KFUAOB6VK8
+    WARC-Block-Digest: sha1:DBXHDRBXLF4OMUZ5DN4JJ2KFUAOB6VK8
+    Content-Length: 1662
 
-WARC-Type: resource
-
-WARC-Target-URI: file://var/www/htdoc/images/logoc.jpg
-
-WARC-Date: 2006-09-30T16:40:32Z
-
-WARC-Record-ID: &lt;urn:uuid:23200706-de3e-3c61-a131-g65d7fd80cc1&gt;
-
-Content-Type: image/jpeg
-
-WARC-Payload-Digest: sha1:DBXHDRBXLF4OMUZ5DN4JJ2KFUAOB6VK8
-
-WARC-Block-Digest: sha1:DBXHDRBXLF4OMUZ5DN4JJ2KFUAOB6VK8
-
-Content-Length: 1662
-
-\[image/jpeg binary data here\]
+    [image/jpeg binary data here]
 
 Example of 'metadata' record 
 ----------------------------
 
-WARC/1.0
-
-WARC-Type: metadata
-
-WARC-Target-URI: http://www.archive.org/images/logoc.jpg
-
-WARC-Date: 2006-09-19T17:20:24Z
-
-WARC-Record-ID: &lt;urn:uuid:16da6da0-bcdc-49c3-927e-57494593b943&gt;
-
-WARC-Concurrent-To:
-&lt;urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0&gt;
-
-Content-Type: application/warc-fields
-
-WARC-Block-Digest: sha1:VXT4AF5BBZVHDYKNC2CSM8TEAWDB6CH8
-
-Content-Length: 59
-
-via: http://www.archive.org/
-
-hopsFromSeed: E
-
-fetchTimeMs: 565
+    WARC/1.0
+    WARC-Type: metadata
+    WARC-Target-URI: http://www.archive.org/images/logoc.jpg
+    WARC-Date: 2006-09-19T17:20:24Z
+    WARC-Record-ID: <urn:uuid:16da6da0-bcdc-49c3-927e-57494593b943>
+    WARC-Concurrent-To: <urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0>
+    Content-Type: application/warc-fields
+    WARC-Block-Digest: sha1:VXT4AF5BBZVHDYKNC2CSM8TEAWDB6CH8
+    
+    Content-Length: 59
+    via: http://www.archive.org/
+    hopsFromSeed: E
+    fetchTimeMs: 565
 
 Example of 'revisit' record 
 ---------------------------
 
-WARC/1.0
+    WARC/1.0
+    WARC-Type: revisit
+    WARC-Target-URI: http://www.archive.org/images/logoc.jpg
+    WARC-Date: 2007-03-06T00:43:35Z
+    WARC-Profile: http://netpreserve.org/warc/1.0/server-not-modified
+    WARC-Record-ID: <urn:uuid:16da6da0-bcdc-49c3-927e-57494593bbbb>
+    WARC-Refers-To: <urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0>
+    Content-Type: message/http
+    Content-Length: 226
 
-WARC-Type: revisit
-
-WARC-Target-URI: http://www.archive.org/images/logoc.jpg
-
-WARC-Date: 2007-03-06T00:43:35Z
-
-WARC-Profile: http://netpreserve.org/warc/1.0/server-not-modified
-
-WARC-Record-ID: &lt;urn:uuid:16da6da0-bcdc-49c3-927e-57494593bbbb&gt;
-
-WARC-Refers-To: &lt;urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0&gt;
-
-Content-Type: message/http
-
-Content-Length: 226
-
-HTTP/1.x 304 Not Modified
-
-Date: Tue, 06 Mar 2007 00:43:35 GMT
-
-Server: Apache/2.0.54 (Ubuntu) PHP/5.0.5-2ubuntu1.4
-
-Connection: Keep-Alive
-
-Keep-Alive: timeout=15, max=100
-
-Etag: "3e45-67e-2ed02ec0"
+    HTTP/1.x 304 Not Modified
+    Date: Tue, 06 Mar 2007 00:43:35 GMT
+    Server: Apache/2.0.54 (Ubuntu) PHP/5.0.5-2ubuntu1.4
+    Connection: Keep-Alive
+    Keep-Alive: timeout=15, max=100
+    Etag: "3e45-67e-2ed02ec0"
 
 Example of 'conversion' record 
 ------------------------------
 
-WARC/1.0
-
-WARC-Type: conversion
-
-WARC-Target-URI: http://www.archive.org/images/logoc.jpg
-
-WARC-Date: 2016-09-19T19:00:40Z
-
-WARC-Record-ID: &lt;urn:uuid:16da6da0-bcdc-49c3-927e-57494593dddd&gt;
-
-WARC-Refers-To: &lt;urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0&gt;
-
-WARC-Block-Digest: sha1:XQMRY75YY42ZWC6JAT6KNXKD37F7MOEK
-
-Content-Type: image/neoimg
-
-Content-Length: 934
-
-\[image/neoimg binary data here\]
+    WARC/1.0
+    WARC-Type: conversion
+    WARC-Target-URI: http://www.archive.org/images/logoc.jpg
+    WARC-Date: 2016-09-19T19:00:40Z
+    WARC-Record-ID: <urn:uuid:16da6da0-bcdc-49c3-927e-57494593dddd>
+    WARC-Refers-To: <urn:uuid:92283950-ef2f-4d72-b224-f54c6ec90bb0>
+    WARC-Block-Digest: sha1:XQMRY75YY42ZWC6JAT6KNXKD37F7MOEK
+    Content-Type: image/neoimg
+    Content-Length: 934
+    
+    [image/neoimg binary data here]
 
 Example of segmentation ('continuation' record) 
 -----------------------------------------------
@@ -1679,47 +1512,29 @@ with a WARC-Segment-Number of 1. Note that the block-digest has changed
 record -- but the payload-digest has not changed, as the reassembled
 record will have the same internal payload.
 
-WARC/1.0
-
-WARC-Type: response
-
-WARC-Target-URI: http://www.archive.org/images/logoc.jpg
-
-WARC-Date: 2006-09-19T17:20:24Z
-
-WARC-Block-Digest: sha1:2ASS7ZUZY6ND6CCHXETFVJDENAWF7KQ2
-
-WARC-Payload-Digest: sha1:CCHXETFVJD2MUZY6ND6SS7ZENMWF7KQ2
-
-WARC-IP-Address: 207.241.233.58
-
-WARC-Record-ID: &lt;urn:uuid:39509228-ae2f-11b2-763a-aa4c6ec90bb0&gt;
-
-WARC-Segment-Number: 1
-
-Content-Type: application/http;msgtype=response
-
-Content-Length: 1600
-
-HTTP/1.1 200 OK
-
-Date: Tue, 19 Sep 2006 17:18:40 GMT
-
-Server: Apache/2.0.54 (Ubuntu)
-
-Last-Modified: Mon, 16 Jun 2003 22:28:51 GMT
-
-ETag: "3e45-67e-2ed02ec0"
-
-Accept-Ranges: bytes
-
-Content-Length: 1662
-
-Connection: close
-
-Content-Type: image/jpeg
-
-\[first 1360 bytes of image/jpeg binary data here\]
+    WARC/1.0
+    WARC-Type: response
+    WARC-Target-URI: http://www.archive.org/images/logoc.jpg
+    WARC-Date: 2006-09-19T17:20:24Z
+    WARC-Block-Digest: sha1:2ASS7ZUZY6ND6CCHXETFVJDENAWF7KQ2
+    WARC-Payload-Digest: sha1:CCHXETFVJD2MUZY6ND6SS7ZENMWF7KQ2
+    WARC-IP-Address: 207.241.233.58
+    WARC-Record-ID: <urn:uuid:39509228-ae2f-11b2-763a-aa4c6ec90bb0>
+    WARC-Segment-Number: 1
+    Content-Type: application/http;msgtype=response
+    Content-Length: 1600
+    
+    HTTP/1.1 200 OK
+    Date: Tue, 19 Sep 2006 17:18:40 GMT
+    Server: Apache/2.0.54 (Ubuntu)
+    Last-Modified: Mon, 16 Jun 2003 22:28:51 GMT
+    ETag: "3e45-67e-2ed02ec0"
+    Accept-Ranges: bytes
+    Content-Length: 1662
+    Connection: close
+    Content-Type: image/jpeg
+    
+    [first 1360 bytes of image/jpeg binary data here]
 
 The next file would contain the 'continuation' record, with fields to
 identify the start of the segmentation series (WARC-Segment-Origin-ID),
@@ -1727,48 +1542,37 @@ to indicate this record's place in the series (WARC-Segment-Number), and
 to report that this the last record and what the total size is
 (WARC-Segment-Total-Length).
 
-WARC/1.0
+    WARC/1.0
+    WARC-Type: continuation
+    WARC-Target-URI: http://www.archive.org/images/logoc.jpg
+    WARC-Date: 2006-09-19T17:20:24Z
+    WARC-Block-Digest: sha1:T7HXETFVA92MSS7ZENMFZY6ND6WF7KB7
+    WARC-Record-ID: <urn:uuid:70653950-a77f-b212-e434-7a7c6ec909ef>
+    WARC-Segment-Origin-ID: <urn:uuid:39509228-ae2f-11b2-763a-aa4c6ec90bb0>
+    WARC-Segment-Number: 2
+    WARC-Segment-Total-Length: 1902
+    WARC-Identified-Payload-Type: image/jpeg
+    Content-Length: 302
+    
+    [last 302 bytes of image/jpeg binary data here]
 
-WARC-Type: continuation
 
-WARC-Target-URI: http://www.archive.org/images/logoc.jpg
-
-WARC-Date: 2006-09-19T17:20:24Z
-
-WARC-Block-Digest: sha1:T7HXETFVA92MSS7ZENMFZY6ND6WF7KB7
-
-WARC-Record-ID: &lt;urn:uuid:70653950-a77f-b212-e434-7a7c6ec909ef&gt;
-
-> WARC-Segment-Origin-ID:
-> &lt;urn:uuid:39509228-ae2f-11b2-763a-aa4c6ec90bb0&gt;
-
-WARC-Segment-Number: 2
-
-WARC-Segment-Total-Length: 1902
-
-WARC-Identified-Payload-Type: image/jpeg
-
-Content-Length: 302
-
-\[last 302 bytes of image/jpeg binary data here\]
-
-A.  (informative)\
-    \
-    Use cases for writing WARC records
+Annex D: *(informative)* Use cases for writing WARC records
+===========================================================
 
 Below are listed different use cases developing some situations where
 WARC files and WARC records may be generated. These use cases correspond
 to the needs of the web archiving community.
 
-> N.B.: In a web harvesting context, the files constituting the websites
-> are stored as WARC records in WARC files. Depending on the web
-> harvesting process configuration, the different pieces of a website
-> may not be contained in a single WARC file or in a set of WARC files
-> but may be spread out and stored along pieces of other harvested
-> websites. Thus, to render the archive of a website to users, access
-> software may have to extract files contained in WARC records from
-> different WARC files. External indexes may be used for a quicker
-> access.
+*N.B.: In a web harvesting context, the files constituting the websites
+are stored as WARC records in WARC files. Depending on the web
+harvesting process configuration, the different pieces of a website
+may not be contained in a single WARC file or in a set of WARC files
+but may be spread out and stored along pieces of other harvested
+websites. Thus, to render the archive of a website to users, access
+software may have to extract files contained in WARC records from
+different WARC files. External indexes may be used for a quicker
+access.*
 
 Other users may imagine other use cases to answer their own needs.
 Moreover, solutions adopted for each use case are not the only solutions
@@ -1786,18 +1590,37 @@ document.
 Note: we suppose these WARC records are written in an already opened
 WARC file, containing a ‘warcinfo’ record.
 
-  ----------------------------------------------
-  **Use case one: An archiving crawler fetches** [**http://netpreserve.org/reports/iipc2007conference.pdf**](http://netpreserve.org/reports/iipc2007conference.pdf) **from the World Wide Web and writes it in a WARC file.**
+<table border="1">
+<tr>
+<th colspan="2">
+Use case one: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/iipc2007conference.pdf</a> from the World Wide Web and writes it in a WARC file.<br/>
+<br/>
+Date: 2007-10-24 at 10:14:22 GMT
+</th>
+</tr>
+<tr>
+<td>
+A request is sent by the crawler to the server hosting <http://netpreserve.org/reports/iipc2007conference.pdf>
+</td>
+<td>
+**WARC record created:**
+</td>
+</tr>
+<tr><td>
+A response is received by the crawler from the server
+</td><td></td></tr>
+<tr><td>
+Metadata further describing the harvesting process / the harvested record are added (e.g. information coming from the log files)
+</td><td></td></tr>
+<tr><td>
+If the file harvested on the web is too big to be contained in a single WARC file (e.g. 1,5 GB), the WARC record is segmented and a second record is created
+</td><td></td></tr>
+</table>
 
-  **Date: 2007-10-24 at 10:14:22 GMT**
-  ---------------------------------------------
-  A request is sent by the crawler to the server hosting <http://netpreserve.org/reports/iipc2007conference.pdf>
 
-  A response is received by the crawler from the server
 
-  Metadata further describing the harvesting process / the harvested record are added (e.g. information coming from the log files)
+  
 
-  If the file harvested on the web is too big to be contained in a single WARC file (e.g. 1,5 GB), the WARC record is segmented and a second record is created
 
   **Use case two: the XML version of the French Gazette of 2007-11-01 has been transferred to the National Library of France (via FTP or email). This file is archived in a WARC file.**
 

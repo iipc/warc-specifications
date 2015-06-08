@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+/*  padding-top: 50px; only good when navbar is fixed to top, which messes with anchors.*/
 }
 
 #sidebar {
@@ -13,7 +13,7 @@ body {
 
 #toc UL { counter-reset: item }
 #toc LI { display: block }
-#toc LI:before { content: counters(item, ".") "."; counter-increment: item; padding-right:0.5em; margin-left:-1em;}
+#toc LI:before { content: counters(item, "."); counter-increment: item; padding-right:0.5em; margin-left:-1em;}
 
 .spec-status {
   font-weight: bold;
@@ -31,13 +31,15 @@ body {
   background-color: #eeeeff;
 }
 
-body {counter-reset: h2}
+body {counter-reset: h1}
+h1 {counter-reset: h2}
 h2 {counter-reset: h3}
 h3 {counter-reset: h4}
 h4 {counter-reset: h5}
-h5 {counter-reset: h6}h2:before {counter-increment: h2; content: counter(h2) ". "}
-h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
-h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
-h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
-h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before { content: ""; counter-increment: none } 
+.numbered-headers h1:before {counter-increment: h1; content: counter(h1) " "}
+.numbered-headers h2:before {counter-increment: h2; content: counter(h1) "." counter(h2) " "}
+.numbered-headers h3:before {counter-increment: h3; content: counter(h1) "." counter(h2) "." counter(h3) " "}
+.numbered-headers h4:before {counter-increment: h4; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " "}
+.numbered-headers h5:before {counter-increment: h5; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "}
+h1.nocount:before, h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before { content: ""; counter-increment: none } 
 
