@@ -1590,7 +1590,8 @@ document.
 Note: we suppose these WARC records are written in an already opened
 WARC file, containing a ‘warcinfo’ record.
 
-<table class="table table-responsive table-bordered force-wrap">
+<div class="table-responsive">
+<table class="table table-bordered">
 <tbody>
 <tr>
 <th colspan="2">
@@ -1624,6 +1625,7 @@ If the file harvested on the web is too big to be contained in a single WARC fil
 </td></tr>
 </tbody>
 </table>
+</div>
   
 
 

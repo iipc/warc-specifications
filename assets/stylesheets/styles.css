@@ -42,8 +42,3 @@ h4 {counter-reset: h5}
 .numbered-headers h4:before {counter-increment: h4; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " "}
 .numbered-headers h5:before {counter-increment: h5; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "}
 h1.nocount:before, h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before { content: ""; counter-increment: none } 
-
-table.force-wrap td {
-  overflow: hidden;
-  word-wrap: break-word;
-}
