@@ -6,9 +6,15 @@
     </div>
     <div class="panel-body">
     <div id="toc">
+{% if page.numbered == true %}
+<div class="numbered-headers">
+{% endif %}
 <div markdown="1">
 *  Auto generated table of contents
 {:toc}
+{% if page.numbered == true %}
+</div>
+{% endif %}
 </div>
     </div>
     </div>
