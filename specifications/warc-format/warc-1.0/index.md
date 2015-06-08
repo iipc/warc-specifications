@@ -1590,8 +1590,7 @@ document.
 Note: we suppose these WARC records are written in an already opened
 WARC file, containing a ‘warcinfo’ record.
 
-<div style="overflow:hidden">
-<table border="1">
+<table class="table table-responsive table-bordered">
 <tr>
 <th colspan="2">
 Use case one: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/<br/>iipc2007conference.pdf</a> from the World Wide Web and writes it in a WARC file.<br/>
