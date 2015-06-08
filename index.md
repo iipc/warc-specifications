@@ -20,8 +20,18 @@ We are in the early staged of working out how best to develop these standards an
 * Contribute modifications to site by editing the pages on GitHub and submitting pull requests.
 * *PROPOSAL:* Set up a dedicated, public mailing list?
 
-Specifications
---------------
+Strands
+-------
+
+<ul>
+{% for page in site.pages | sort:"title" %}
+{% if page.strand %}
+<li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+
+### Individual Specifications ###
 
 <ul>
 {% for page in site.pages | sort:"title" %}

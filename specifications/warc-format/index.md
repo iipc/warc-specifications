@@ -1,5 +1,6 @@
 ---
 title: The WARC Format
+strand: warc-format
 ---
 
 The official WARC specification is maintained by ISO. The draft versions are hosted at <http://bibnum.bnf.fr/warc/>, and mirrored here.

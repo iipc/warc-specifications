@@ -1,9 +1,10 @@
 ---
 title: Deduplication
+strand: warc-deduplication
 ---
 
-Explain WARC Deduplication
+**TODO:** Explain WARC Deduplication
 
-Describe the various historical deduplication approaches as well as including the latest and greatest form.
+**TODO:** Describe the various historical deduplication approaches as well as including the latest and greatest form.
 
 See <a href="recording-arbitrary-duplicates.html">Recording Arbitraray Duplicates</a>.
