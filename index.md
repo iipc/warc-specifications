@@ -6,6 +6,10 @@ Welcome
 
 idea of this site...
 
+
+How to contribute
+-----------------
+
 how to contribute
 
 etc.

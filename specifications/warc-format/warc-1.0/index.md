@@ -70,7 +70,6 @@ existing archival data in the previous ARC format, it is important that
 access and use of this legacy not be interrupted when transitioning to
 the WARC format.
 
-Information and documentation — The WARC File Format
 
 Scope 
 =====
