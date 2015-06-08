@@ -20,7 +20,7 @@ body {
   text-align: center;
   padding: 1em 1em;
   background-color: #ffffee;
-  margin-top: 1em;
+  margin: 0.5em;
 }
 
 .spec-status-adopted {

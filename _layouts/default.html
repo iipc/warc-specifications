@@ -75,13 +75,6 @@
 
     <div class="container">
 
-       <div class="col-xs-12 col-sm-4 col-md-4" id="sidebar" role="navigation">
-{% capture toc %}{% include _toc.md %}{% endcapture %}
-{{ toc | markdownify | split:"<!-- CUT -->" | first }}
-        </div>
-
-        <div class="col-xs-12 col-sm-8 col-md-8">
-
 {% if page.status %}
 <div class="spec-status spec-status-{{ page.status }}">
 <a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
@@ -92,6 +85,13 @@ title="Edit this document on GitHub." class="pull-right" id="edit_button">
 <div class="clearfix"></div>
 </div>
 {% endif %}
+
+       <div class="col-xs-12 col-sm-4 col-md-4" id="sidebar" role="navigation">
+{% capture toc %}{% include _toc.md %}{% endcapture %}
+{{ toc | markdownify | split:"<!-- CUT -->" | first }}
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-8">
 
 <h1 class="nocount">{{ page.title }}</h1>
 
@@ -105,18 +105,19 @@ title="Edit this document on GitHub." class="pull-right" id="edit_button">
 </div>
 {% endif %}
 
-{% if page.status %}
-<div class="spec-status">
-{{ page.status | capitalize }}
-</div>
-{% endif %}
-
 
       </div>
     </div><!-- /.container -->
 
 
     <div class="container">
+    
+{% if page.status %}
+<div class="spec-status spec-status-{{ page.status }}">
+{{ page.status | capitalize }}
+</div>
+{% endif %}
+
       <footer class="well">
         This project is maintained by members of the <a href="http://netpreserve.org/">IIPC</a>.
       </footer>
