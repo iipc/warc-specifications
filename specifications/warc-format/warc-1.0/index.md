@@ -1594,7 +1594,7 @@ WARC file, containing a ‘warcinfo’ record.
 <table border="1">
 <tr>
 <th colspan="2">
-Use case one: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/ iipc2007conference.pdf</a> from the World Wide Web and writes it in a WARC file.<br/>
+Use case one: An archiving crawler fetches <a href="http://netpreserve.org/reports/iipc2007conference.pdf">http://netpreserve.org/reports/<br/>iipc2007conference.pdf</a> from the World Wide Web and writes it in a WARC file.<br/>
 <br/>
 Date: 2007-10-24 at 10:14:22 GMT
 </th>
