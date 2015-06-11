@@ -95,6 +95,7 @@ title="Edit this document on GitHub."><span class="glyphicon glyphicon-pencil"><
        <div class="col-xs-12 col-sm-4 col-md-4" id="sidebar" role="navigation">
 {% capture toc %}{% include _toc.md %}{% endcapture %}
 {{ toc | markdownify | split:"<!-- CUT -->" | first }}
+{% include _issues.md %}
         </div>
 
         <div class="col-xs-12 col-sm-8 col-md-8">
