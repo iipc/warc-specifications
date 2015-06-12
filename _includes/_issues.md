@@ -38,7 +38,7 @@ GithubIssuesWidget.go = function () {
       var issueHtml = "<li>";
       issueHtml += '<a href="' + issue.html_url+ '">';
       issueHtml += issue.title;
-      issueHtml += "</a>";
+      issueHtml += "</a>&nbsp;";
       var style = "";
       if( typeof issue.labels != "undefined") {
       $.each(issue.labels, function (labelIndex, label) {
