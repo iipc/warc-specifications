@@ -38,7 +38,7 @@ GithubIssuesWidget.go = function () {
       var issueHtml = "<li>";
       issueHtml += '<a href="' + issue.html_url+ '">';
       issueHtml += issue.title;
-      issueHtml += "</a>&nbsp;";
+      issueHtml += "</a>";
       var style = "";
       if( typeof issue.labels != "undefined") {
       $.each(issue.labels, function (labelIndex, label) {
@@ -46,7 +46,7 @@ GithubIssuesWidget.go = function () {
         if(label.color == "000000"){
           style = 'color: white;' + style;
         }
-        issueHtml += '<span class="label label-' + label.name + '" style="' + style + '">' + label.name + '</span>';
+        issueHtml += '&nbsp;<span class="label label-' + label.name + '" style="' + style + '">' + label.name + '</span>';
       });
       }
       issueHtml += "</li>";
