@@ -4,19 +4,44 @@ type: primer
 strand: warc-format
 ---
 
+Archiving a URL
+---------------
+
 [hello-world.txt](./hello-world.txt)
 
-    wget --warc-file hello-world http://iipc.github.io/warc-specifications/primers/web-archive-formats/hello-world.txt
+    $ wget --warc-file hello-world http://iipc.github.io/warc-specifications/primers/web-archive-formats/hello-world.txt
 
-    gunzip hello-world.warc.gz
+
+What's in the WARC?
+-------------------
+
+    $ gunzip hello-world.warc.gz
 
 [hello-world.warc](./hello-world.warc)
 
-    jwattools cdx hello-world.warc
+~~~
+WARC-Type: warcinfo
+WARC-Type: request
+WARC-Type: response
+WARC-Type: metadata
+WARC-Type: resource
+WARC-Type: resource
+~~~
 
-    tail -c +1261 hello-world.warc | head -c 1120
+Building a content index (CDX) file
+-----------------------------------
 
-```    
+    $ jwattools cdx hello-world.warc
+
+or
+
+    $ cdx-indexer hello-world.warc > hello-world.warc.cdx
+
+which means we can pick out the response record like this:
+
+    $ tail -c +1261 hello-world.warc | head -c 1085
+
+~~~
 WARC/1.0
 WARC-Type: response
 WARC-Record-ID: <urn:uuid:3C74F309-6B37-461C-B982-1B5C447C3C0E>
@@ -51,27 +76,19 @@ Vary: Accept-Encoding
 
 Hello World
 
+~~~
 
+Comparison with ARC files
+-------------------------
 
-WARC/1.0
-WARC-Type: metadata
 ...
-```
 
-
-WARC-Type: warcinfo
-WARC-Type: request
-WARC-Type: response
-WARC-Type: metadata
-WARC-Type: resource
-WARC-Type: resource
-
-
-For introductory information about the WARC format, see:
+Further Reading
+---------------
+For more information about the WARC format, see:
 
 * [Web ARChive -- Wikipedia](http://en.wikipedia.org/wiki/Web_ARChive)
 * [WARC -- File Formats Wiki](http://fileformats.archiveteam.org/wiki/WARC)
 * [WARC, Web ARChive file format -- Sustainability of Digital Formats (Library of Congress)](http://www.digitalpreservation.gov/formats/fdd/fdd000236.shtml)
 
-**TODO:** include copies of earlier versions?
 
