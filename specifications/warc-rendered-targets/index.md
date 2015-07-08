@@ -1,5 +1,6 @@
 ---
 title: Rendered Targets
+type: strand
 strand: warc-rendered-targets
 ---
 

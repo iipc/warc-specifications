@@ -1,5 +1,6 @@
 ---
 title: The WARC Format
+type: strand
 strand: warc-format
 ---
 

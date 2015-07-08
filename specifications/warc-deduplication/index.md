@@ -1,5 +1,6 @@
 ---
 title: Deduplication
+type: strand
 strand: warc-deduplication
 ---
 

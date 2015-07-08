@@ -25,7 +25,7 @@ Strands
 
 <ul>
 {% for page in site.pages | sort:"title" %}
-{% if page.strand %}
+{% if page.type == "strand" %}
 <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
 {% endif %}
 {% endfor %}
