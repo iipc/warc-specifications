@@ -47,11 +47,11 @@ Specification Status
 The possible statuses of the specifications are as follows:
 
 Proposed
-: Document is for review and discussion, may change
+: Document is for review and discussion, may change.
 
 Adopted
-: IIPC has adopted the proposal and it may eventually be incorporated into an official standard. In any case, it represents current best practices.
+: IIPC members have adopted the proposal and it may eventually be incorporated into an official standard. Whether *de facto* or official, it represents current best practices.
 
 Standard
-: Has been incorporated into an offical standard, would include a version number
+: Has been incorporated into an offical standard.
 

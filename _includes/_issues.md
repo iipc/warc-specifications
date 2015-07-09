@@ -6,7 +6,6 @@
       </h3>
     </div>
     <div class="panel-body">
-}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <div id="github-issues-widget"></div>
