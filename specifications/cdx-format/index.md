@@ -1,5 +1,8 @@
-CDX File Format
----------------
+---
+title: CDX File Format
+type: strand
+strand: cdx-format
+---
 
 A CDX file consists of individual lines of text, each of which summarizes a single web document.
 The first line in the file is a legend for interpreting the data, and the following lines contain the data for referencing the corresponding pages within the host. The first character of the file is the field delimiter used in the rest of the file. This is followed by the literal "CDX" and then individual field markers as defined below.

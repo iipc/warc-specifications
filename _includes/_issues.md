@@ -1,3 +1,4 @@
+{% if page.type == "strand" %}
   <div class="panel panel-default" id="issues_panel">
     <div class="panel-heading">
       <h3 class="panel-title nocount">
@@ -5,6 +6,7 @@
       </h3>
     </div>
     <div class="panel-body">
+}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <div id="github-issues-widget"></div>
@@ -58,3 +60,4 @@ GithubIssuesWidget.go = function () {
 };
 GithubIssuesWidget.go();
 </script>
+{% endif %}
