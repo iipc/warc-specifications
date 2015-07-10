@@ -1,4 +1,4 @@
-{% if page.type == "strand" %}
+{% if page.status or page.path == "index.md" %}
   <div class="panel panel-default" id="issues_panel">
     <div class="panel-heading">
       <h3 class="panel-title nocount">
@@ -13,7 +13,9 @@
   GITHUB_ISSUES_USER = "iipc";
   GITHUB_ISSUES_REPO = "warc-specifications";
   /* Uncomment the following line to filter issues by one or more labels.*/
-  // GITHUB_ISSUES_LABELS = "feature";
+  {% if page.version-of != %}
+  GITHUB_ISSUES_LABELS = "{{ page.version-of }}";
+  {% endif %}
   /* To filter by multiple labels use a CSV string: */
   // GITHUB_ISSUES_LABELS = "feature,bug";
 </script>
@@ -25,11 +27,7 @@
 var GithubIssuesWidget = {};
 GithubIssuesWidget.url = "https://api.github.com/repos/" + GITHUB_ISSUES_USER + "/" + GITHUB_ISSUES_REPO + "/issues?callback=?"
 if(typeof window.GITHUB_ISSUES_LABELS != "undefined") {
-  if(is_string(GITHUB_ISSUES_LABELS)) {
     GithubIssuesWidget.url += "&labels=" + GITHUB_ISSUES_LABELS;
-  } else {
-    error("GITHUB_ISSUES_LABELS must be a string, ignoring label filter");
-  }
 }
 GithubIssuesWidget.go = function () {
   $('#github-issues-widget').append('<p class="loading">Loading...</p>');

@@ -3,6 +3,9 @@ title: The WARC Format
 status: proposed
 version: 1.1
 numbered: true
+latest: true
+version-of: warc-format
+previous-version: warc-1.0
 ---
 
 Web sites and web pages emerge and disappear from the world wide web

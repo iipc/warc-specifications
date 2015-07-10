@@ -16,25 +16,21 @@ How to contribute
 
 We are in the early staged of working out how best to develop these standards and guidelines.
 
-* Use GitHub to open issues you wish to raise.
+* Use GitHub to review the [open issues](https://github.com/iipc/warc-specifications/issues) or [add new issues or comments](https://github.com/iipc/warc-specifications/issues).
+    * Use the issue tags to identify the specification the issue applies to. 
 * Contribute modifications to site by editing the pages on GitHub and submitting pull requests.
-* *PROPOSAL:* Set up a dedicated, public mailing list?
+    * Every page has icons at the top and bottom that let you view and edit that page on GitHub. 
+* Get in touch!
+    * Use the IIPC Members mailing list, or [openwayback-dev](https://groups.google.com/forum/#!forum/openwayback-dev) otherwise.
+    * *PROPOSAL:* Set up a dedicated, public mailing list?
 
-Strands
--------
 
-<ul>
-{% for page in site.pages | sort:"title" %}
-{% if page.type == "strand" %}
-<li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-{% endif %}
-{% endfor %}
-</ul>
+### Specifications ###
 
-### Individual Specifications ###
+{% assign sorted_pages = site.pages | sort:"name" %}
 
 <ul>
-{% for page in site.pages | sort:"title" %}
+{% for page in sorted_pages %}
 {% if page.status %}
 <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}{% if page.version %} {{ page.version }}{% endif %}</a> <span class="badge spec-badge-status-{{ page.status }}">{{ page.status }}</span></li>
 {% endif %}

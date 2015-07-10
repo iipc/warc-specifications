@@ -4,6 +4,8 @@ type: specification
 status: adopted
 version: (c.2006)
 numbered: false
+latest: true
+version-of: cdx-format
 ---
 
 A CDX file consists of individual lines of text, each of which summarizes a single web document.

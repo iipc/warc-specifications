@@ -1,6 +1,9 @@
 ---
 title: Proposal for Standardizing the Recording of Arbitrary Duplicates in WARC Files
 status: adopted
+type: specification
+latest: true
+version-of: warc-deduplication
 ---
 International Internet Preservation Consortium<br/>
 Harvesting Working Group

@@ -1,6 +1,8 @@
 ---
 title: Proposal for Standardizing the Recording Rendered Targets
 status: proposed
+latest: true
+version-of: warc-rendered-targets
 ---
 International Internet Preservation Consortium<br/>
 Harvesting Working Group

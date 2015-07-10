@@ -1,8 +1,11 @@
 ---
 title: The WARC Format
+type: specification
 status: standard
 version: 1.0
 numbered: true
+latest: false
+version-of: warc-format
 ---
 
 Web sites and web pages emerge and disappear from the world wide web

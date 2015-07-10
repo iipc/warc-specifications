@@ -45,21 +45,12 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
             <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Standards <span class="caret"></span></a>
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Specifications <span class="caret"></span></a>
              <ul class="dropdown-menu" role="menu">
-{% for page in site.pages | sort:"title" %}
-{% if page.status == "standard" or page.status == "adopted" %}
-<li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}{% if page.version %} {{ page.version }}{% endif %}</a></li>
-{% endif %}
-{% endfor %}
-             </ul>
-            </li>
-            <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Proposals <span class="caret"></span></a>
-             <ul class="dropdown-menu" role="menu">
-{% for page in site.pages | sort:"title" %}
-{% if page.status == "proposed" %}
-<li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}{% if page.version %} {{ page.version }}{% endif %}</a></li>
+{% assign sorted_pages = site.pages | sort:"title" %}
+{% for page in sorted_pages %}
+{% if page.status %}
+<li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}{% if page.version %} {{ page.version }}{% endif %}&nbsp;<span class="badge spec-badge-status-{{ page.status }}">{{ page.status }}</span></a></li>
 {% endif %}
 {% endfor %}
              </ul>
@@ -99,6 +90,9 @@ title="Back to parent page." class="pull-left">
 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 </a>
       <span class="pull-right">
+        {% if page.version-of %}
+        <a href="https://github.com/iipc/warc-specifications/labels/{{ page.version-of }}"><span class="glyphicon glyphicon-tags"></span></a>&nbsp;
+        {% endif %}
         <a href="https://github.com/iipc/warc-specifications/blob/gh-pages/{{ page.path }}"
 title="View this document on GitHub."><span class="glyphicon glyphicon-eye-open"></span></a>
         <a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
@@ -110,6 +104,7 @@ title="Edit this document on GitHub."><span class="glyphicon glyphicon-pencil"><
 {% endif %}
 
        <div class="col-xs-12 col-sm-4 col-md-4" id="sidebar" role="navigation">
+{% include _about.md %}
 {% capture toc %}{% include _toc.md %}{% endcapture %}
 {{ toc | markdownify | split:"<!-- CUT -->" | first }}
 {% include _issues.md %}
@@ -152,6 +147,9 @@ title="Edit this document on GitHub."><span class="glyphicon glyphicon-pencil"><
 
       <footer class="well">
       <span class="pull-right">
+        {% if page.version-of %}
+        <a href="https://github.com/iipc/warc-specifications/labels/{{ page.version-of }}"><span class="glyphicon glyphicon-tags"></span></a>
+        {% endif %}
         <a href="https://github.com/iipc/warc-specifications/blob/gh-pages/{{ page.path }}"
 title="View this document on GitHub."><span class="glyphicon glyphicon-eye-open"></span></a>
         <a href="https://github.com/iipc/warc-specifications/edit/gh-pages/{{ page.path }}"
