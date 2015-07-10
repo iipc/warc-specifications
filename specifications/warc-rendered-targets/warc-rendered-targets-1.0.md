@@ -3,12 +3,10 @@ title: Proposal for Standardizing the Recording Rendered Targets
 status: proposed
 latest: true
 version-of: warc-rendered-targets
+version: 1.0
 ---
 International Internet Preservation Consortium<br/>
 Harvesting Working Group
-
-* TOC
-{:toc}
 
 The modifications described below are based on [HTTP Archive 1.2](http://www.google.com/url?q=http%3A%2F%2Fwww.softwareishard.com%2Fblog%2Fhar-12-spec%2F&sa=D&sntz=1&usg=AFQjCNESSsDv3ZkYTVkyfGPjRKpwSlr6AQ)
 

@@ -4,12 +4,10 @@ status: adopted
 type: specification
 latest: true
 version-of: warc-deduplication
+version: 1.0
 ---
 International Internet Preservation Consortium<br/>
 Harvesting Working Group
-
-* TOC
-{:toc}
 
 Introduction
 ============

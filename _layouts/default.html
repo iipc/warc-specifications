@@ -85,10 +85,6 @@
 
 {% if page.status %}
 <div class="spec-status spec-status-{{ page.status }}">
-<a href=".."
-title="Back to parent page." class="pull-left">
-<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-</a>
       <span class="pull-right">
         {% if page.version-of %}
         <a href="https://github.com/iipc/warc-specifications/labels/{{ page.version-of }}"><span class="glyphicon glyphicon-tags"></span></a>&nbsp;
@@ -120,7 +116,7 @@ title="View this document on GitHub."><span class="glyphicon glyphicon-eye-open"
 title="Edit this document on GitHub."><span class="glyphicon glyphicon-pencil"></span></a>
       </span>
 {% endif %}
-<h1 class="nocount">{{ page.title }}{%if page.version %} v.{{ page.version }}{% endif %}</h1>
+<h1 class="nocount">{{ page.title }}{%if page.version %} {{ page.version }}{% endif %}</h1>
 
 {% if page.numbered == true %}
 <div class="numbered-headers">

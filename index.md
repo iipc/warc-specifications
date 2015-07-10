@@ -27,7 +27,7 @@ We are in the early staged of working out how best to develop these standards an
 
 ### Specifications ###
 
-{% assign sorted_pages = site.pages | sort:"name" %}
+{% assign sorted_pages = site.pages | sort:"title" %}
 
 <ul>
 {% for page in sorted_pages %}

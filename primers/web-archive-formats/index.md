@@ -92,11 +92,15 @@ Comparison with ARC files
 
 Further Reading
 ---------------
-For more information about the WARC format, see:
+
+The official WARC specification is maintained by ISO. The draft versions are hosted at <http://bibnum.bnf.fr/warc/>, and mirrored here.
+
+For introductory information about the WARC format, see:
 
 * [Web ARChive -- Wikipedia](http://en.wikipedia.org/wiki/Web_ARChive)
 * [WARC -- File Formats Wiki](http://fileformats.archiveteam.org/wiki/WARC)
 * [WARC, Web ARChive file format -- Sustainability of Digital Formats (Library of Congress)](http://www.digitalpreservation.gov/formats/fdd/fdd000236.shtml)
+
 
 
 Appendix: Tools used

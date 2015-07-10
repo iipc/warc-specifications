@@ -5,7 +5,7 @@ version: 1.1
 numbered: true
 latest: true
 version-of: warc-format
-previous-version: warc-1.0
+previous-version: 1.0
 ---
 
 Web sites and web pages emerge and disappear from the world wide web
@@ -1805,5 +1805,14 @@ WARC-Refers-To: <i>WARC-Record ID of
 </tbody>
 </table>
 </div>  
+
+Document History
+================
+
+*2015-07-10* -- Version 1.0 of the specification copied to act as the baseline for version 1.0. Added this document history and updated metadata in header.
+
+*2015-06-08* -- Used [pandoc](http://pandoc.org/) to convert the last pre-ISO version of the WARC specification to Markdown from DOCX. Manually tweaked the resulting markup to match the specification. See <a href="warc-1.0">The WARC Format v1.0</a> (via Markdown from last pre-ISO version) <a href="warc-1.0/WARC_ISO_28500_version1_latestdraft.doc">(DOC)</a> <a href="warc-1.0/WARC_ISO_28500_version1_latestdraft.pdf">(PDF)</a>
+
+*2015-05-01* -- WARC Revision meeting held at the 2015 IIPC GA. [See meeting minutes](../meetings/2015-05-01-IIPC-GA-WARC-Meeting-Minutes.html).
 
 

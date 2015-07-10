@@ -1,5 +1,8 @@
 baseurl: /warc-specifications
+
 markdown: kramdown
+
+permalink: pretty
 
 defaults:
   -

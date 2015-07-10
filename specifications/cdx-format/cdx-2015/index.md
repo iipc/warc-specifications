@@ -1,12 +1,27 @@
 ---
 title: The CDX File Format
 type: specification
-status: adopted
-version: (c.2006)
+status: proposed
+version: (2015)
 numbered: false
-latest: false
+latest: true
 version-of: cdx-format
+previous-version: (c.2006)
 ---
+
+> FWIW, IA has been using this 11-field format as pretty much standard for new > CDX files:
+> 
+>     CDX N b a m s k r M S V g
+> 
+> (You can see it as the default in their CDX-Writer: https://github.com/internetarchive/CDX-Writer/blob/master/cdx_writer.py#L37)
+> 
+> An older 9-field format that was in use a few years back was: 
+> 
+>     CDX N b a m s k r V g
+> 
+> I think most of the other fields are obsolete, and date back to an even older Alexa .dat format.
+
+----
 
 A CDX file consists of individual lines of text, each of which summarizes a single web document.
 The first line in the file is a legend for interpreting the data, and the following lines contain the data for referencing the corresponding pages within the host. The first character of the file is the field delimiter used in the rest of the file. This is followed by the literal "CDX" and then individual field markers as defined below.
@@ -85,5 +100,7 @@ z url found in script *
 
 Document History
 ----------------
+
+*2015-07-10* -- Copied from v.2006 and added notes from [Ilya Kreymer](https://github.com/ikreymer).
 
 *2015-07-09* -- Imported from the Internet Archive [CDX File Format](http://web.archive.org/web/20031226073353/http://www.archive.org/web/researcher/cdx_file_format.php) and [CDX Legend](http://web.archive.org/web/20031226073353/http://www.archive.org/web/researcher/cdx_legend.php) documents.
