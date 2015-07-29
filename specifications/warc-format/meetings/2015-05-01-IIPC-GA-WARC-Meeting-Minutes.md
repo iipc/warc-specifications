@@ -79,7 +79,7 @@ in **future versions of the standard**…”.
 
 **Issue:** the issue has been identified and describe by the IIPC
 harvesting working, which has proposed a
-solution:*https://iipc.github.io/warc-specifications/specifications/warc-deduplication/recording-arbitrary-duplicates.html*.
+solution: *<http://iipc.github.io/warc-specifications/specifications/warc-deduplication/recording-arbitrary-duplicates-1.0/>*
 
 **Decision:** the preconisation from the HWG should be written in the
 standard.
