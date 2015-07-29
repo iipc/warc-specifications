@@ -1,5 +1,6 @@
 ---
 title: Minutes of the WARC revision workshop
+redirect_from: "specifications/warc-format/meetings/2015-05-01-IIPC-GA-WARC-Meeting-Minutes.html"
 ---
 
 During the General Assembly of the IIPC in Stanford, a workshop has been

@@ -90,6 +90,9 @@ Comparison with ARC files
 
 ...
 
+<https://archive.org/web/researcher/ArcFileFormat.php>
+
+
 Further Reading
 ---------------
 
