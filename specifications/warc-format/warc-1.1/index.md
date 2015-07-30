@@ -637,7 +637,7 @@ considered a revisit of.
     
 The WARC-Refers-To-Date field may be used to help associate a record of 
 type 'revisit' with the another record which helped determine the 
-present record content. The WARC-Refers-To-Target-URI field shall not be 
+present record content. The WARC-Refers-To-Date field shall not be 
 used in 'warcinfo', 'response','metadata',´conversion',
 ‘resource’, 'request', and 'continuation' records.
 
