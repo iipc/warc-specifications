@@ -361,6 +361,8 @@ defined-field = WARC-Type
               | WARC-Payload-Digest
               | WARC-IP-Address
               | WARC-Refers-To
+              | WARC-Refers-To-Target-URI
+              | WARC-Refers-To-Date
               | WARC-Target-URI
               | WARC-Truncated
               | WARC-Warcinfo-ID
@@ -608,6 +610,35 @@ another record it describes. The WARC-Refers-To field may also be used
 to associate a record of type 'revisit' or 'conversion' with the
 preceding record which helped determine the present record content. The
 WARC-Refers-To field shall not be used in 'warcinfo', 'response',
+‘resource’, 'request', and 'continuation' records.
+
+WARC-Refers-To-Target-URI
+-------------------------
+
+The WARC-Target-URI of a record for which the present record is 
+considered a revisit of.
+
+    WARC-Refers-To-Target-URI = "WARC-Refers-To-Target-URI" ":" uri
+
+The WARC-Refers-To-Target-URI field may be used to help associate a record of 
+type 'revisit' with the another record which helped determine the 
+present record content. The WARC-Refers-To-Target-URI field shall not be 
+used in 'warcinfo', 'response','metadata',´conversion',
+‘resource’, 'request', and 'continuation' records.
+
+WARC-Refers-To-Date
+-------------------------
+
+The WARC-Date of a record for which the present record is 
+considered a revisit of.
+
+    WARC-Refers-To-Date = "WARC-Refers-To-Date" ":" w3c-iso8601
+    w3c-iso8601 = <YYYY-MM-DDThh:mm:ssZ>
+    
+The WARC-Refers-To-Date field may be used to help associate a record of 
+type 'revisit' with the another record which helped determine the 
+present record content. The WARC-Refers-To-Target-URI field shall not be 
+used in 'warcinfo', 'response','metadata',´conversion',
 ‘resource’, 'request', and 'continuation' records.
 
 WARC-Target-URI
@@ -1043,7 +1074,9 @@ See annex C.6 below for an example of a ‘revisit’ record.
 
 This 'revisit' profile may be used whenever a subsequent consideration
 of a URI provides payload content which a strong digest function, such
-as SHA-1, indicates is identical to a previously recorded version.
+as SHA-1, indicates is identical to a previously recorded version. It
+is not necessary that the URI of the original capture and the revisit
+be identical.
 
 To indicate this profile, use the URI:
 
@@ -1058,7 +1091,8 @@ case a Content-Length of zero must be written. If a record block is
 present, it shall be interpreted the same as a 'response' record type
 for the same URI, but truncated to avoid storing the duplicate content.
 A WARC-Truncated header with reason 'length' shall be used for any
-identical-digest truncation.
+identical-digest truncation. It is recommended that server response 
+headers be preserved in the revisit record in this manner.
 
 For records using this profile, the payload is defined as the original
 payload content whose digest value was unchanged.
@@ -1066,6 +1100,17 @@ payload content whose digest value was unchanged.
 Using a WARC-Refers-To header to identify a specific prior record from
 which the matching content can be retrieved is recommended, to minimize
 the risk of misinterpreting the 'revisit' record.
+
+The following two optional fields can also be used to identify the 
+correct original record. Their use is recommended.
+
+WARC-Refers-To-Target-URI. Its value should be equal to the 
+WARC-Target-URI in the WARC record that the current record is considered 
+a duplicate of. 
+
+WARC-Refers-To-Date. Its value should be equal to the WARC-Date in the 
+WARC record that the current record is considered a duplicate of.
+
 
 ### Profile: Server Not Modified
 
@@ -1089,6 +1134,11 @@ taken.
 Using a WARC-Refers-To header to identify a specific prior record from
 which the unmodified content can be retrieved is recommended, to
 minimize the risk of misinterpreting the 'revisit' record.
+
+WARC-Refers-To-Date may be optionally used to help resolve the original 
+capture. Its value should be equal to the WARC-Date in the 
+WARC record that the current record is considered a duplicate of. Its
+use is recommended.
 
 ### Other profiles
 
