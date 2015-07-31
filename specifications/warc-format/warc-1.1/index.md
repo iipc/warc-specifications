@@ -449,7 +449,19 @@ All records shall have a Content-Length field.
 WARC-Date (mandatory)
 ---------------------
 
-A UTC timestamp as described in the W3C profile of ISO8601 [W3CDTF]. The timestamp shall represent the instant that data capture for record creation began. Multiple records written as part of a single capture event (see section 5.7) shall use the same WARC-Date, even though the times of their writing will not be exactly synchronized. WARC-Date may be specified at any of the six levels of granularity described in [W3CDTF]. If WARC-Date includes a decimal fraction of a second, the decimal fraction of a second shall have a minimum of 1 digit and a maximum of 9 digits. WARC-Date should be specified with as much precision as is accurately known. This document recommends no particular algorithm for choosing a record by date when an exact match is not available.
+A UTC timestamp as described in the W3C profile of ISO8601 [W3CDTF].
+The timestamp shall represent the instant that data capture for record
+creation began. Multiple records written as part of a single capture
+event (see section 5.7) shall use the same WARC-Date, even though the
+times of their writing will not be exactly synchronized. 
+
+WARC-Date may be specified at any of the six levels of granularity
+described in [W3CDTF]. If WARC-Date includes a decimal fraction of a
+second, the decimal fraction of a second shall have a minimum of 1
+digit and a maximum of 9 digits. WARC-Date should be specified with as
+much precision as is accurately known. This document recommends no
+particular algorithm for access software to choose a record by date
+when an exact match is not available.
 
     WARC-Date   = "WARC-Date" ":" w3c-iso8601
     w3c-iso8601 = w3c-iso8601-14+ | w3c-iso8601-14 | w3c-iso8601-12 | w3c-iso8601-10 | w3c-iso8601-8 | w3c-iso8601-6 | w3c-iso8601-4
