@@ -339,7 +339,8 @@ LWS            = [CRLF] 1*( SP | HT )         ; semantics same as
 quoted-string  = ( <"> *(qdtext | quoted-pair ) <"> )
 qdtext         = <any TEXT except <">>
 quoted-pair    = "\" CHAR                     ; single-character quoting
-uri            = "<" <'URI' per RFC3986> ">"
+record-id      = "<" uri ">"
+uri            = <'URI' per RFC3986>
 ~~~
 
 Although UTF-8 characters are allowed, the 'encoded-word' mechanism of
@@ -432,7 +433,7 @@ conforms (e.g., via a URI scheme prefix such as "http:" or "urn:").
 Care should be taken to ensure that this value is written with no
 internal whitespace.
 
-    WARC-Record-ID = "WARC-Record-ID" ":" uri
+    WARC-Record-ID = "WARC-Record-ID" ":" record-id
 
 All records shall have a WARC-Record-ID field.
 
@@ -519,7 +520,7 @@ automatically gathered by a retrieval against a single target-URI; for
 example, it might be represented by a 'response' or 'revisit' record
 plus its associated 'request' record.
 
-    WARC-Concurrent-To = "WARC-Concurrent-To" ":" uri
+    WARC-Concurrent-To = "WARC-Concurrent-To" ":" record-id
 
 This field may be used to associate records of types 'request',
 'response', 'resource', 'metadata', and 'revisit' with one another when
@@ -601,7 +602,7 @@ WARC-Refers-To
 The WARC-Record-ID of a single record for which the present record holds
 additional content.
 
-    WARC-Refers-To = "WARC-Refers-To" ":" uri
+    WARC-Refers-To = "WARC-Refers-To" ":" record-id
 
 The WARC-Refers-To field may be used to associate a 'metadata' record to
 another record it describes. The WARC-Refers-To field may also be used
@@ -667,7 +668,7 @@ such as after distributing single records into separate WARC files. WARC
 writing applications (such web crawlers) may choose to always record
 this parameter.
 
-    WARC-Warcinfo-ID = "WARC-Warcinfo-ID" ":" uri
+    WARC-Warcinfo-ID = "WARC-Warcinfo-ID" ":" record-id
 
 The WARC-Warcinfo-ID field value overrides any association with a
 previously occurring (in the WARC) 'warcinfo' record, thus providing a
@@ -743,7 +744,7 @@ Identifies the starting record in a series of segmented records whose
 content blocks are reassembled to obtain a logically complete content
 block.
 
-    WARC-Segment-Origin-ID = "WARC-Segment-Origin-ID" ":" uri
+    WARC-Segment-Origin-ID = "WARC-Segment-Origin-ID" ":" record-id
 
 This field is mandatory on all 'continuation' records, and shall not be
 used in other records. See the section below, Record segmentation, for
