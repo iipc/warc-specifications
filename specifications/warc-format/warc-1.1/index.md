@@ -51,12 +51,14 @@ British Library (UK), The Library of Congress (USA), and the Internet
 Archive (IA). The California Digital Library and the Los Alamos National
 Laboratory also provided input on extending and generalizing the format.
 
-The WARC format is expected to be a standard way to structure, manage
-and store billions of resources collected from the web and elsewhere. It
-will be used to build applications for harvesting (such as the open
-source Heritrix web crawler), managing, accessing, and exchanging
-content. The way WARC files will be created and resources will be stored
-and rendered will depend on software and applications implementations.
+The WARC format offers a standard way to structure, manage and store 
+billions of resources collected from the web and elsewhere. It is used 
+to build applications for harvesting, managing, accessing, mining and 
+exchanging content. While it represents the unique standard format for 
+web archives, it has been adopted beyond the web archiving community, 
+notably to store born-digital or digitized books and serials. The way 
+WARC files will be created and resources stored and rendered will depend 
+on software and applications implementations
 
 Besides the primary content recorded in ARCs, the extended WARC format
 accommodates related secondary content, such as assigned metadata,
