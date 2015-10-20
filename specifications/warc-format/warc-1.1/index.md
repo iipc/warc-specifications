@@ -58,7 +58,7 @@ exchanging content. While it represents the unique standard format for
 web archives, it has been adopted beyond the web archiving community, 
 notably to store born-digital or digitized books and serials. The way 
 WARC files will be created and resources stored and rendered will depend 
-on software and applications implementations
+on software and applications implementations.
 
 Besides the primary content recorded in ARCs, the extended WARC format
 accommodates related secondary content, such as assigned metadata,
