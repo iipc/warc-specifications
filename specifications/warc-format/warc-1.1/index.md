@@ -56,7 +56,7 @@ billions of resources collected from the web and elsewhere. It is used
 to build applications for harvesting, managing, accessing, mining and 
 exchanging content. While it represents the unique standard format for 
 web archives, it has been adopted beyond the web archiving community, 
-notably to store born-digital or digitized books and serials. The way 
+notably to store born-digital or digitized material. The way 
 WARC files will be created and resources stored and rendered will depend 
 on software and applications implementations.
 
