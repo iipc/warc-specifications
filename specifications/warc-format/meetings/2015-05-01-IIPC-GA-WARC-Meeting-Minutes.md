@@ -165,7 +165,7 @@ second solution).
 
 ---
 
-**9) Augmentation: how to render AJAX interactions in WARC**
+**9) [Augmentation: how to render AJAX interactions in WARC](https://github.com/iipc/warc-specifications/issues/14)**
 
 **Issue:** it is necessary to have a common way of rendering AJAX
 interactions in WARC. 
@@ -178,7 +178,7 @@ the second solution).
 
 ---
 
-**10) Modification: support of HTTP 2.X protocol in WARC format.**
+**10) [Modification: support of HTTP 2.X protocol in WARC format.](https://github.com/iipc/warc-specifications/issues/15)**
 
 **Issue:** nothing is said on the HTTP 2 protocol, which could give the
 impression that WARC files cannot harvest documents in HTTP2.
@@ -191,7 +191,7 @@ example.**
 
 ---
 
-**11) Augmentation: specification of the WAT format.**
+**11) [Augmentation: specification of the WAT format.](https://github.com/iipc/warc-specifications/issues/16)**
 
 **Issue:** WAT (Web Archive Transformation) is a “profile” of WARC
 format intended to store web archive metadata, notably for data mining
