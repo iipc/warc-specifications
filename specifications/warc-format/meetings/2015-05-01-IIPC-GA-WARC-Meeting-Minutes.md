@@ -29,7 +29,7 @@ be minor, thus named WARC 1.1**
 
 ---
 
-**[2) Clarification: scope of the standard ](https://github.com/iipc/warc-specifications/issues/8)**
+**2) [Clarification: scope of the standard ](https://github.com/iipc/warc-specifications/issues/8)**
 
 **Issue:** the introduction and the scope of the standard mostly
 acknowledges use cases related to web archiving. However, some
@@ -44,7 +44,7 @@ acknowledge its use in other communities.
 
 ---
 
-**3) Clarification: validity of a WARC file / a WARC record with unknown field (s).**
+**3) [Clarification: validity of a WARC file / a WARC record with unknown field (s).](https://github.com/iipc/warc-specifications/issues/9)**
 
 **Issue:** In 6.1 “WARC record types/General”, it is written “Because
 new record types that extend the WARC format may be defined in future
@@ -75,7 +75,7 @@ in **future versions of the standard**…”.
 
 ---
 
-**4) Augmentation: add new named fields for deduplication**
+**4) [Augmentation: add new named fields for deduplication](https://github.com/iipc/warc-specifications/issues/10)**
 
 **Issue:** the issue has been identified and describe by the IIPC
 harvesting working, which has proposed a
@@ -89,8 +89,8 @@ standard.
 
 ---
 
-**5) Augmentation: propose a specific profile for the management of
-diffs in the revisit records.**
+**5) [Augmentation: propose a specific profile for the management of
+diffs in the revisit records.](https://github.com/iipc/warc-specifications/issues/11)**
 
 **Issue:** revisit records may be used to store the diffs of a
 deduplication process. A new profile should be proposed that takes this
@@ -110,8 +110,8 @@ Sigurðsson from NL of Iceland to propose a formulation.
 
 ---
 
-**6) Modification: allow for more precise timestamps for WARC-date
-field**
+**6) [Modification: allow for more precise timestamps for WARC-date
+field](https://github.com/iipc/warc-specifications/issues/11)**
 
 **Issue:** The current standard (5.4) states that “The WARC-Date is a
 14-digit UTC time-stamp formatted as YYYY-MM-DDThh:mm:ssZ, and shall
