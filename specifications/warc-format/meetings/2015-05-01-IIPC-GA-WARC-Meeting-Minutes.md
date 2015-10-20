@@ -29,7 +29,7 @@ be minor, thus named WARC 1.1**
 
 ---
 
-**2) Clarification: scope of the standard **
+**[2) Clarification: scope of the standard ](https://github.com/iipc/warc-specifications/issues/8)**
 
 **Issue:** the introduction and the scope of the standard mostly
 acknowledges use cases related to web archiving. However, some
@@ -130,7 +130,7 @@ formulation.
 
 ---
 
-**7) Clarification: security issues**
+**7) [Clarification: security issues](https://github.com/iipc/warc-specifications/issues/12)**
 
 **Issue:** It is written in the WARC standards (8.3): “Security
 considerations: The WARC record syntax poses no direct risk to computers
@@ -150,7 +150,7 @@ should not be part of the standard.
 
 ---
 
-**8)      Augmentation: storing the “rendered target” in WARC record**
+**8)      [Augmentation: storing the “rendered target” in WARC record](https://github.com/iipc/warc-specifications/issues/13)**
 
 **Issue:** some robots store “rendered target” along with files archived
 on the web, i.e. screenshots of these files. A precise way to record
