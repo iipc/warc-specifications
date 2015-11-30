@@ -21,6 +21,11 @@ previous-version: (c.2006)
 > 
 > I think most of the other fields are obsolete, and date back to an even older Alexa .dat format.
 
+<pre>
+CDX N b a m s k r M S V g
+<a href="#N" title="N - massaged url">au,gov,financeminister)/</a> <a href="#b" title="b - date">20150914222034</a> <a href="#" title="a - original url">http://www.financeminister.gov.au/</a> <a href="#" title="m - mime type of original document">text/html</a> <a href="#" title="s - response code">200</a> <a href="#" title="k - new style checksum">ZMSA5TNJUKKRYAIM5PRUJLL24DV7QYOO</a> <a href="#" title="r - redirect">-</a> <a href="#" title="M - AIF meta tags">-</a> <a href="#" title="S - compressed record size">83848</a> <a href="#" title="V - compressed arc file offset">117273</a> <a href="#" title="g - file name">WEB-20150914222031256-00000-43190~heritrix.nla.gov.au~8443.warc.gz</a>
+</pre>
+
 ----
 
 A CDX file consists of individual lines of text, each of which summarizes a single web document.
@@ -63,6 +68,7 @@ N massaged url
 P canonized path
 Q language string
 R canonized redirect
+S compressed record size
 U uniqness ***
 V compressed arc file offset *
 X canonized url in other href tages
@@ -100,6 +106,8 @@ z url found in script *
 
 Document History
 ----------------
+
+*2015-11-30* -- Added example CDX-11 record with tooltips and added 'S compressed record size' to the list.
 
 *2015-07-10* -- Copied from v.2006 and added notes from [Ilya Kreymer](https://github.com/ikreymer).
 
