@@ -5,7 +5,7 @@ status: draft
 version: 1.0
 ---
 
-# 1. Preamble
+# Preamble
 
 
 This specification covers the CDXJ file format used by OpenWayback 3.0.0 (and later) to index web archive contents (notably in 
@@ -19,17 +19,17 @@ The use of a JSON in this manner is not novel. This specification is focused on 
 and creating a list of the most common JSON fields for cross compatibility reasons.
 
 
-# 2. File Specification
+# File Specification
 
-Each file is a plain text file, UTF-8 encoded. It should end each line with Unix style newlines (`LF`).
+Each file is a plain text file, UTF-8 encoded. It should end each line with Unix style newlines (U+000A).
 
 A CDXJ file that has been sorted can be refered to as a CDXJ *index* as it is easily searchable.
 
 
-## 2.1 Header / Format Version
+## Header / Format Version
 
 Each file should begin with a line declaring the file format and file format version. This line is preceeded with a bang symbol 
-(`!`) so that it automatically sorts to the front of the file.
+(`!` - U+0021) so that it automatically sorts to the front of the file.
 
 Example:
 ```
@@ -47,20 +47,20 @@ the major version number indicates a change that is not backwards compatible. It
 different major version numbers.
 
 
-## 2.2 Resource Entries
+## Resource Entries
 
 Following the header lines, each additional line should represent exactly one resource in a web archive. Typically in a WARC or ARC file, although the exact storage of the resource is not defined by this specification.
 
 
-# 3. Field Specification
+# Field Specification
 
 Each line is composed of five fields as described in the next capter. 
 
 The fields are seperated by spaces (U+0020). Consequently, spaces may not appear in the fields, except for the last field (JSON blob). 
 
-Additionally, only the last (JSON) field may begin with an opening curly brace (`{`).
+Additionally, only the last (JSON) field may begin with an opening curly brace (`{` - U+007B).
 
-## 3.1 Searchable URI
+## Searchable URI
 
 The first field is a searchable version of the URI that this resource refers to.
 
@@ -87,20 +87,43 @@ The correct SURT transformation is:
 
 Once in include the third stop of dropping the scheme. 
 
-
-## 3.2 Timestamp
-
-
-## 3.3 Content Digest
+The first field may not begin with a bang character (`!` - U+0021). As these are not allowed in URIs, this is unlikely to cause any issues.
 
 
-## 3.4 Record Type
+## Timestamp
+
+The second field is a timestamp. It should correspond to the WARC-Date timestamp as of WARC 1.1.
+
+> A UTC timestamp as described in the W3C profile of ISO8601 [W3CDTF].
+> The timestamp shall represent the instant that data capture for record
+> creation began. Multiple records written as part of a single capture
+> event (see section 5.7) shall use the same WARC-Date, even though the
+> times of their writing will not be exactly synchronized. 
+> 
+> WARC-Date may be specified at any of the six levels of granularity
+> described in [W3CDTF]. If WARC-Date includes a decimal fraction of a
+> second, the decimal fraction of a second shall have a minimum of 1
+> digit and a maximum of 9 digits. WARC-Date should be specified with as
+> much precision as is accurately known. This document recommends no
+> particular algorithm for access software to choose a record by date
+> when an exact match is not available.
+
+This is a notable departure from the original CDX format, that used a somewhat truncated timestamp (YYYYMMDDhhmmss). The level of accuracy
+of the timestamp should match the accuracy that is available in the WARC (or other source material).
+
+**Note:** All timestamps should be in UTC.
 
 
-## 3.5 JSON 
+## Content Digest
 
 
-# 4 Sorting File / Index
+## Record Type
+
+
+## JSON 
+
+
+# Sorting File / Index
 
 
 # Appendices 
