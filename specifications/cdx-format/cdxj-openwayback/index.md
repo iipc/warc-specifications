@@ -85,7 +85,7 @@ The correct SURT transformation is:
 (com,example,)/
 ```
 
-Once in include the third stop of dropping the scheme. 
+Once you include the third step of dropping the scheme. 
 
 The first field may not begin with a bang character (`!` - U+0021). As these are not allowed in URIs, this is unlikely to cause any issues.
 
@@ -115,6 +115,17 @@ of the timestamp should match the accuracy that is available in the WARC (or oth
 
 
 ## Content Digest
+
+The third field should contain a Base32 encoded SHA-1 digest of the contents of the URI or a simple dash (`-` - U+002D) if the URI refers 
+to a record without a content block. The algorithm prefix (e.g. `sha1:`) often used where multiple hashing algorithms may be used, is
+omitted in this case.
+
+In the case of revisit records and continuation records (or others that rely on a second record to fully replay the content), this should
+be the digest of the original/full content. Additional digests may be included in the JSON blob.
+
+The choice of SHA-1 hashing algorithm is based on its extremly widespread usage in web archiving. As it is not practical to have a CDXJ 
+with a mixture of digest from different algorithms here, we chose the most commonly used algorithm. Additional digests from other 
+algorithms may be included in the JSON blob.
 
 
 ## Record Type
