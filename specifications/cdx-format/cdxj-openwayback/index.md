@@ -66,10 +66,27 @@ The first field is a searchable version of the URI that this resource refers to.
 
 By *searchable*, we mean that the following transformations have been applied to it:
 
-1. Canonicalization
-2. Sort-friendly URI Reordering Transform (SURT)
+1. Canonicalization - See Appendix A
+2. Sort-friendly URI Reordering Transform (SURT) - See Appendix B
+3. The scheme is dropped from the SURT format
 
-See Appendix A and B for more information on these.
+**Note:** While this is extremly simmilar to other CDX and CDXJ implementations, we note that a lot of them get the SURT format wrong. 
+Most notably by omitting the starting parenthesis or dropping the trailing comma in the domain name.
+
+E.g. in using OpenWayback 2's CDX server the URL `http://example.com/' would translate to:
+
+```
+com,example)/
+```
+
+The correct SURT transformation is:
+
+```
+(com,example,)/
+```
+
+Once in include the third stop of dropping the scheme. 
+
 
 ## Timestamp
 
@@ -82,7 +99,19 @@ See Appendix A and B for more information on these.
 # Sorting / Index
 
 
-# Appendix A - Canonicalization
+# Appendices 
+
+## A - Canonicalization
+
+Canonicalization is applied to URIs to remove trivial differences in the URIs that do not reflect that the URI reference different resources. Examples include removing session ID parameters, unneccessary port declerations (e.g. :80 when crawling HTTP).
+
+OpenWayback implements its own canonicalization process. Typically, it will be applied to the searchable URIs in CDXJ files. You can, however, use any canonicalization scheme you care for (including none). You must simple ensure that the same canonicalization process is applied to the URIs when performing searches. Otherwise they may not match correctly.
 
 
-# Appendix B - Sort-friendly URI Reordering Transform (SURT)
+## B - Sort-friendly URI Reordering Transform (SURT)
+
+SURT is a transformation applied to URIs which makes their left-to-right representation better match the natural hierarchy of domain names.
+
+A URI <scheme://domain.tld/path?query> has SURT form <scheme://(tld,domain,)/path?query>.
+
+Conversion to SURT form also involves making all characters lowercase, and changing the 'https' scheme to 'http'. Further, the '/' after a URI authority component -- for example, the third slash in a regular HTTP URI -- will only appear in the SURT form if it appeared in the plain URI form. (This convention proves important when using real URIs as a shorthand for SURT prefixes, as described below.)
