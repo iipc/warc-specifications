@@ -2,7 +2,7 @@
 title: CDXJ OpenWayback File Format
 type: specification
 status: draft
-version: 1
+version: 1.0
 ---
 
 # Preamble
@@ -26,7 +26,7 @@ Each file is a plain text file, UTF-8 encoded. It should end each line with Unix
 A CDXJ file that has been sorted can be refered to as a CDXJ *index* as it is easily searchable.
 
 
-## Header
+## Header / Format Version
 
 Each file should begin with a line declaring the file format and file format version. This line is preceeded with a bang symbol 
 (`!`) so that it automatically sorts to the front of the file.
@@ -47,11 +47,42 @@ the major version number indicates a change that is not backwards compatible. It
 different major version numbers.
 
 
+## Resource Entries
+
+Following the header lines, each additional line should represent exactly one resource in a web archive. Typically in a WARC or ARC file, although the exact storage of the resource is not defined by this specification.
+
+
 # Field Specification
 
+Each line is composed of five fields as described in the next capter. 
+
+The fields are seperated by spaces (U+0020). Consequently, spaces may not appear in the fields, except for the last field (JSON blob). 
+
+Additionally, only the last (JSON) field may begin with an opening curly brace (`{`).
+
+## Searchable URI
+
+The first field is a searchable version of the URI that this resource refers to.
+
+By *searchable*, we mean that the following transformations have been applied to it:
+
+1. Canonicalization
+2. Sort-friendly URI Reordering Transform (SURT)
+
+See Appendix A and B for more information on these.
+
+## Timestamp
+
+
+## Content Digest
+
+
+## Record Type
 
 # Sorting / Index
 
 
+# Appendix A - Canonicalization
 
 
+# Appendix B - Sort-friendly URI Reordering Transform (SURT)
