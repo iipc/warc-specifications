@@ -5,7 +5,7 @@ status: draft
 version: 1.0
 ---
 
-# Preamble
+# 1. Preamble
 
 
 This specification covers the CDXJ file format used by OpenWayback 3.0.0 (and later) to index web archive contents (notably in 
@@ -19,14 +19,14 @@ The use of a JSON in this manner is not novel. This specification is focused on 
 and creating a list of the most common JSON fields for cross compatibility reasons.
 
 
-# File Specification
+# 2. File Specification
 
 Each file is a plain text file, UTF-8 encoded. It should end each line with Unix style newlines (`LF`).
 
 A CDXJ file that has been sorted can be refered to as a CDXJ *index* as it is easily searchable.
 
 
-## Header / Format Version
+## 2.1 Header / Format Version
 
 Each file should begin with a line declaring the file format and file format version. This line is preceeded with a bang symbol 
 (`!`) so that it automatically sorts to the front of the file.
@@ -47,12 +47,12 @@ the major version number indicates a change that is not backwards compatible. It
 different major version numbers.
 
 
-## Resource Entries
+## 2.2 Resource Entries
 
 Following the header lines, each additional line should represent exactly one resource in a web archive. Typically in a WARC or ARC file, although the exact storage of the resource is not defined by this specification.
 
 
-# Field Specification
+# 3. Field Specification
 
 Each line is composed of five fields as described in the next capter. 
 
@@ -60,7 +60,7 @@ The fields are seperated by spaces (U+0020). Consequently, spaces may not appear
 
 Additionally, only the last (JSON) field may begin with an opening curly brace (`{`).
 
-## Searchable URI
+## 3.1 Searchable URI
 
 The first field is a searchable version of the URI that this resource refers to.
 
@@ -88,15 +88,19 @@ The correct SURT transformation is:
 Once in include the third stop of dropping the scheme. 
 
 
-## Timestamp
+## 3.2 Timestamp
 
 
-## Content Digest
+## 3.3 Content Digest
 
 
-## Record Type
+## 3.4 Record Type
 
-# Sorting / Index
+
+## 3.5 JSON 
+
+
+# 4 Sorting File / Index
 
 
 # Appendices 
