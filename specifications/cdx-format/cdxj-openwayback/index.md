@@ -103,6 +103,9 @@ The correct SURT transformation is ...
 
 Note that the first field may not begin with a bang character (`!` - 0x21). 
 
+For URI's containing an *Internationalized domain name* (IDN), this field should always use the IDN format and not the *Punycode* 
+representation.
+
 
 Timestamp
 ---------
@@ -189,6 +192,14 @@ Defined JSON keys:
 
 Sorting File / Index
 ====================
+
+A sorted CDXJ file is considered a CDXJ *index*, allowing lookup on URI (and timestamp) using simple binary searches. The CDXJ structure 
+is designed to facilitate this, but the sorting is outside the scope of this document. A non-sorted CDXJ file is still valid as far as
+this specification goes. It is just not usable for searching.
+
+Furthermore, the structure of the CDXJ is designed so that using common sorting tools (e.g. GNU "sort" utility) works as expected. Do
+note that you may need to correctly configure the collation settings (how it orders the characters when sorting). This must match the
+expectation of the software using the CDXJ file (typically OpenWayback). Consult the software's documentation for further details.
 
 
 Appendices 
