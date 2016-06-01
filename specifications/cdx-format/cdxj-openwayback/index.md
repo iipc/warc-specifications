@@ -1,7 +1,7 @@
 ---
 title: CDXJ OpenWayback File Format
 type: specification
-status: draft
+status: proposed
 version: 1.0
 ---
 
@@ -129,6 +129,17 @@ algorithms may be included in the JSON blob.
 
 
 ## Record Type
+
+Indicates what type of record the current line refers to. This field is fully compatible with WARC 1.0 (ISO 28500) definition of 
+WARC-Type (chapter 5.5 and chapter 6). 
+
+For content not stored in WARCs, a reasonable equivalent should be chosen.
+
+E.g. 
+
+* **response** - Suitable for any record that contains the response from a server to a specific request (irrespective of protocol).
+* **request** - Suitable for any record containing a request made to a server.
+* **revisit** - Suitable for any record of a response from a server to a specific request, where the content body is equal to that of another record.
 
 
 ## JSON 
