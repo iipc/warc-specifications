@@ -171,6 +171,7 @@ It is legal to store any amount of data in the JSON block. The following keys, h
 fields are required.
 
 Defined JSON keys:
+
 * **uri** (*required*) - The value should be the non-transformed URI used for the searchable URI (first sortable field).
 * **hsc** - HTTP Status Code. Applicable for *response* records for HTTP(S) URIs.
 * **mct** - Media Content Type (MIME type). For HTTP(S) *response* records this is typically the "Content-Type" from the HTTP header. This field, however, does not specify the origin of the information. It may be used to include content type that was derived from content analysis or other sources.
