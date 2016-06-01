@@ -21,7 +21,7 @@ and creating a list of the most common JSON fields for cross compatibility reaso
 
 # File Specification
 
-Each file is a plain text file, UTF-8 encoded. It should end each line with Unix style newlines (U+000A).
+Each file is a plain text file, UTF-8 encoded. It should end each line with Unix style newlines (0x0A).
 
 A CDXJ file that has been sorted can be refered to as a CDXJ *index* as it is easily searchable.
 
@@ -29,7 +29,7 @@ A CDXJ file that has been sorted can be refered to as a CDXJ *index* as it is ea
 ## Header / Format Version
 
 Each file should begin with a line declaring the file format and file format version. This line is preceeded with a bang symbol 
-(`!` - U+0021) so that it automatically sorts to the front of the file.
+(`!` - 0x21) so that it automatically sorts to the front of the file.
 
 Example:
 ```
@@ -56,9 +56,11 @@ Following the header lines, each additional line should represent exactly one re
 
 Each line is composed of five fields as described in the next capter. 
 
-The fields are seperated by spaces (U+0020). Consequently, spaces may not appear in the fields, except for the last field (JSON blob). 
+The fields are seperated by spaces (0x20). Consequently, spaces may not appear in the fields, except for the last field (JSON blob). 
 
-Additionally, only the last (JSON) field may begin with an opening curly brace (`{` - U+007B).
+Additionally, only the last (JSON block) field may begin with an opening curly brace (`{` - 0x7B).
+
+The first four fields are collectively known as the *sortable* fields.
 
 ## Searchable URI
 
@@ -87,7 +89,7 @@ The correct SURT transformation is:
 
 Once you include the third step of dropping the scheme. 
 
-The first field may not begin with a bang character (`!` - U+0021). As these are not allowed in URIs, this is unlikely to cause any issues.
+The first field may not begin with a bang character (`!` - 0x21). As these are not allowed in URIs, this is unlikely to cause any issues.
 
 
 ## Timestamp
@@ -116,7 +118,7 @@ of the timestamp should match the accuracy that is available in the WARC (or oth
 
 ## Content Digest
 
-The third field should contain a Base32 encoded SHA-1 digest of the contents of the URI or a simple dash (`-` - U+002D) if the URI refers 
+The third field should contain a Base32 encoded SHA-1 digest of the contents of the URI or a simple dash (`-` - 0x2D) if the URI refers 
 to a record without a content block. The algorithm prefix (e.g. `sha1:`) often used where multiple hashing algorithms may be used, is
 omitted in this case.
 
@@ -144,6 +146,31 @@ E.g.
 
 ## JSON 
 
+The fifth and final field is a single line JSON block. This should contain fully valid JSON data. The only limitation, beyond those 
+imposed by JSON encoding rules, is that this may not contain any newline characters, either in Unix (0x0A) or Windows form (0x0D0A). The 
+first occurance of a 0x0A constitutes the end of this field.
+
+The order of key/value pairs within the JSON block is unspecified. It is not expected that records can be sorted, in any way, on the JSON 
+field.
+
+It is legal to store any amount of data in the JSON block. The following keys, however have a defined meaning. Further, some of these
+fields are required.
+
+Defined JSON keys:
+* **uri** (*required*) - The value should be the non-transformed URI used for the searchable URI (first sortable field).
+* **hsc** - HTTP Status Code. Applicable for *response* records for HTTP(S) URIs
+* **mct** - Media Content Type (MIME type). For HTTP(S) *response* records this is typically the "Content-Type" from the HTTP header. This field, however, does not specify the origin of the information. It may be used to include content type that was derived from content analysis or other sources.
+* **ref** (*required) - A URI that resolves to the resource that this record refers to. This can be any well defined URI scheme. For the most common web archive use case of warc filename plus offset, see Appendix C. For other use cases, existing schemes can be used or new ones devised.
+* **rid** (*recommended*) - Record ID. Typically WARC-Record-ID or equivalent if not using WARCs. In a mixed environment, you should ensure that record ID is unique.
+* **cle** - Content Length. The length of the content (uncompressed), ignoring WARC headers, but including any HTTP headers or similar.
+* **ple** - Payload Length. The length of the *payload* (uncompressed). The exact meaning will vary by content type, but the common case is the length of the document, excluding any HTTP headers in a HTTP response record.
+* **rle** - Record Length. The length of the record that this line refers to. This is the entire record (including e.g. WARC headers) as written on disk (compressed if stored compressed).
+* **rct** - Record Concurrant To. The record ID of another record that the current record is considered to be 'concurrant' to. See further WARC chapter 5.7 (WARC-Concurrent-To).
+* **rou** (*recommended*) - Revisit Original URI. Only valid for records of type *revisit*. Contains the URI of the record that this record is considered a revisit of.
+* **rod** (*recommended*) - Revisit Original Date. Only valid for records of type *revisit*. Contains the timestamp (equivalent to sortable field #2) of the record that this record is considered a revisit of.
+* **roi** - Revisit Original record ID. Only valid for records of type *revisit*. Contains the record ID of the record that this record is considered a revisit of.
+
+
 
 # Sorting File / Index
 
@@ -164,3 +191,25 @@ SURT is a transformation applied to URIs which makes their left-to-right represe
 A URI <scheme://domain.tld/path?query> has SURT form <scheme://(tld,domain,)/path?query>.
 
 Conversion to SURT form also involves making all characters lowercase, and changing the 'https' scheme to 'http'. Further, the '/' after a URI authority component -- for example, the third slash in a regular HTTP URI -- will only appear in the SURT form if it appeared in the plain URI form. (This convention proves important when using real URIs as a shorthand for SURT prefixes, as described below.)
+
+
+## C - warcfile URI Scheme
+
+The 'warcfile' URI scheme shall be assumed to have the following structure:
+
+```
+warcfile:<warc-filename>#<offset>
+```
+
+The `<warc-filename>` is the full filename of the WARC (including any suffixes) but excluding any path information. WARC filenames are 
+assumed to be unique.
+
+The `<offset>` is the number of bytes from the start of the WARC when the relevant record begins.
+
+Example URI:
+
+```
+warcfile:warcfile:IAH-20070824123353-00393-heritrix2.nb.no.arc.gz#25523382
+```
+
+To fully resolve a URI with this scheme, an index mapping WARC filenames to specific locations is needed.
