@@ -8,8 +8,8 @@ latest: true
 version-of: cdxj-openwayback-format
 ---
 
-# Preamble
-
+Preamble
+========
 
 This specification covers the CDXJ file format used by OpenWayback 3.0.0 (and later) to index web archive contents (notably in 
 WARC and ARC files) and make them searchable via a resource resolution service.
@@ -22,7 +22,8 @@ The use of a JSON in this manner is not novel. This specification is focused on 
 and creating a list of the most common JSON fields for cross compatibility reasons.
 
 
-# File Specification
+File Specification
+==================
 
 Each file is a plain text file, UTF-8 encoded. It should end each line with Unix style newlines (0x0A).
 
@@ -35,6 +36,7 @@ Each file should begin with a line declaring the file format and file format ver
 (`!` - 0x21) so that it automatically sorts to the front of the file.
 
 Example:
+
 ```
 !OpenWayback-CDXJ 1.0
 ```
@@ -50,12 +52,14 @@ the major version number indicates a change that is not backwards compatible. It
 different major version numbers.
 
 
-## Resource Entries
+Resource Entries
+----------------
 
 Following the header lines, each additional line should represent exactly one resource in a web archive. Typically in a WARC or ARC file, although the exact storage of the resource is not defined by this specification.
 
 
-# Field Specification
+Field Specification
+===================
 
 Each line is composed of five fields as described in the next capter. 
 
@@ -65,7 +69,9 @@ Additionally, only the last (JSON block) field may begin with an opening curly b
 
 The first four fields are collectively known as the *sortable* fields.
 
-## Searchable URI
+
+Searchable URI
+--------------
 
 The first field is a searchable version of the URI that this resource refers to.
 
@@ -95,7 +101,8 @@ Once you include the third step of dropping the scheme.
 The first field may not begin with a bang character (`!` - 0x21). As these are not allowed in URIs, this is unlikely to cause any issues.
 
 
-## Timestamp
+Timestamp
+---------
 
 The second field is a timestamp. It should correspond to the WARC-Date timestamp as of WARC 1.1.
 
@@ -119,7 +126,8 @@ of the timestamp should match the accuracy that is available in the WARC (or oth
 **Note:** All timestamps should be in UTC.
 
 
-## Content Digest
+Content Digest
+--------------
 
 The third field should contain a Base32 encoded SHA-1 digest of the contents of the URI or a simple dash (`-` - 0x2D) if the URI refers 
 to a record without a content block. The algorithm prefix (e.g. `sha1:`) often used where multiple hashing algorithms may be used, is
@@ -133,7 +141,8 @@ with a mixture of digest from different algorithms here, we chose the most commo
 algorithms may be included in the JSON blob.
 
 
-## Record Type
+Record Type
+-----------
 
 Indicates what type of record the current line refers to. This field is fully compatible with WARC 1.0 (ISO 28500) definition of 
 WARC-Type (chapter 5.5 and chapter 6). 
@@ -147,7 +156,8 @@ E.g.
 * **revisit** - Suitable for any record of a response from a server to a specific request, where the content body is equal to that of another record.
 
 
-## JSON 
+JSON 
+----
 
 The fifth and final field is a single line JSON block. This should contain fully valid JSON data. The only limitation, beyond those 
 imposed by JSON encoding rules, is that this may not contain any newline characters, either in Unix (0x0A) or Windows form (0x0D0A). The 
@@ -175,19 +185,23 @@ Defined JSON keys:
 
 
 
-# Sorting File / Index
+Sorting File / Index
+====================
 
 
-# Appendices 
+Appendices 
+==========
 
-## A - Canonicalization
+A Canonicalization
+--------------------
 
 Canonicalization is applied to URIs to remove trivial differences in the URIs that do not reflect that the URI reference different resources. Examples include removing session ID parameters, unneccessary port declerations (e.g. :80 when crawling HTTP).
 
 OpenWayback implements its own canonicalization process. Typically, it will be applied to the searchable URIs in CDXJ files. You can, however, use any canonicalization scheme you care for (including none). You must simple ensure that the same canonicalization process is applied to the URIs when performing searches. Otherwise they may not match correctly.
 
 
-## B - Sort-friendly URI Reordering Transform (SURT)
+B Sort-friendly URI Reordering Transform (SURT)
+-----------------------------------------------
 
 SURT is a transformation applied to URIs which makes their left-to-right representation better match the natural hierarchy of domain names.
 
@@ -196,7 +210,8 @@ A URI <scheme://domain.tld/path?query> has SURT form <scheme://(tld,domain,)/pat
 Conversion to SURT form also involves making all characters lowercase, and changing the 'https' scheme to 'http'. Further, the '/' after a URI authority component -- for example, the third slash in a regular HTTP URI -- will only appear in the SURT form if it appeared in the plain URI form. (This convention proves important when using real URIs as a shorthand for SURT prefixes, as described below.)
 
 
-## C - warcfile URI Scheme
+C 'warcfile' URI Scheme
+-----------------------
 
 The 'warcfile' URI scheme shall be assumed to have the following structure:
 
@@ -216,3 +231,14 @@ warcfile:warcfile:IAH-20070824123353-00393-heritrix2.nb.no.arc.gz#25523382
 ```
 
 To fully resolve a URI with this scheme, an index mapping WARC filenames to specific locations is needed.
+
+
+D Example CDXJ File
+-------------------
+
+```
+!OpenWayback-CDXJ 1.0
+
+
+
+```
