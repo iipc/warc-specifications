@@ -1,5 +1,5 @@
 ---
-title: CDXJ OpenWayback File Format
+title: OpenWayback CDXJ File Format
 type: specification
 status: proposed
 version: 1.0
