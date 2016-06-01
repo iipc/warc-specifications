@@ -3,6 +3,9 @@ title: CDXJ OpenWayback File Format
 type: specification
 status: proposed
 version: 1.0
+numbered: true
+latest: true
+version-of: cdxj-openwayback-format
 ---
 
 # Preamble
