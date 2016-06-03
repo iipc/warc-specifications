@@ -192,6 +192,13 @@ Defined JSON keys:
 * **rod** (*recommended*) - Revisit Original Date. Only valid for records of type *revisit*. Contains the timestamp (equivalent to sortable field #2) of the record that this record is considered a revisit of.
 * **roi** - Revisit Original record ID. Only valid for records of type *revisit*. Contains the record ID of the record that this record is considered a revisit of.
 
+Additionally, the four sortable fields can be redundantly stored in the JSON block, if so desired using the following keys:
+
+1. Searchable URI - **ssu** (**s**ortable **s**earchable **U**RI)
+2. Timestamp - **sts** (**s**ortable **t**ime**s**tamp)
+3. Content Digest - **scd** (**s**ortable **c**ontent **d**igest)
+4. Record Type - **srt**  (**s**ortable **r**ecord **t**ype)
+
 To reduce the possibility of incompatibility with future versions of CDXJ, the use of custom keys longer than 3 characters is recommended.
 
 Alternatively, new keys may be discussed and agreed upon by the OpenWayback community prior to a revised CDXJ version being released. 
@@ -202,12 +209,13 @@ Sorting File / Index
 ====================
 
 A sorted CDXJ file is considered a CDXJ *index*, allowing lookup on URI (and timestamp) using simple binary searches. The CDXJ structure 
-is designed to facilitate this, but the sorting is outside the scope of this document. A non-sorted CDXJ file is still valid as far as
-this specification goes. It is just not usable for searching.
+is designed to facilitate this. A non-sorted CDXJ file is still valid as far as this specification goes. It is just not usable for
+searching. 
 
-Furthermore, the structure of the CDXJ is designed so that using common sorting tools (e.g. GNU "sort" utility) works as expected. Do
-note that you may need to correctly configure the collation settings (how it orders the characters when sorting). This must match the
-expectation of the software using the CDXJ file (typically OpenWayback). Consult the software's documentation for further details.
+When sorted, the sorting should be done based on the native byte values of the characters. This is equivalent to using the GNU sort with 
+the collation settings `LC_ALL=C`.
+
+The structure of the CDXJ is designed so that using common sorting tools (e.g. GNU sort utility) works as expected. Provided that the correct collation settings are set as described above.
 
 
 Appendices 
@@ -254,7 +262,7 @@ The `<offset>` is the number of bytes from the start of the WARC when the releva
 Example URI:
 
 ```
-warcfile:warcfile:IAH-20070824123353-00393-heritrix2.nb.no.arc.gz#25523382
+warcfile:IAH-20070824123353-00393-heritrix2.nb.no.arc.gz#25523382
 ```
 
 To fully resolve a URI with this scheme, an index mapping WARC filenames to specific locations is needed.
