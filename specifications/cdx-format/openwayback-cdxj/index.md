@@ -56,6 +56,8 @@ It is not permissible to mix major version numbers (e.g. `1.0` and `2.0`) in the
 the major version number indicates a change that is not backwards compatible. It is not possible to merge CDXJ files with 
 different major version numbers.
 
+Lines beginning with the bang symbol may *only* appear at the top of the file, regardless of whether the file has been sorted.
+
 
 Resource Entries / Records
 ----------------
@@ -66,13 +68,13 @@ Following the header lines, each additional line should represent exactly one re
 Field Specification
 ===================
 
-Each line, or record, is composed of five fields. 
+Each line, or record, is composed of four (4) fields. 
 
 The fields are seperated by spaces (0x20). Consequently, spaces may not appear in the fields, except for the last field (JSON block).
 
 Additionally, only the last (JSON block) field may begin with an opening curly brace (`{` - 0x7B).
 
-The first four fields are collectively known as the *sortable* fields.
+The first three fields are collectively known as the *sortable* fields.
 
 
 Searchable URI
@@ -132,23 +134,6 @@ of the timestamp should match the accuracy that is available in the WARC (or oth
 In general, this field is equivalent to the WARC-Date field of a WARC record.
 
 
-Content Digest
---------------
-
-The third field should contain a Base32 encoded SHA-1 digest of the contents of the URI. The algorithm prefix (e.g. `sha1:`) often used 
-where multiple hashing algorithms may be used, is omitted in this case.
-
-Note that this is the digest of the payload or content of the record, excluding such things as, for example, HTTP headers. Records that 
-refer to resources without such a payload (e.g. HTTP redirects) use a simple dash (`-` - 0x2D) for this field to indicate this. 
-
-In the case of revisit records and continuation records (or others that rely on a second record to fully replay the content), this should
-be the digest of the original/full content. Additional digests may be included in the JSON block.
-
-The choice of SHA-1 hashing algorithm is based on its extremly widespread usage in web archiving. As it is not practical to have a CDXJ 
-with a mixture of digest from different algorithms here, we chose the most commonly used algorithm. Additional digests from other 
-algorithms may be included in the JSON block.
-
-
 Record Type
 -----------
 
@@ -167,7 +152,7 @@ E.g.
 JSON block
 ----------
 
-The fifth and final field is a single line JSON block. This should contain fully valid JSON data. The only limitation, beyond those 
+The fourth and final field is a single line JSON block. This should contain fully valid JSON data. The only limitation, beyond those 
 imposed by JSON encoding rules, is that this may not contain any newline characters, either in Unix (0x0A) or Windows form (0x0D0A). The 
 first occurance of a 0x0A constitutes the end of this field (and the record).
 
@@ -180,6 +165,8 @@ fields are required.
 Defined JSON keys:
 
 * **uri** (*required*) - The value should be the non-transformed URI used for the searchable URI (first sortable field).
+* **sha** (*recommended*) - A Base32 encoded SHA-1 digest of the payload that this record refers to. Omit if the URI has no intrinsic payload. For revisit records, this is the digest of the original payload. The algorithm prefix (e.g. `sha-1`) is not included in this field. See **dig** for alternative hashing algorithms.
+* **dig** - A Base32 encoded output of a hashing algorithm applied to the URI's payload. This should include a prefix indicating the algorithm.
 * **hsc** - HTTP Status Code. Applicable for *response* records for HTTP(S) URIs.
 * **mct** - Media Content Type (MIME type). For HTTP(S) *response* records this is typically the "Content-Type" from the HTTP header. This field, however, does not specify the origin of the information. It may be used to include content type that was derived from content analysis or other sources.
 * **ref** (*required*) - A URI that resolves to the resource that this record refers to. This can be any well defined URI scheme. For the most common web archive use case of warc filename plus offset, see Appendix C. For other use cases, existing schemes can be used or new ones devised.
@@ -192,12 +179,11 @@ Defined JSON keys:
 * **rod** (*recommended*) - Revisit Original Date. Only valid for records of type *revisit*. Contains the timestamp (equivalent to sortable field #2) of the record that this record is considered a revisit of.
 * **roi** - Revisit Original record ID. Only valid for records of type *revisit*. Contains the record ID of the record that this record is considered a revisit of.
 
-Additionally, the four sortable fields can be redundantly stored in the JSON block, if so desired using the following keys:
+Additionally, the three sortable fields can be redundantly stored in the JSON block, if so desired using the following keys:
 
 1. Searchable URI - **ssu** (**s**ortable **s**earchable **U**RI)
 2. Timestamp - **sts** (**s**ortable **t**ime**s**tamp)
-3. Content Digest - **scd** (**s**ortable **c**ontent **d**igest)
-4. Record Type - **srt**  (**s**ortable **r**ecord **t**ype)
+3. Record Type - **srt**  (**s**ortable **r**ecord **t**ype)
 
 To reduce the possibility of incompatibility with future versions of CDXJ, the use of custom keys longer than 3 characters is recommended.
 
