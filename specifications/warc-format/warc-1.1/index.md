@@ -112,22 +112,22 @@ applies.
 
 \[RFC 1035\] Mockapetris, P. Domain names — Implementation and
 specification. STD 13, November 1987. Available at:
-https://www.ietf.org/rfc/rfc1035.txt
+<https://www.ietf.org/rfc/rfc1035.txt>
 
 \[RFC 2045\] Freed, N. and Borenstein, N. Multipurpose Internet Mail
 Extensions (MIME) Part One: Format of Internet Message Bodies.
-November 1996. Available at: https://www.ietf.org/rfc/rfc2045.txt
+November 1996. Available at: <https://www.ietf.org/rfc/rfc2045.txt>
 
 \[RFC 2540\] Eastlake, D. Detached Domain Name System (DNS) Information.
-March 1999. Available at: https://tools.ietf.org/html/rfc2540
+March 1999. Available at: <https://tools.ietf.org/html/rfc2540>
 
 \[RFC 2616\] Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter,
 L., Leach, P. and Berners-Lee, T. Hypertext Transfer Protocol —
 HTTP/1.1. June 1999 (TXT, PS, PDF, HTML, XML). Available at:
-https://www.ietf.org/rfc/rfc2616.txt
+<https://www.ietf.org/rfc/rfc2616.txt>
 
 \[RFC 3629\] Yergeau, F. UTF-8, a transformation format of ISO 10646. STD
-63, November 2003. Available at: https://tools.ietf.org/html/rfc3629
+63, November 2003. Available at: <https://tools.ietf.org/html/rfc3629>
 
 Terms, definitions and abbreviated terms
 ========================================
@@ -365,7 +365,7 @@ New named fields and new records types may be defined in extensions of
 the core format. However, it is strongly recommended to discuss any
 addition to verify that a suitable field or type doesn't already exist
 to avoid collision. Discussion should notably be held within the IIPC.
-More information on http://bibnum.bnf.fr/warc/.
+More information on <http://bibnum.bnf.fr/warc/>.
 
 Named fields
 ============
@@ -1778,34 +1778,34 @@ Bibliography
 ============
 
 \[1\] ARC BURNER M., KAHLE B. ARC File Format. 15 September 1996.
-Available at: http://www.archive.org/web/researcher/ArcFileFormat.php
+Available at: <http://www.archive.org/web/researcher/ArcFileFormat.php>
 
 \[2\] DCMI DCMI Metadata Terms. Available at:
-http://dublincore.org/documents/dcmi-terms/
+<http://dublincore.org/documents/dcmi-terms/>
 
 \[3\] RFC1950 DEUTSCH P., GAILLY J.-L. ZLIB Compressed Data Format
 Specification version 3.3. May 1996 (TXT, PS, PDF). Available at:
-https://www.ietf.org/rfc/rfc1950.txt
+<https://www.ietf.org/rfc/rfc1950.txt>
 
 \[4\] RFC1951 DEUTSCH P. Deflate. Compressed Data Format Specification
 version 1.3. May 1996 (TXT, PS, PDF). Available at:
-https://www.ietf.org/rfc/rfc1951.txt
+<https://www.ietf.org/rfc/rfc1951.txt>
 
 \[5\] RFC1952 DEUTSCH P. GZIP file format specification version 4.3. May
-1996 (TXT, PS, PDF). https://www.ietf.org/rfc/rfc1952.txt
+1996 (TXT, PS, PDF). <https://www.ietf.org/rfc/rfc1952.txt>
 
 \[6\] RFC2047 MOORE K. MIME (Multipurpose Internet Mail Extensions) Part
 Three: Message Header Extensions for Non-ASCII Text. November 1996 (TXT,
-HTML, XML). Available at: https://www.ietf.org/rfc/rfc2047.txt
+HTML, XML). Available at: <https://www.ietf.org/rfc/rfc2047.txt>
 
 \[7\] RFC2048 FREED N., KLENSIN J., POSTEL J. Multipurpose Internet Mail
 Extensions (MIME) Part Four: Registration Procedures. BCP 13, RFC 2048,
 November 1996 (TXT, HTML, XML). Available at:
-https://www.ietf.org/rfc/rfc2048.txt
+<https://www.ietf.org/rfc/rfc2048.txt>
 
 \[8\] RFC4501 JOSEFSSON S. Domain Name System Uniform Resource
-Identifiers. May 2006. Available at: https://tools.ietf.org/html/rfc4501
+Identifiers. May 2006. Available at: <https://tools.ietf.org/html/rfc4501>
 
 \[9\] RFC4648 JOSEFSSON S. The Base16, Base32, and Base64 Data
 Encodings. October 2006. Available at:
-https://tools.ietf.org/html/rfc4648
+<https://tools.ietf.org/html/rfc4648>
