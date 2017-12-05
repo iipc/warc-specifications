@@ -110,23 +110,23 @@ references, only the edition cited applies. For undated references, the
 latest edition of the referenced document (including any amendments)
 applies.
 
-\[RFC1035\] Mockapetris, P. Domain names — Implementation and
+\[RFC 1035\] Mockapetris, P. Domain names — Implementation and
 specification. STD 13, November 1987. Available at:
 https://www.ietf.org/rfc/rfc1035.txt
 
-\[RFC2045\] Freed, N. and Borenstein, N. Multipurpose Internet Mail
-Extensions (MIME) Part One: Format of Internet Message Bodies. November
-1996. Available at: https://www.ietf.org/rfc/rfc2045.txt
+\[RFC 2045\] Freed, N. and Borenstein, N. Multipurpose Internet Mail
+Extensions (MIME) Part One: Format of Internet Message Bodies.
+November 1996. Available at: https://www.ietf.org/rfc/rfc2045.txt
 
-\[RFC2540\] Eastlake, D. Detached Domain Name System (DNS) Information.
+\[RFC 2540\] Eastlake, D. Detached Domain Name System (DNS) Information.
 March 1999. Available at: https://tools.ietf.org/html/rfc2540
 
-\[RFC2616\] Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter,
+\[RFC 2616\] Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter,
 L., Leach, P. and Berners-Lee, T. Hypertext Transfer Protocol —
 HTTP/1.1. June 1999 (TXT, PS, PDF, HTML, XML). Available at:
 https://www.ietf.org/rfc/rfc2616.txt
 
-\[RFC3629\] Yergeau, F. UTF-8, a transformation format of ISO 10646. STD
+\[RFC 3629\] Yergeau, F. UTF-8, a transformation format of ISO 10646. STD
 63, November 2003. Available at: https://tools.ietf.org/html/rfc3629
 
 Terms, definitions and abbreviated terms
@@ -255,40 +255,38 @@ UTF-8 character. Both defined- fields and extension-fields follow the
 generic named-field format. Extension-fields may be used in extensions
 of the core format.
 
-```
-    named-field    = field-name ":" [ field-value ]
-    field-name     = token
-    field-value    = *( field-content | LWS )     ; further qualified
-                                                  ; by field
-                                                  ; definitions
-    field-content  = <the OCTETs making up the field-value and
-                     consisting of either *TEXT or combinations of
-                     token, separators, and quoted-string>
-    OCTET          = <any 8-bit sequence of data>
-    token          = 1*<any US-ASCII character>
-                     except CTLs or separators>
-    separators     = "(" | ")" | "<" | ">" | "@"
-                        | "," | ";" | ":" | "\" | <">
-                        | "/" | "[" | "]" | "?" | "="
-                        | "{" | "}" | SP | HT
-    TEXT           = <any OCTET except CTLs,
-                     but including LWS>
-    CHAR           = <UTF-8 characters; RFC3629>  ; (0-191, 194-244)
-    DIGIT          = <any US-ASCII digit "0".."9">
-    CTL            = <any US-ASCII control character
-                     (octets 0 - 31) and DEL (127)>
-    CR             = <ASCII CR, carriage return>  ; (13)
-    LF             = <ASCII LF, linefeed>         ; (10)
-    SP             = <ASCII SP, space>            ; (32)
-    HT             = <ASCII HT, horizontal-tab>   ; (9)
-    CRLF           = CR LF
-    LWS            = [CRLF] 1*( SP | HT )         ; semantics same as
-                                                  ; single SP
-    quoted-string  = ( <"> *(qdtext | quoted-pair ) <"> )
-    qdtext         = <any TEXT except <">>
-    quoted-pair    = "\" CHAR ; single-character quoting
-    uri            = <'URI' per RFC3986>
-```
+    named-field   = field-name ":" [ field-value ]
+    field-name    = token
+    field-value   = *( field-content | LWS )     ; further qualified
+                                                 ; by field
+                                                 ; definitions
+    field-content = <the OCTETs making up the field-value and
+                    consisting of either *TEXT or combinations of
+                    token, separators, and quoted-string>
+    OCTET         = <any 8-bit sequence of data>
+    token         = 1*<any US-ASCII character>
+                    except CTLs or separators>
+    separators    = "(" | ")" | "<" | ">" | "@"
+                       | "," | ";" | ":" | "\" | <">
+                       | "/" | "[" | "]" | "?" | "="
+                       | "{" | "}" | SP | HT
+    TEXT          = <any OCTET except CTLs,
+                    but including LWS>
+    CHAR          = <UTF-8 characters; RFC3629>  ; (0-191, 194-244)
+    DIGIT         = <any US-ASCII digit "0".."9">
+    CTL           = <any US-ASCII control character
+                    (octets 0 - 31) and DEL (127)>
+    CR            = <ASCII CR, carriage return>  ; (13)
+    LF            = <ASCII LF, linefeed>         ; (10)
+    SP            = <ASCII SP, space>            ; (32)
+    HT            = <ASCII HT, horizontal-tab>   ; (9)
+    CRLF          = CR LF
+    LWS           = [CRLF] 1*( SP | HT )         ; semantics same as
+                                                 ; single SP
+    quoted-string = ( <"> *(qdtext | quoted-pair ) <"> )
+    qdtext        = <any TEXT except <">>
+    quoted-pair   = "\" CHAR ; single-character quoting
+    uri           = <'URI' per RFC3986>
 
 Although UTF-8 characters are allowed, the 'encoded-word' mechanism of
 \[RFC2047\] may also be used when writing WARC fields and shall also be
