@@ -1,6 +1,6 @@
 ---
 title: The WARC Format
-status: final draft
+status: standard
 version: 1.1
 numbered: true
 latest: true
@@ -1210,8 +1210,6 @@ recommended size limit according to experience.
 WARC files may be compressed. See Annex D for recommendations on WARC
 file compression.
 
-
-
 Annex A. *(informative)* Use cases for writing WARC records
 ===========================================================
 
@@ -1244,13 +1242,19 @@ presented in this International Standard.
 It has been assumed that these WARC records are written in an already
 opened WARC file, containing a 'warcinfo' record.
 
-#### Table A.1 — Use case one: An archiving crawler fetches http://netpreserve.org/reports/iipc2007conference.pdf from the World Wide Web and writes it in a WARC file
+## Table A.1
+
+Use case one: An archiving crawler fetches
+http://netpreserve.org/reports/iipc2007conference.pdf from the World
+Wide Web and writes it in a WARC file
+
 <div class="table-responsive">
 <table class="table table-bordered">
 <tbody>
 <tr>
 <td>
-A request is sent by the crawler to the server hosting http://netpreserve.org/reports/iipc2007conference.pdf
+A request is sent by the crawler to the server hosting
+http://netpreserve.org/reports/iipc2007conference.pdf
 </td>
 <td>
 <b>WARC record created:</b>
@@ -1272,7 +1276,8 @@ WARC-Date: 2007-10-24T10:14:22Z
 </pre>
 </td></tr>
 <tr><td>
-Metadata further describing the harvesting process / the harvested record are added (e.g. information coming from the log files)
+Metadata further describing the harvesting process / the harvested
+record are added (e.g. information coming from the log files)
 </td><td>
 <b>WARC record created:</b>
 <pre>
@@ -1283,7 +1288,9 @@ WARC-Concurrent-To: <i>WARC-Record ID of
 </pre>
 </td></tr>
 <tr><td>
-If the file harvested on the web is too big to be contained in a single WARC file (e.g. 1,5 GB), the WARC record is segmented and a second record is created
+If the file harvested on the web is too big to be contained in a single
+WARC file (e.g. 1,5 GB), the WARC record is segmented and a second
+record is created
 </td><td>
 <b>Second WARC record created:</b>
 <pre>
@@ -1295,8 +1302,12 @@ WARC-Date: 2007-10-24T10:14:22Z
 </table>
 </div>
 
+## Table A.2
 
-#### Table A.2 — Use case two: The XML version of the French Gazette of 2007-11-01 has been transferred to the National Library of France (via FTP or email) and is written in a WARC file
+Use case two: The XML version of the French Gazette of 2007-11-01 has
+been transferred to the National Library of France (via FTP or email)
+and is written in a WARC file
+
 <div class="table-responsive">
 <table class="table table-bordered">
 <tbody>
@@ -1314,7 +1325,8 @@ WARC-Date: 2007-11-02T15:20:44Z
 </tr>
 <tr>
 <td>
-Metadata further describing the archiving process / the archived record are added (e.g. information about the transfer)
+Metadata further describing the archiving process / the archived record
+are added (e.g. information about the transfer)
 </td>
 <td>
 <b>WARC record created:</b>
@@ -1330,13 +1342,19 @@ WARC-Concurrent-To: <i>WARC-Record ID of
 </table>
 </div>
 
-#### Table A.3 — Use case three: An archiving crawler fetches http://netpreserve.org/reports/iipc2007conference.pdf from the World Wide Web that has not changed since the latest harvest
+## Table A.3
+
+Use case three: An archiving crawler fetches
+http://netpreserve.org/reports/iipc2007conference.pdf from the World
+Wide Web that has not changed since the latest harvest
+
 <div class="table-responsive">
 <table class="table table-bordered">
 <tbody>
 <tr>
 <td>
-A request is sent by the crawler to the server hosting http://netpreserve.org/reports/iipc2007conference.pdf
+A request is sent by the crawler to the server hosting
+http://netpreserve.org/reports/iipc2007conference.pdf
 </td>
 <td>
 <b>WARC record created:</b>
@@ -1350,7 +1368,9 @@ WARC-Concurrent-To: <i>WARC-Record ID of
 </tr>
 <tr>
 <td>
-The crawler detects that the file is the same as previously archived and that it has not changed. The entire file is not recorded to avoid duplicates and reduce storage redundancy
+The crawler detects that the file is the same as previously archived and
+that it has not changed. The entire file is not recorded to avoid
+duplicates and reduce storage redundancy
 </td>
 <td>
 <b>WARC record created:</b>
@@ -1366,7 +1386,13 @@ WARC-Refers-To: <i>WARC-Record ID of
 </table>
 </div>
 
-#### Table A.4 — Use case four: After the end of the harvest, Jhove is used to validate the format of http://netpreserve.org/reports/iipc2007conference.pdf and the validation results are stored in a WARC file and linked to the corresponding record
+## Table A.4
+
+Use case four: After the end of the harvest, Jhove is used to validate
+the format of http://netpreserve.org/reports/iipc2007conference.pdf and
+the validation results are stored in a WARC file and linked to the
+corresponding record
+
 <div class="table-responsive">
 <table class="table table-bordered">
 <tbody>
@@ -1386,10 +1412,14 @@ WARC-Refers-To: <i>WARC-Record ID of
 </tr>
 </tbody>
 </table>
-</div>  
+</div>
 
+## Table A.5
 
-#### Table A.5 — Use case five: http://netpreserve.org/reports/iipc2007conference.pdf file format has become obsolete as it cannot be read anymore by the existing rendering tools
+Use case five: http://netpreserve.org/reports/iipc2007conference.pdf
+file format has become obsolete as it cannot be read anymore by the
+existing rendering tools
+
 <div class="table-responsive">
 <table class="table table-bordered">
 <tbody>
@@ -1426,7 +1456,10 @@ WARC-Refers-To: <i>WARC-Record ID of
 </table>
 </div>  
 
-#### Table A.6 — Different use cases for record timestamps, featuring different levels of precision
+## Table A.6
+
+Different use cases for record timestamps, featuring different levels of
+precision
 
 <div class="table-responsive">
 <table class="table table-bordered">
