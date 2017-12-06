@@ -62,3 +62,8 @@ dd {
 dd:before {
   content: "\2014  ";
 }
+
+ol {
+    list-style-type: lower-alpha;
+}
+
