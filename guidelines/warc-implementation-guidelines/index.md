@@ -11,9 +11,9 @@ latest: true
 **Author:** Clément Oury
 **Date:** 27/01/2009
 
-# 1 Objectives and organization
+# Objectives and organization
 
-## 1.1 Objectives and scope
+## Objectives and scope
 
 Since May 15, 2009, memory institutions and other digital archiving organizations can
 use a standardized way to store and preserve documents harvested from the web: the
@@ -54,7 +54,7 @@ practitioners who use the standard in real-life situations.
 
 This document is called "WARC implementation guidelines”.
 
-## 1.2 Document management and evolution
+## Document management and evolution
 
 This document is based on WARC experts brainstorming and on first developer’s
 experiences towards WARC. It has been written by a task force gathering people
@@ -90,7 +90,7 @@ Version | Date       | Nature of update
 0.2.1   | 2009-09-25 | Additions made to the section dedicated to record identification.
 1.0     | 2009-01-27 | 1st  validated version. It takes into account comments from Gordon Paynter and from IIPC Preservation Working Group members. The document form and expression was also amended
 
-## 1.3 Organization
+## Organization
 
 The document structure reflects the main circumstances in which WARC files may be
 created. Therefore, it does not follow the actual presentation order of the standard, but
@@ -109,9 +109,9 @@ For each functional case, recommendations are provided on the way WARC records a
 well as WARC fields within WARC records should be written. Examples of records may be
 provided.
 
-## 1.4 Related documents
+## Related documents
 
-### 1.4.1 WARC Standard
+### WARC Standard
 
 This document does not replace the WARC standard; it should be read as a companion
 document. To avoid redundancy references to the standard are made throughout these
@@ -131,7 +131,7 @@ experts before the ISO editorial board added modifications. From a technical poi
 view, this draft is similar to the published standard, but the forms of the two documents
 are different.
 
-### 1.4.2 Other documents
+### Other documents
 
 A general introduction to the WARC format and to those guidelines has been done
 during the IIPC conference on “Active Solutions for Preserving Internet Content”, held in
@@ -143,14 +143,14 @@ is available on the Preservation Working Group wiki:
 this document is only a work in progress and may be updated (access restricted to IIPC
 members only).
 
-# 2 General recommendations
+# General recommendations
 
-## 2.1 Scope
+## Scope
 
 This section is dedicated to recommendations that apply in all cases where WARC files
 are produced.
 
-## 2.2 File naming
+## File naming
 
 WARC file names should represent a first set of information on the content and the
 origin of the files. For this reason they should strictly follow carefully defined
@@ -241,9 +241,9 @@ In combination, the Target Instance number (1179651) and ARC sequence number
 Note: recommendations on the design of internal crawl instance IDs might be later
 given by the working group.
 
-## 2.3 Record identification
+## Record identification
 
-### 2.3.1 General
+### General
 
 There are two common ways to identify a WARC record. Historically, the record’s
 Target-URI and record creation date (“URL+Timestamp”) have been used. The
@@ -274,7 +274,7 @@ large number of unique IDs is typically required (e.g., billions for a large col
 building initiative spanning years), so an appropriate identifier generation method
 should be considered.
 
-### 2.3.2 Identifier Generation
+### Identifier Generation
 
 The generation method refers to the technical means for creating potentially billions of
 unique strings.
@@ -297,7 +297,7 @@ recommended that these strings be embedded in a service context that represents 
 as globally (not just locally) unique. Global uniqueness provides the best foundation for
 interoperation among different institutional collections, such as a federation archives.
 
-### 2.3.3 Identifier Service Context
+### Identifier Service Context
 
 The identifier service context is extra information, such as an identifier scheme label,
 that is added to the generated string before using it as a record ID. For example, here
@@ -358,9 +358,9 @@ pluggable component of the WARC writing tools.
 > **recommendation #7:** WARC writing tools should enable institutions to choose their
 > own records identification system.
 
-## 2.4 Recording of processing information
+## Recording of processing information
 
-### 2.4.1 General
+### General
 
 WARC files are intended to be self-descriptive. Therefore, they should contain all
 information on why and how they have been created, including configuration files, log
@@ -401,7 +401,7 @@ To record context and provenance information that pertain to a higher level than
 one of the WARC file, this document recommends using the same locations as for
 information pertaining to the WARC file level: warcinfo, resource and metadata records.
 
-### 2.4.2 Use of warcinfo records for processing information
+### Use of warcinfo records for processing information
 
 It is recommended to record in warcinfo:
 
@@ -437,7 +437,7 @@ At last, all WARC records, whatever their record type may be (except warcinfo re
 should have a WARC-Warcinfo-ID field. This information is critical to recall the origin of
 each WARC record.
 
-### 2.4.3 Use of resource records for processing information
+### Use of resource records for processing information
 
 Some information cannot be recorded in warcinfo records, as it is released at the end of
 a crawl process: notably configuration, report and log files. These files should be located
@@ -483,7 +483,7 @@ larger than 1 Gb. In this case, two solutions are possible:
 A third solution would be to truncate the crawl log after the maximum size has been
 reached. This solution is not recommended.
 
-### 2.4.4 Association of records to the crawl instance level
+### Association of records to the crawl instance level
     
 To associate these resource records to the level of the crawl instance, it is
 recommended – at the end of the crawl process – to write a metadata record that lists
@@ -567,15 +567,15 @@ for manifest metadata records might be proposed by the working group.
 
 > **recommendation #10:** Use a WARC-Filename field in every warcinfo record
 
-# 3 Web harvesting
+# Web harvesting
 
-## 3.1 Scope
+## Scope
 
 This section is dedicated to recommendations on how to write WARC files during a web
 harvesting session. Basically, it describes how should behave the WARC writing module
 of a crawler.
 
-## 3.2 Record types generated during web harvesting
+## Record types generated during web harvesting
 
 Typically, the harvesting of a file on the web may generate two different sets of records.
 
@@ -591,9 +591,9 @@ and the same Target-URI, and are linked together using WARC-Concurrent-To
 relationships. A revisit record is also linked to the original response record using WARC-
 Refers-To field.
 
-## 3.3 Use of metadata records in web harvesting
+## Use of metadata records in web harvesting
 
-### 3.3.1 General
+### General
 
 Different kind of information may be located in the metadata records concurrent-to
 response records. You may find examples of relevant information in the draft IIPC
@@ -603,7 +603,7 @@ For now, these implementation guidelines only study the case of payload informat
 generated during the harvesting process. Other examples and cases may be added
 later.
 
-### 3.3.2 Recording payload information generated during the harvesting process
+### Recording payload information generated during the harvesting process
 
 Metadata records may be used to record additional information on the harvested
 payload. This information will typically be format information generated by identification
@@ -628,9 +628,9 @@ of the record containing the corresponding payload. The name of the format and i
 possible its version number should be recorded in the WARC-Identified-Payload-Type
 field of the record containing the corresponding payload.
 
-# 4 Data packaging
+# Data packaging
 
-## 4.1 Scope
+## Scope
 
 This section is dedicated to recommendations on how to package in WARC files data that
 are not directly harvested on the Web (but that may have been originally published on
@@ -638,9 +638,9 @@ the Web). As there is still very few users experience towards this topic, most o
 section refers to ARC/WARC conversion, that how to package in WARC files data
 previously contained in ARC files.
 
-## 4.2 ARC to WARC conversion
+## ARC to WARC conversion
 
-### 4.2.1 Number of ARC and WARC files
+### Number of ARC and WARC files
 
 As a first principle, it is recommended to convert one ARC file into one WARC file. Even
 though the standard size of ARC files (100 Mb) is ten times smaller than the one of
@@ -651,7 +651,7 @@ complex for ARC to WARC conversion tools.
 > **recommendation #12:** Maintain a 1 ARC file = 1 WARC file relationship for ARC to
 > WARC conversions.
 
-### 4.2.2 Converted WARC file names
+### Converted WARC file names
 
 There are typically two ways of generating the WARC filename:
 
@@ -679,7 +679,7 @@ been created from which machine).
 
 There is no agreement within the working group on which is the better solution.
 
-### 4.2.3 WARC-Date field
+### WARC-Date field
     
 Another question arises when it comes to the date of a converted WARC record. The
 standard states that the WARC-date field of a record should be filed with a timestamp
@@ -704,7 +704,7 @@ To record the date when the ARC to WARC conversion occurred, the converted recor
 should be linked to the warcinfo record describing the conversion process, thanks to its
 WARC-Warcinfo-ID field.
 
-### 4.2.4 ARC filedesc record
+### ARC filedesc record
 
 The filedesc of an ARC file is a special case record giving some information on the crawl
 operation itself. It is located at the beginning of each ARC file.
@@ -723,7 +723,7 @@ of the filedesc).
 > **Recommendation #14:** The filedesc of an ARC file should be located in a metadata
 > record concurrent to the warcinfo record of the converted WARC file.
 
-## 4.3 Packaging web data to WARC
+## Packaging web data to WARC
 
 This section is dedicated to recommendations on how to package into WARC files data
 originally published on the Web and copied offline afterwards.
@@ -735,7 +735,7 @@ This section is currently empty; however some recommendations expressed for ARC 
 WARC conversion (notably on WARC dates) should apply. Other recommendations may
 be given in the future.
 
-## 4.4 Packaging non-web data to WARC
+## Packaging non-web data to WARC
 
 Several institutions use ARC file format to store and manage non web resources, for
 example digitized books or electronic journals. Note that the WARC standard was
@@ -745,7 +745,7 @@ application layer protocols (HTTP, DNS, FTP).
 Therefore it has been decided not to include recommendations on the packaging of non-
 web data into WARC files in the scope of these WARC implementation guidelines.
 
-## 5.2 Payload identification and characterization
+## Payload identification and characterization
 
 During a harvest session, very little information is obtained on the format of the
 harvested files. The most common information is the MIME type of the file, sent by the
@@ -793,7 +793,7 @@ extraction (reporting the intrinsic properties of a digital object) and assessme
 level of acceptability of a digital object for a specific use on the basis of locally-defined policies).
 See [http://www.bl.uk/ipres2008/ipres2008-proceedings.pdf.](http://www.bl.uk/ipres2008/ipres2008-proceedings.pdf)</aside>
 
-### 5.3 Virus checking
+### Virus checking
 
 Archives may consider viruses contained in payloads to be a threat to their own
 computing system or that of their users. They may use therefore an AV tool to check
@@ -817,9 +817,9 @@ goes against the goal of maintaining the collection’s integrity and authentici
 Moreover, changing a single record will force the institution to re-index the whole WARC
 file.
 
-## 5.4 WARC files repackaging
+## WARC files repackaging
 
-### 5.4.1 Repackaged record IDs
+### Repackaged record IDs
 
 This section is dedicated to WARC repackaging operations. A repackaging operation
 consists in copying a set of WARC records from an original WARC file, to a new WARC
@@ -835,7 +835,7 @@ a new record-ID.
 
 Other fields, including the WARC-Date field, should not change.
 
-### 5.4.2 Link with previous record
+### Link with previous record
 
 The repackaged record should be linked to the previous one. Two solutions are possible:
 
@@ -860,7 +860,7 @@ recommended, according to the repackaging operation goals:
     headers will not necessarily be meaningful as the WARC standard states that
     “named field may appear in any order” (section 4, page 3).
     
-## 4.3 Repackaged WARC file names
+## Repackaged WARC file names
 
 The name of a repackaged WARC file should follow the naming scheme defined in the
 annex C of the standard:
