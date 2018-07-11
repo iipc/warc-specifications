@@ -83,12 +83,37 @@ through times. Some parts of the document may be amended according to new user
 experiences. Additional problems or questions – not imagined yet – will probably be
 addressed and solved in the future.
 
-Version | Date       | Nature of update
---------|------------|-----------------
-0.1     | 2009-07-29 | First draft released following an expert meeting held in Paris on June 29, 2009.
-0.2     | 2009-09-21 | Second draft released, taking into account written comments and a conference call held on September 15, 2009
-0.2.1   | 2009-09-25 | Additions made to the section dedicated to record identification.
-1.0     | 2009-01-27 | 1st  validated version. It takes into account comments from Gordon Paynter and from IIPC Preservation Working Group members. The document form and expression was also amended
+<table class="table">
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Nature of update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>2009-07-29</td>
+<td>First draft released following an expert meeting held in Paris on June 29, 2009.</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>2009-09-21</td>
+<td>Second draft released, taking into account written comments and a conference call held on September 15, 2009</td>
+</tr>
+<tr>
+<td>0.2.1</td>
+<td>2009-09-25</td>
+<td>Additions made to the section dedicated to record identification.</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>2009-01-27</td>
+<td>1st validated version. It takes into account comments from Gordon Paynter and from IIPC Preservation Working Group members. The document form and expression was also amended</td>
+</tr>
+</tbody>
+</table>
 
 ## Organization
 
