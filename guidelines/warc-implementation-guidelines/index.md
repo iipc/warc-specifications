@@ -206,9 +206,9 @@ following scheme^1:
 Prefix-Timestamp-Serial-Crawlhost.warc.gz
 ```
 
-<aside>(^1) Annex C of WARC standard also recommends to IIPC institutions to begin their filenames with
-“IIPC”. This recommendation supposes that an internal identification system within IIPC has been
-defined. As this system does not exist yet, this recommendation can not be followed for now.</aside>
+> (^1) Annex C of WARC standard also recommends to IIPC institutions to begin their filenames with
+> “IIPC”. This recommendation supposes that an internal identification system within IIPC has been
+> defined. As this system does not exist yet, this recommendation can not be followed for now.
 
 “Prefix is an abbreviation usually reflective of the project or crawl that created this file.
 Time-stamp is a 14-digit GMT time-stamp indicating the time the file was initially begun.
@@ -787,6 +787,13 @@ identification, Jhove for validation and characterization. This kind of operatio
 commonly be made on payloads of response, resource, conversion or continuation
 records.
 
+> (^2) Stephen Abrams, Sheila Morrissey and Tom Cramer distinguish four possible operations:
+> identification (discovering in what format is encoded the file, and in what version), validation
+> (determining conformance of the file to the theoretical requirements of the format), features
+> extraction (reporting the intrinsic properties of a digital object) and assessment (determining the
+> level of acceptability of a digital object for a specific use on the basis of locally-defined policies).
+> See [http://www.bl.uk/ipres2008/ipres2008-proceedings.pdf.](http://www.bl.uk/ipres2008/ipres2008-proceedings.pdf)
+
 Identification and characterization can be performed during of after the harvest. See
 section 3.3.2 for recommendations on operations performed as part of the harvesting
 process.
@@ -810,13 +817,6 @@ use of external locations for format information.
 > Recommendation #15: Payload format information computed after the end of an
 > harvesting process should be recorded in metadata records, with a refers-to field that
 > indicates the ID of the record containing the corresponding payload.
-
-<aside>(^2) Stephen Abrams, Sheila Morrissey and Tom Cramer distinguish four possible operations:
-identification (discovering in what format is encoded the file, and in what version), validation
-(determining conformance of the file to the theoretical requirements of the format), features
-extraction (reporting the intrinsic properties of a digital object) and assessment (determining the
-level of acceptability of a digital object for a specific use on the basis of locally-defined policies).
-See [http://www.bl.uk/ipres2008/ipres2008-proceedings.pdf.](http://www.bl.uk/ipres2008/ipres2008-proceedings.pdf)</aside>
 
 ### Virus checking
 
