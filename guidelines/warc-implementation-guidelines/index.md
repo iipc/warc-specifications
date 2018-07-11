@@ -164,14 +164,14 @@ Note that the filename is stored in WARC-Filename field of the Warcinfo record. 
 content of this WARC-Filename field should not change even when the name of the
 WARC file is changed as it records the original name of the file.
 
-> **recommendation #1:** Institutions should create and maintain their own naming
+> **Recommendation #1:** Institutions should create and maintain their own naming
 > conventions.
 
-> **recommendation #2:** Information available in the file names should also be
+> **Recommendation #2:** Information available in the file names should also be
 > recorded elsewhere to allow institutions to be free to change the names of their files if
 > needed.
 
-> **recommendation #3:** The content of the WARC-Filename field of the Warcinfo
+> **Recommendation #3:** The content of the WARC-Filename field of the Warcinfo
 > record should not be changed.
 
 Annex C of the WARC standard recommend designing WARC file names according to the
@@ -346,16 +346,16 @@ identifiers. In making a choice, an institution may prefer identifiers consisten
 used for its other digital assets. Thus the identifiers generation system should be a
 pluggable component of the WARC writing tools.
 
-> **recommendation #4:** For the near future, use Collection+URL+Timestamp
+> **Recommendation #4:** For the near future, use Collection+URL+Timestamp
 > combination for harvested files identification when providing access to external users.
 
-> **recommendation #5:** Use WARC record identifiers for internal management and
+> **Recommendation #5:** Use WARC record identifiers for internal management and
 > preservation purposes.
 
-> **recommendation #6:** The chosen system of WARC record identifiers should
+> **Recommendation #6:** The chosen system of WARC record identifiers should
 > generate identifiers unique within and outside the institution collection.
 
-> **recommendation #7:** WARC writing tools should enable institutions to choose their
+> **Recommendation #7:** WARC writing tools should enable institutions to choose their
 > own records identification system.
 
 ## Recording of processing information
@@ -548,7 +548,7 @@ manifest metadata record (proposed as first example). Note that a specific MIME 
 for manifest metadata records might be proposed by the working group.
 
 <blockquote>
-<strong>recommendation #8:</strong> The following system should be used to record processing information at the record, container file and crawl instance level: 
+<strong>Recommendation #8:</strong> The following system should be used to record processing information at the record, container file and crawl instance level: 
 <table>
 <tr><th>Level of information</th><th>Location</th><th>Examples</th></tr>
 <tr><td rowspan="2">WARC record</td><td>Record headers</td><td>Reference to the request that caused the sending of the record </td></tr>
@@ -563,9 +563,9 @@ for manifest metadata records might be proposed by the working group.
 </table>
 </blockquote>
 
-> **recommendation #9:** Use a WARC-Warcinfo-ID field in every WARC record (except warcinfo records)
+> **Recommendation #9:** Use a WARC-Warcinfo-ID field in every WARC record (except warcinfo records)
 
-> **recommendation #10:** Use a WARC-Filename field in every warcinfo record
+> **Recommendation #10:** Use a WARC-Filename field in every warcinfo record
 
 # Web harvesting
 
@@ -648,7 +648,7 @@ WARC files (1 Gb), merging 10 ARC files in one single WARC file would make disap
 the original ARC files organization. Moreover, it would make the operation really more
 complex for ARC to WARC conversion tools.
 
-> **recommendation #12:** Maintain a 1 ARC file = 1 WARC file relationship for ARC to
+> **Recommendation #12:** Maintain a 1 ARC file = 1 WARC file relationship for ARC to
 > WARC conversions.
 
 ### Converted WARC file names
