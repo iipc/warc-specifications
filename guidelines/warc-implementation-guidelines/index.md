@@ -549,7 +549,7 @@ for manifest metadata records might be proposed by the working group.
 
 <blockquote>
 <strong>Recommendation #8:</strong> The following system should be used to record processing information at the record, container file and crawl instance level: 
-<table>
+<table class="table">
 <tr><th>Level of information</th><th>Location</th><th>Examples</th></tr>
 <tr><td rowspan="2">WARC record</td><td>Record headers</td><td>Reference to the request that caused the sending of the record </td></tr>
 <tr><td>Metadata record concurrent to the record </td><td>Seed URL that led to the harvesting of the record</td></tr>
