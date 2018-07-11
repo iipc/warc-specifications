@@ -1,10 +1,10 @@
---
+---
 title: WARC Implementation Guidelines
 type: guidelines
 version: 1.0
 numbered: true
 latest: true
---
+---
 
 **Contribution from WARC usage task force**
 
