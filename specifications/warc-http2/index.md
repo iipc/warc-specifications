@@ -44,15 +44,18 @@ a proposal via the [warc-specifications Github project].
 The WARC-Original-Protocol field denotes that the protocol messages in the
 record block was originally encoded using a different protocol.
 
-    WARC-Original-Protocol = "WARC-Original-Protocol" ":" protocol
-    protocol = "HTTP/2"
+    WARC-Original-Protocol = "WARC-Original-Protocol" ":" protocol-id
+    protocol-id = "h2"   ; HTTP/2 over TLS
+                | "h2c"  ; HTTP/2 over cleartext TCP
+                | <other protocol identifier>
 
 The WARC-Original-Protocol field should not be used when the record block
 contains the original protocol and the protocol can be determined from the
 value of the WARC record's Content-Type field.
 
-This document defines a single protocol value "HTTP/2". Other protocol values
-may be defined by future extensions.
+Protocol identifiers from the
+[TLS Application-Layer Protocol Negotiation (ALPN) Protocol IDs registry](https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids)
+may be used.
 
 The WARC-Original-Protocol field may be used in 'request', 'response',
 'resource' and 'metadata' records and shall not be used in 'warcinfo',
@@ -76,7 +79,7 @@ Example request record:
     WARC-Type: request
     WARC-Date: 2018-07-12T16:44:13.123Z
     WARC-Target-URI: https://example.org/
-    WARC-Original-Protocol: HTTP/2
+    WARC-Original-Protocol: h2
     Conent-Length: 75
     Content-Type: application/http;msgtype=request
 
@@ -92,7 +95,7 @@ Example response record:
     WARC-Type: response
     WARC-Date: 2018-07-12T16:44:13.123Z
     WARC-Target-URI: https://example.org/
-    WARC-Original-Protocol: HTTP/2
+    WARC-Original-Protocol: h2
     WARC-IP-Address: 192.0.2.1
     Conent-Length: 12131
     Content-Type: application/http;msgtype=response
@@ -114,7 +117,7 @@ Example resource record:
     WARC-Type: resource
     WARC-Date: 2018-07-12T16:44:13.123Z
     WARC-Target-URI: https://example.org/
-    WARC-Original-Protocol: HTTP/2
+    WARC-Original-Protocol: h2
     Content-Length: 12131
     Content-Type: text/html;charset=UTF-8
     
