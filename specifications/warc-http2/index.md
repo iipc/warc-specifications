@@ -47,15 +47,10 @@ record block was originally encoded using a different protocol.
     WARC-Original-Protocol = "WARC-Original-Protocol" ":" protocol-id
     protocol-id = "h2"   ; HTTP/2 over TLS
                 | "h2c"  ; HTTP/2 over cleartext TCP
-                | <other protocol identifier>
 
 The WARC-Original-Protocol field should not be used when the record block
 contains the original protocol and the protocol can be determined from the
 value of the WARC record's Content-Type field.
-
-Protocol identifiers from the
-[TLS Application-Layer Protocol Negotiation (ALPN) Protocol IDs registry](https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids)
-may be used.
 
 The WARC-Original-Protocol field may be used in 'request', 'response',
 'resource' and 'metadata' records and shall not be used in 'warcinfo',
@@ -69,8 +64,8 @@ with the header encoded as HTTP/1.1. When header information is unavailable a
 'resource' record should instead be used.
 
 In all three record types the fact the exchange originally occurred via HTTP/2
-should be recorded by including a WARC-Original-Protocol field with the value
-"HTTP/2".
+should be recorded by including a WARC-Original-Protocol field with the values
+"h2" for HTTP/2 over TLS or "h2c" for HTTP/2 of cleartext TCP.
 
 Example request record:
 
