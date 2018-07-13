@@ -29,7 +29,9 @@ of reading WARC files.
 
 Therefore this document proposes a mechanism for storing HTTP/2 requests and
 responses in their semantically equivalent HTTP/1.1 form and defines an
-extension WARC header field recording the original protocol version.
+extension WARC header field recording the original protocol version. It also
+defines a new 'push-promise' to hold the new server to client PUSH\_PROMISE
+message introduced by HTTP/2.
 
 Future versions of these extensions may specify how extra HTTP/2-specific
 information may be optionally encoded in extension fields or metadata records.
@@ -39,22 +41,35 @@ a proposal via the [warc-specifications Github project].
 
 [warc-specifications Github project]: https://github.com/iipc/warc-specifications
 
-# WARC-Original-Protocol field definition
+# 'push-promise' record type definition
 
-The WARC-Original-Protocol field denotes that the protocol messages in the
-record block was originally encoded using a different protocol.
+Type 'push-promise' record type holds the details of a request-like message
+sent from the server to the client to pre-emptively offer a resource without
+the client actually having requested it.
 
-    WARC-Original-Protocol = "WARC-Original-Protocol" ":" protocol-id
-    protocol-id = "h2"   ; HTTP/2 over TLS
-                | "h2c"  ; HTTP/2 over cleartext TCP
+Similar to the 'request' record type a 'push-promise' record is typically paired
+with a corresponding 'response' record. Note that both 'push-promise' and
+'response' are records messages sent from the server to the client as a client
+denotes its acceptance of a pushed resource by taking no action.
 
-The WARC-Original-Protocol field should not be used when the record block
-contains the original protocol and the protocol can be determined from the
-value of the WARC record's Content-Type field.
+## 'http' and 'https' URI schemes
 
-The WARC-Original-Protocol field may be used in 'request', 'response',
-'resource' and 'metadata' records and shall not be used in 'warcinfo',
-'conversion' and 'continuation' records.
+The 'push-promise' record block should contain a textual application/http
+representation of the HTTP request header the server sent via a HTTP/2 
+PUSH\_PROMISE frame. If the header was split over an initial PUSH\_PROMISE
+frame and subsequent CONTINUATION frames it should be reassembled and decoded
+as a single complete request.
+
+A WARC-IP-Address field should be used to record the network IP address of
+the server which sent the PUSH\_PROMISE.
+
+One or more WARC-Protocol fields should be used to record the network protocol.
+
+The WARC record's Content-Type field should contain the value defined by
+HTTP/1.1, "application/http;msgtype=request".
+
+A 'push-promise' record for a HTTP/2 push request has no defined payload as
+it is not possible to push a request body.
 
 # Encoding HTTP/2 messages as HTTP/1.1
 
@@ -64,7 +79,7 @@ with the header encoded as HTTP/1.1. When header information is unavailable a
 'resource' record should instead be used.
 
 In all three record types the fact the exchange originally occurred via HTTP/2
-should be recorded by including a WARC-Original-Protocol field with the values
+should be recorded by including a WARC-Protocol field with the values
 "h2" for HTTP/2 over TLS or "h2c" for HTTP/2 of cleartext TCP.
 
 Example request record:
@@ -74,7 +89,8 @@ Example request record:
     WARC-Type: request
     WARC-Date: 2018-07-12T16:44:13.123Z
     WARC-Target-URI: https://example.org/
-    WARC-Original-Protocol: h2
+    WARC-Protocol: h2
+    WARC-Protocol: tls/1.2
     Conent-Length: 75
     Content-Type: application/http;msgtype=request
 
@@ -90,7 +106,8 @@ Example response record:
     WARC-Type: response
     WARC-Date: 2018-07-12T16:44:13.123Z
     WARC-Target-URI: https://example.org/
-    WARC-Original-Protocol: h2
+    WARC-Protocol: h2
+    WARC-Protocol: tls/1.2
     WARC-IP-Address: 192.0.2.1
     Conent-Length: 12131
     Content-Type: application/http;msgtype=response
@@ -112,11 +129,16 @@ Example resource record:
     WARC-Type: resource
     WARC-Date: 2018-07-12T16:44:13.123Z
     WARC-Target-URI: https://example.org/
-    WARC-Original-Protocol: h2
+    WARC-Protocol: h2
     Content-Length: 12131
     Content-Type: text/html;charset=UTF-8
     
     [text/html payload follows]
+
+## Server push responses
+
+Via the server push mechanism a HTTP/2 server may return extra responses for
+resources that were not actually requested by the client. 
 
 ## Handling of reason phrases in HTTP responses
  
@@ -142,6 +164,6 @@ This is not a valid HTTP message and for interoperability programs writing
 WARC files must not write records like this. Programs translating WARC/2
 messages to HTTP/1.1 should write messages which obey grammar defined in
 [RFC 7230]. The original protocol version should instead be indicated using the
-WARC-Original-Protocol field defined above. 
+WARC-Protocol field defined in [warc-specifications#42](https://github.com/iipc/warc-specifications/issues/42).
 
 [RFC 7230]: https://tools.ietf.org/html/rfc7230
