@@ -4,9 +4,9 @@
 
 ### Protocol identifier
 
-> Identifiers should be a lowercase ASCII string of the form "name/version".
-> The slash character and version should be omitted if the protocol doesn't
-> have multiple versions or is fully backwards compatible.
+> Guidelines: When in doubt identifiers should be a lowercase ASCII string
+> of the form "name/version". The slash character and version should be
+> omitted if the protocol doesn't have multiple wire versions.
 >
 > Consider reusing identifiers from the following registry when possible:
 > https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
