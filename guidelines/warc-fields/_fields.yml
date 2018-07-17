@@ -1,0 +1,78 @@
+# Please run 'make' after editing.
+fields:
+  Content-Length:
+    since: 1.0
+    spec: WARC 1.1
+  Content-Type:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Block-Digest:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Concurrent-To:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Date:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Filename:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Identified-Payload-Type:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-IP-Address:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Payload-Digest:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Profile:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Protocol:
+    spec: issues/42
+    status: draft
+  WARC-Push-Promised-From:
+    spec: issues/43
+    status: draft
+  WARC-Record-ID:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Refers-To:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Refers-To-Date:
+    since: 1.1
+    spec: WARC 1.1
+  WARC-Refers-To-Target-URI:
+    since: 1.1
+    spec: WARC 1.1
+  WARC-Segment-Number:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Segment-Origin-ID:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Segment-Total-Length:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Target-URI:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Transcluded-By:
+    spec: issues/4
+    status: draft
+  WARC-Truncated:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Type:
+    since: 1.0
+    spec: WARC 1.1
+  WARC-Warcinfo-ID:
+    since: 1.0
+    spec: WARC 1.1
+specs:
+  issues: https://github.com/iipc/warc-specifications/issues
+  WARC 1.0: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.0/
+  WARC 1.1: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1/

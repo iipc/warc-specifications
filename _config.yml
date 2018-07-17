@@ -11,6 +11,9 @@ defaults:
     values:
       layout: "default"
 
+exclude:
+- "*/Makefile"
+
 gems:
   - jekyll-redirect-from
 
