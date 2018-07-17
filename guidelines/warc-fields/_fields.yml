@@ -32,10 +32,10 @@ fields:
     spec: WARC 1.1
   WARC-Protocol:
     spec: issues/42
-    status: draft
+    status: proposed
   WARC-Push-Promised-From:
     spec: issues/43
-    status: draft
+    status: proposed
   WARC-Record-ID:
     since: 1.0
     spec: WARC 1.1
@@ -62,7 +62,7 @@ fields:
     spec: WARC 1.1
   WARC-Transcluded-By:
     spec: issues/4
-    status: draft
+    status: proposed
   WARC-Truncated:
     since: 1.0
     spec: WARC 1.1

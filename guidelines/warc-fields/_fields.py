@@ -38,7 +38,7 @@ for name, value in sorted(data['fields'].items()):
     row = f"""
         <tr>
             <td>{name}</td>
-            <td>{status}</td>
+            <td><span class='badge spec-badge-status-{status}'>{status}</span></td>
             <td>{value.get('since', '')}</td>
             <td><a href="{spec_url}">{value['spec']}</a></td>
         </tr>
