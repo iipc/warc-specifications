@@ -8,7 +8,7 @@
 > The slash character and version should be omitted if the protocol doesn't
 > have multiple versions or is fully backwards compatible.
 >
-> Consider reusing identifiers from the following registry where posibble:
+> Consider reusing identifiers from the following registry when possible:
 > https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
 
 ### Specification URL (optional)
