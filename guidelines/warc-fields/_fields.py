@@ -24,8 +24,11 @@ Generated from fields.yml. Don't edit this directly. Run 'make' to update.
 for name, value in sorted(data['fields'].items()):
     spec = value.get('spec')
     if '/' in spec:
-        spec, path = spec.split('/', 1)
-        spec_url = data['specs'][spec] + '/' + path
+        spec_id, path = spec.split('/', 1)
+        spec_url = data['specs'][spec_id] + '/' + path
+    elif '#' in spec:
+        spec, path = spec.split('#', 1)
+        spec_url = data['specs'][spec] + '#' + path
     elif spec in data['specs']:
         spec_url = data['specs'][spec] + '#' + name.lower()
     else:
@@ -40,7 +43,7 @@ for name, value in sorted(data['fields'].items()):
             <td>{name}</td>
             <td><span class='badge spec-badge-status-{status}'>{status}</span></td>
             <td>{value.get('since', '')}</td>
-            <td><a href="{spec_url}">{value['spec']}</a></td>
+            <td><a href="{spec_url}">{spec}</a></td>
         </tr>
     """
     print(indent(dedent(row).strip('\n'), "    "))

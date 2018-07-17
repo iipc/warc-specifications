@@ -27,6 +27,9 @@ fields:
   WARC-Payload-Digest:
     since: 1.0
     spec: WARC 1.1
+  WARC-Previous-Record-ID:
+    spec: WARC Implementation Guidelines#link-with-previous-record
+    status: proposed
   WARC-Profile:
     since: 1.0
     spec: WARC 1.1
@@ -73,6 +76,7 @@ fields:
     since: 1.0
     spec: WARC 1.1
 specs:
+  WARC Implementation Guidelines: https://iipc.github.io/warc-specifications/guidelines/warc-implementation-guidelines/
   issues: https://github.com/iipc/warc-specifications/issues
   WARC 1.0: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.0/
   WARC 1.1: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1/
