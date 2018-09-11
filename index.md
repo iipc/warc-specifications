@@ -7,7 +7,7 @@ Introduction
 
 This site and the corresponding [GitHub repository](https://github.com/iipc/warc-specifications) are being used by IIPC members and other interested parties to track and improve various specifications and proposals relating to web archiving.
 
-In particular, [the specification of the WARC format](./specifications/warc-format/) is hosted here, and we will develop the forthcoming 1.1 version of the specification on this site, using GitHub [issues](https://github.com/iipc/warc-specifications/issues) and [pull requests](https://github.com/iipc/warc-specifications/pulls).
+In particular, [the specification of the WARC format](./specifications/warc-format/warc-1.1/) is hosted here, and we will develop the forthcoming 1.1 version of the specification on this site, using GitHub [issues](https://github.com/iipc/warc-specifications/issues) and [pull requests](https://github.com/iipc/warc-specifications/pulls).
 
 We also intend to publish and develop appropriate guidelines for web archiving, covering areas where common practice should be encouraged prior to any attempt at formal standardisation, e.g. through ISO.
 
