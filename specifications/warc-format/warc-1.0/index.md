@@ -9,7 +9,7 @@ version-of: warc-format
 ---
 
 Web sites and web pages emerge and disappear from the world wide web
-every day. For the past ten years, memory organizations have tried to
+every day. For the past ten years, many organizations have tried to
 find the most appropriate ways to collect and keep track of this vast
 quantity of important material using web-scale tools such as web
 crawlers. A web crawler is a program that browses the web in an
