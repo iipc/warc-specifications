@@ -42,6 +42,9 @@ body {
 .spec-badge-status-standard {
   background-color: #337AB7;
 }
+.spec-badge-status-wild {
+  background-color: #9400D3;
+}
 
 body {counter-reset: h1}
 h1 {counter-reset: h2}
