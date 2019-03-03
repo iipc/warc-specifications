@@ -12,6 +12,9 @@ fields:
   WARC-Concurrent-To:
     since: 1.0
     spec: WARC 1.1
+  WARC-Created-Date:
+    spec: warcit
+    status: wild
   WARC-Date:
     since: 1.0
     spec: WARC 1.1
@@ -60,6 +63,9 @@ fields:
   WARC-Segment-Total-Length:
     since: 1.0
     spec: WARC 1.1
+  WARC-Source-URI:
+    spec: warcit
+    status: wild
   WARC-Target-URI:
     since: 1.0
     spec: WARC 1.1
@@ -80,3 +86,4 @@ specs:
   issues: https://github.com/iipc/warc-specifications/issues
   WARC 1.0: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.0/
   WARC 1.1: https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1/
+  warcit: https://github.com/webrecorder/warcit
