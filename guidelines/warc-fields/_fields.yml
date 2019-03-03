@@ -13,7 +13,7 @@ fields:
     since: 1.0
     spec: WARC 1.1
   WARC-Created-Date:
-    spec: warcit
+    spec: warcit#warc-structure-and-format
     status: wild
   WARC-Date:
     since: 1.0
@@ -64,7 +64,7 @@ fields:
     since: 1.0
     spec: WARC 1.1
   WARC-Source-URI:
-    spec: warcit
+    spec: warcit#warc-structure-and-format
     status: wild
   WARC-Target-URI:
     since: 1.0
