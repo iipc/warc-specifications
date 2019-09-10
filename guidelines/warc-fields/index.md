@@ -17,30 +17,26 @@ standardisation or just used in the wild without formal specification.
     </thead>
     <tbody>
     {%- assign refs = site.data.refs %}
-    {%- assign fields = site.data.warc_fields %}
-    {%- for field in fields %}
-        {%- assign name = field.first %}
-        {%- assign attrs = field.last %}
-        {%- assign spec = attrs.spec %}
-        {%- assign spec_base = spec | replace: "#", "/" | split: "/" | first %}
-        {%- if refs[spec] %}
-            {%- assign lower_name = name | downcase %}
-            {%- assign spec_url = refs[spec] | append: "#" | append: lower_name %}
+    {%- for field in site.data.warc_fields %}
+        {%- assign spec_base = field.spec | replace: "#", "/" | split: "/" | first %}
+        {%- if refs[field.spec] %}
+            {%- assign lower_name = field.name | downcase %}
+            {%- assign spec_url = refs[field.spec] | append: "#" | append: lower_name %}
         {%- else  %}
             {%- if refs[spec_base] %}
-                {%- assign spec_url = spec | replace_first: spec_base, refs[spec_base] %}
+                {%- assign spec_url = field.spec | replace_first: spec_base, refs[spec_base] %}
             {%- endif %}
         {%- endif %}
-        {%- assign status = attrs.status %}
+        {%- assign status = field.status %}
         {%- unless status %}
-            {%- if attrs.since %}
+            {%- if field.since %}
                 {%- assign status = "standard" %}
             {%- endif %}
         {%- endunless %}
         <tr>
-            <td>{{ name }}</td>
+            <td>{{ field.name }}</td>
             <td><span class='badge spec-badge-status-{{ status }}'>{{ status }}</span></td>
-            <td>{{ attrs.since }}</td>
+            <td>{{ field.since }}</td>
             <td><a href="{{ spec_url }}">{{ spec_base }}</a></td>
         </tr>
     {%- endfor %}
