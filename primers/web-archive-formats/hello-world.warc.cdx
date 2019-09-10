@@ -1,0 +1,5 @@
+ CDX N b a m s k r M S V g
+io,github,iipc)/warc-specifications/primers/web-archive-formats/hello-world.txt 20150708215513 http://iipc.github.io/warc-specifications/primers/web-archive-formats/hello-world.txt text/plain 200 XMABAYFTCASBJ5QATNBILSXH6PSZEMG4 - - 1085 1260 hello-world.warc
+metadata)/gnu.org/software/wget/warc/manifest.txt 20150708215513 metadata://gnu.org/software/wget/warc/MANIFEST.txt text/plain - B2CRHOOYITJQSOUNGVNII5B54SBG63P2 - - 419 2349 hello-world.warc
+metadata)/gnu.org/software/wget/warc/wget_arguments.txt 20150708215513 metadata://gnu.org/software/wget/warc/wget_arguments.txt text/plain - KTV2WSNW5VSOLYZINAXKR3LXV7T4MMGI - - 564 2772 hello-world.warc
+metadata)/gnu.org/software/wget/warc/wget.log 20150708215513 metadata://gnu.org/software/wget/warc/wget.log text/plain - 3NZMVDB5DUHNA332E57M2IS5FUFIJ24E - - 941 3340 hello-world.warc

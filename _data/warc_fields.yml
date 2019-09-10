@@ -1,0 +1,81 @@
+- name: Content-Length
+  since: 1.0
+  spec: WARC 1.1
+- name: Content-Type
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Block-Digest
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Concurrent-To
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Creation-Date
+  spec: warcit#warc-structure-and-format
+  status: wild
+- name: WARC-Date
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Filename
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Identified-Payload-Type
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-IP-Address
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Payload-Digest
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Previous-Record-ID
+  spec: WARC Implementation Guidelines#link-with-previous-record
+  status: proposed
+- name: WARC-Profile
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Protocol
+  spec: issues/42
+  status: proposed
+- name: WARC-Push-Promised-From
+  spec: issues/43
+  status: proposed
+- name: WARC-Record-ID
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Refers-To
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Refers-To-Date
+  since: 1.1
+  spec: WARC 1.1
+- name: WARC-Refers-To-Target-URI
+  since: 1.1
+  spec: WARC 1.1
+- name: WARC-Segment-Number
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Segment-Origin-ID
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Segment-Total-Length
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Source-URI
+  spec: warcit#warc-structure-and-format
+  status: wild
+- name: WARC-Target-URI
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Transcluded-By
+  spec: issues/4
+  status: proposed
+- name: WARC-Truncated
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Type
+  since: 1.0
+  spec: WARC 1.1
+- name: WARC-Warcinfo-ID
+  since: 1.0
+  spec: WARC 1.1

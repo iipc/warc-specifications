@@ -1,0 +1,72 @@
+body {
+/*  padding-top: 50px; only good when navbar is fixed to top, which messes with anchors.*/
+}
+
+#sidebar {
+  margin-top: 1em;
+}
+
+#toc ul {
+  padding-left: 1.5em;
+  list-style-type: none;
+}
+
+#edit_button {
+  margin-top: 1.5em;
+}
+
+#toc UL { counter-reset: item }
+#toc LI { display: block }
+#toc .numbered-headers LI:before { content: counters(item, "."); counter-increment: item; padding-right:0.5em; margin-left:-1em;}
+
+.spec-status {
+  font-weight: bold;
+  text-align: center;
+  padding: 1em 1em;
+  background-color: #ffffee;
+  margin: 0.5em;
+}
+.spec-status-adopted {
+  background-color: #eeffee;
+}
+.spec-status-standard {
+  background-color: #eeeeff;
+}
+
+.spec-badge-status-proposed {
+  background-color: #F0AD4E;
+}
+.spec-badge-status-adopted {
+  background-color: #5CB85C;
+}
+.spec-badge-status-standard {
+  background-color: #337AB7;
+}
+.spec-badge-status-wild {
+  background-color: #9400D3;
+}
+
+body {counter-reset: h1}
+h1 {counter-reset: h2}
+h2 {counter-reset: h3}
+h3 {counter-reset: h4}
+h4 {counter-reset: h5}
+.numbered-headers h1:before {counter-increment: h1; content: counter(h1) " "}
+.numbered-headers h2:before {counter-increment: h2; content: counter(h1) "." counter(h2) " "}
+.numbered-headers h3:before {counter-increment: h3; content: counter(h1) "." counter(h2) "." counter(h3) " "}
+.numbered-headers h4:before {counter-increment: h4; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " "}
+.numbered-headers h5:before {counter-increment: h5; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "}
+h1.nocount:before, h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before { content: ""; counter-increment: none } 
+
+dd {
+  margin-bottom: 0.25em;
+}
+
+dd:before {
+  content: "\2014  ";
+}
+
+ol {
+    list-style-type: lower-alpha;
+}
+
