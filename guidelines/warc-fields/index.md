@@ -17,7 +17,7 @@ standardisation or just used in the wild without formal specification.
     </thead>
     <tbody>
     {%- assign specs = site.data.warc_fields.specs %}
-    {%- assign fields = site.data.warc_fields.fields | sort: 0 %}
+    {%- assign fields = site.data.warc_fields.fields %}
     {%- for field in fields %}
         {%- assign name = field.first %}
         {%- assign attrs = field.last %}
