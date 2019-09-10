@@ -16,19 +16,19 @@ standardisation or just used in the wild without formal specification.
         </tr>
     </thead>
     <tbody>
-    {%- assign specs = site.data.warc_fields.specs %}
-    {%- assign fields = site.data.warc_fields.fields %}
+    {%- assign refs = site.data.refs %}
+    {%- assign fields = site.data.warc_fields %}
     {%- for field in fields %}
         {%- assign name = field.first %}
         {%- assign attrs = field.last %}
         {%- assign spec = attrs.spec %}
         {%- assign spec_base = spec | replace: "#", "/" | split: "/" | first %}
-        {%- if specs[spec] %}
+        {%- if refs[spec] %}
             {%- assign lower_name = name | downcase %}
-            {%- assign spec_url = specs[spec] | append: "#" | append: lower_name %}
+            {%- assign spec_url = refs[spec] | append: "#" | append: lower_name %}
         {%- else  %}
-            {%- if specs[spec_base] %}
-                {%- assign spec_url = spec | replace_first: spec_base, specs[spec_base] %}
+            {%- if refs[spec_base] %}
+                {%- assign spec_url = spec | replace_first: spec_base, refs[spec_base] %}
             {%- endif %}
         {%- endif %}
         {%- assign status = attrs.status %}
