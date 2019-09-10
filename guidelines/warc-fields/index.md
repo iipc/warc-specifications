@@ -37,7 +37,7 @@ standardisation or just used in the wild without formal specification.
             <td>{{ field.name }}</td>
             <td><span class='badge spec-badge-status-{{ status }}'>{{ status }}</span></td>
             <td>{{ field.since }}</td>
-            <td><a href="{{ spec_url }}">{{ spec_base }}</a></td>
+            <td><a href="{{ spec_url }}">{{ field.spec | split: "#" | first }}</a></td>
         </tr>
     {%- endfor %}
     </tbody>
