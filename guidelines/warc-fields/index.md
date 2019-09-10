@@ -17,18 +17,18 @@ standardisation or just used in the wild without formal specification.
     </thead>
     <tbody>
     {%- assign specs = site.data.warc_fields.specs %}
-    {%- for field in site.data.warc_fields.fields %}
+    {%- assign fields = site.data.warc_fields.fields | sort: 0 %}
+    {%- for field in fields %}
         {%- assign name = field.first %}
         {%- assign attrs = field.last %}
         {%- assign spec = attrs.spec %}
+        {%- assign spec_base = spec | replace: "#", "/" | split: "/" | first %}
         {%- if specs[spec] %}
             {%- assign lower_name = name | downcase %}
             {%- assign spec_url = specs[spec] | append: "#" | append: lower_name %}
         {%- else  %}
-            {%- assign spec_base = spec | replace: "#", "/" | split: "/" | first %}
-            {%- assign spec_ref = specs[spec_base] %}
-            {%- if spec_ref %}
-                {%- assign spec_url = spec | replace_first: spec_base, spec_ref %}
+            {%- if specs[spec_base] %}
+                {%- assign spec_url = spec | replace_first: spec_base, specs[spec_base] %}
             {%- endif %}
         {%- endif %}
         {%- assign status = attrs.status %}
@@ -41,7 +41,7 @@ standardisation or just used in the wild without formal specification.
             <td>{{ name }}</td>
             <td><span class='badge spec-badge-status-{{ status }}'>{{ status }}</span></td>
             <td>{{ attrs.since }}</td>
-            <td><a href="{{ spec_url }}">{{ spec }}</a></td>
+            <td><a href="{{ spec_url }}">{{ spec_base }}</a></td>
         </tr>
     {%- endfor %}
     </tbody>
