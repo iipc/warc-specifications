@@ -12,7 +12,7 @@ fields:
   WARC-Concurrent-To:
     since: 1.0
     spec: WARC 1.1
-  WARC-Created-Date:
+  WARC-Creation-Date:
     spec: warcit#warc-structure-and-format
     status: wild
   WARC-Date:
