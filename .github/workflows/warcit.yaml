@@ -68,7 +68,7 @@ jobs:
           if (test -a CNAME); then
             PREFIX="https://$(cat CNAME)/";
           else
-            PREFIX="https://$(echo $GITHUB_REPOSITORY | sed -e 's/\//.github.io\//g')/"
+            PREFIX="https://$(echo $GITHUB_REPOSITORY | sed 's|/|.github.io/|')/"
           fi
           warcit -v "$PREFIX" -n ./iipc-warc-specifications.warc.gz ./_site/
 
