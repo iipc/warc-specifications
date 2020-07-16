@@ -65,18 +65,26 @@ jobs:
       - name: warcit
         run: |
           pip install warcit
+          # if CNAME is present, use that as the site prefix
           if (test -a CNAME); then
             PREFIX="https://$(cat CNAME)/";
+          # otherwise, determine prefix from [organization]/[repo] in GITHUB_REPOSITORY and insert .github.io to make it [organization].github.io/[repo]
           else
             PREFIX="https://$(echo $GITHUB_REPOSITORY | sed 's|/|.github.io/|')/"
           fi
-          warcit -v "$PREFIX" -n ./iipc-warc-specifications.warc.gz ./_site/
+
+          export TIMESTAMP=$(date +%Y%m%d%H%M%S)
+          export FILENAME="$(echo $GITHUB_REPOSITORY | 's|/|-|')-$TIMESTAMP.warc.gz"
+          warcit -v "$PREFIX" -n ./$FILENAME ./_site/
+
+          echo "::set-env name=FILENAME::$FILENAME"
+
 
       - name: upload WARC
         uses: actions/upload-artifact@v1
         with:
-          name: iipc-warc-specifications.warc.gz
-          path: ./iipc-warc-specifications.warc.gz
+          name: ${{ env.FILENAME }}
+          path: ./${{ env.FILENAME }}
 
       #- name: deploy
       #  uses: peaceiris/actions-gh-pages@v3
