@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Checkout Git reference'
+        required: true
+        default: 'HEAD'
 
 jobs:
   jekyll:
@@ -11,12 +17,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-
-        # include the lines below if you are using jekyll-last-modified-at
-        # or if you would otherwise need to fetch the full commit history
-        # however this may be very slow for large repositories!
-        # with:
-        # fetch-depth: '0'
+        with:
+          fetch-depth: '0'
+      - name: Checkout supplied Git reference
+        if: github.event_name == 'workflow_dispatch'
+        run: git checkout ${{ github.event.inputs.ref }}
       - name: setup ruby
         uses: ruby/setup-ruby@v1
         with:
