@@ -74,7 +74,7 @@ jobs:
           fi
 
           export TIMESTAMP=$(date +%Y%m%d%H%M%S)
-          export FILENAME="$(echo $GITHUB_REPOSITORY | 's|/|-|')-$TIMESTAMP.warc.gz"
+          export FILENAME="$(echo $GITHUB_REPOSITORY | sed 's|/|-|')-$TIMESTAMP.warc.gz"
           warcit -v "$PREFIX" -n ./$FILENAME ./_site/
 
           echo "::set-env name=FILENAME::$FILENAME"
