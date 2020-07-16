@@ -7,7 +7,7 @@
     </div>
     <div class="panel-body">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="{{site.url}}/assets/javascripts/jquery.min.js"></script>
 <div id="github-issues-widget"></div>
 <script type="text/javascript">
   GITHUB_ISSUES_USER = "iipc";

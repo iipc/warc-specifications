@@ -1,0 +1,88 @@
+name: Generate WARC of Hosted Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  jekyll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+        # include the lines below if you are using jekyll-last-modified-at
+        # or if you would otherwise need to fetch the full commit history
+        # however this may be very slow for large repositories!
+        # with:
+        # fetch-depth: '0'
+      - name: setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6 # can change this to 2.7 or whatever version you prefer
+
+      - name: install dependencies & build site
+        uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true
+          ### Enables caching. Similar to https://github.com/actions/cache.
+          #
+          # format_output: true
+          ### Uses prettier https://prettier.io to format jekyll output HTML.
+          #
+          # prettier_opts: '{ "useTabs": true }'
+          ### Sets prettier options (in JSON) to format output HTML. For example, output tabs over spaces.
+          ### Possible options are outlined in https://prettier.io/docs/en/options.html
+          #
+          # prettier_ignore: 'about/*'
+          ### Ignore paths for prettier to not format those html files.
+          ### Useful if the file is exceptionally large, so formatting it takes a while.
+          ### Also useful if HTML compression is enabled for that file / formatting messes it up.
+          #
+          # jekyll_src: sample_site
+          ### If the jekyll website source is not in root, specify the directory. (in this case, sample_site)
+          ### By default, this is not required as the action searches for a _config.yml automatically.
+          #
+          # gem_src: sample_site
+          ### By default, this is not required as the action searches for a _config.yml automatically.
+          ### However, if there are multiple Gemfiles, the action may not be able to determine which to use.
+          ### In that case, specify the directory. (in this case, sample_site)
+          ###
+          ### If jekyll_src is set, the action would automatically choose the Gemfile in jekyll_src.
+          ### In that case this input may not be needed as well.
+          #
+          # key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          # restore-keys: ${{ runner.os }}-gems-
+          ### In cases where you want to specify the cache key, enable the above 2 inputs
+          ### Follows the format here https://github.com/actions/cache
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: warcit
+        run: |
+          pip install warcit
+          if (test -a CNAME); then
+            PREFIX="https://$(cat CNAME)/";
+          else
+            PREFIX="https://$(echo $GITHUB_REPOSITORY | sed -e 's/\//.github.io\//g')/"
+          fi
+          warcit -v "$PREFIX" -n ./iipc-warc-specifications.warc.gz ./_site/
+
+      - name: upload WARC
+        uses: actions/upload-artifact@v1
+        with:
+          name: iipc-warc-specifications.warc.gz
+          path: ./iipc-warc-specifications.warc.gz
+
+      #- name: deploy
+      #  uses: peaceiris/actions-gh-pages@v3
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: ./_site
+          # if the repo you are deploying to is <username>.github.io, uncomment the line below.
+          # if you are including the line below, make sure your source files are NOT in the master branch:
+          # publish_branch: master
