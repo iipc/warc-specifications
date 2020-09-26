@@ -15,7 +15,7 @@ previous-version: (c.2006)
 > 
 > (You can see it as the default in their CDX-Writer: https://github.com/internetarchive/CDX-Writer/blob/master/cdx_writer.py#L37)
 > 
-> An older 9-field format that was in use a few years back was: 
+> An older 9-field format that was in use a few years back:
 > 
 >     CDX N b a m s k r V g
 > 
@@ -57,7 +57,7 @@ B news group
 C rulespace category ***
 D compressed dat file offset
 F canonized frame
-G multi-columm language description (* soon)
+G multi-column language description (* soon)
 H canonized host
 I canonized image
 J canonized jump point
@@ -69,9 +69,9 @@ P canonized path
 Q language string
 R canonized redirect
 S compressed record size
-U uniqness ***
+U uniqueness ***
 V compressed arc file offset *
-X canonized url in other href tages
+X canonized url in other href tags
 Y canonized url in other src tags
 Z canonized url found in script
 a original url **
@@ -106,6 +106,8 @@ z url found in script *
 
 Document History
 ----------------
+
+*2020-09-26* -- Minor, fixed some typos.
 
 *2015-11-30* -- Added example CDX-11 record with tooltips and added 'S compressed record size' to the list.
 
