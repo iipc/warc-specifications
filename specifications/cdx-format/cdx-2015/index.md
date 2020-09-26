@@ -15,7 +15,7 @@ previous-version: (c.2006)
 > 
 > (You can see it as the default in their CDX-Writer: https://github.com/internetarchive/CDX-Writer/blob/master/cdx_writer.py#L37)
 > 
-> An older 9-field format that was in use a few years back was: 
+> An older 9-field format that was in use a few years back: 
 > 
 >     CDX N b a m s k r V g
 > 
@@ -49,35 +49,35 @@ The default first line of a CDX file is:
 CDX A b e a m s c k r V v D d g M n
 ~~~
 
-The letters use in dat files and cdx files are as follows:
+The letters use in .dat files and .cdx files are as follows:
 
 ~~~
 A canonized url
 B news group
 C rulespace category ***
-D compressed dat file offset
+D compressed .dat file offset
 F canonized frame
-G multi-columm language description (* soon)
+G multi-column language description (* soon)
 H canonized host
 I canonized image
 J canonized jump point
 K Some weird FBIS what's changed kinda thing
 L canonized link
 M meta tags (AIF) *
-N massaged url
+N messaged url
 P canonized path
 Q language string
 R canonized redirect
 S compressed record size
-U uniqness ***
-V compressed arc file offset *
-X canonized url in other href tages
+U uniqueness ***
+V compressed .arc file offset *
+X canonized url in other href tags
 Y canonized url in other src tags
 Z canonized url found in script
 a original url **
 b date **
 c old style checksum *
-d uncompressed dat file offset
+d uncompressed .dat file offset
 e IP **
 f frame *
 g file name
@@ -87,13 +87,13 @@ j original jump point
 k new style checksum *
 l link *
 m mime type of original document *
-n arc document length *
+n .arc document length *
 o port
 p original path
 r redirect *
 s response code *
 t title *
-v uncompressed arc file offset *
+v uncompressed .arc file offset *
 x url in other href tages *
 y url in other src tags *
 z url found in script *
@@ -106,6 +106,8 @@ z url found in script *
 
 Document History
 ----------------
+
+*2020-09-26* -- Minor, fixed some typos.
 
 *2015-11-30* -- Added example CDX-11 record with tooltips and added 'S compressed record size' to the list.
 
