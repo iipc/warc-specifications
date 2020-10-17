@@ -70,3 +70,7 @@ ol {
     list-style-type: lower-alpha;
 }
 
+pre.highlight {
+  /* Use same background color as bootstrap. */
+  background-color: #f5f5f5;
+}
