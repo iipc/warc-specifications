@@ -79,32 +79,7 @@ records.
 Like uncompressed WARC files, Zstandard-compressed WARC files must contain at
 least one record.
 
-## Dictionaries
-
-If a Zstandard-compressed WARC file does not contain a dictionary frame, each
-Zstandard frame in the file must be decompressed without a dictionary.
-
-If a Zstandard-compressed WARC file does contain a dictionary frame, it must
-follow the dictionary frame format described below. Each Zstandard frame in the
-file must be decompressed using the decoded dictionary.
-
-Encoders may use an arbitrary dictionary that follows the Zstandard dictionary
-format. They should attempt to give a unique ID to each dictionary. For
-example, they may use a random dictionary ID between 32,768 and 2,147,483,647.
-
-## Extension frames
-
-An extension frame is a skippable frame, as defined in [RFC 8478 section
-3.1.2], with a Magic\_Number other than `0x184D2A5D`. An arbitrary sequence of
-extension frames may appear before or after any Zstandard frame, except that
-the file may not begin with an extension frame.
-
-This specification does not define the format or meaning of any extension
-frame. This specification also does not define which WARC record an extension
-frame should be associated with, if any. Decoders must ignore any extension
-frames they do not recognize.
-
-# Zstandard frames
+## Zstandard frames
 
 Each Zstandard frame in a compressed WARC file must include the
 Frame\_Content\_Size and Content\_Checksum fields, which are described in [RFC
@@ -123,7 +98,20 @@ zero.
 Zstandard frames must use the standard format defined in [RFC 8478]; they
 must not use any of the legacy Zstandard formats not described there.
 
-# Dictionary frame format
+## Dictionaries
+
+If a Zstandard-compressed WARC file does not contain a dictionary frame, each
+Zstandard frame in the file must be decompressed without a dictionary.
+
+If a Zstandard-compressed WARC file does contain a dictionary frame, it must
+follow the dictionary frame format described below. Each Zstandard frame in the
+file must be decompressed using the decoded dictionary.
+
+Encoders may use an arbitrary dictionary that follows the Zstandard dictionary
+format. They should attempt to give a unique ID to each dictionary. For
+example, they may use a random dictionary ID between 32,768 and 2,147,483,647.
+
+### Dictionary frame format
 
 A dictionary frame is a skippable frame, as defined in [RFC 8478 section
 3.1.2], with a Magic\_Number of `0x184D2A5D`. The User\_Data field contains a
@@ -139,6 +127,18 @@ frames are not allowed. The Zstandard frame must be compressed without a
 dictionary, and the Frame\_Content\_Size and Content\_Checksum fields must be
 present. When the frame is decompressed, the result must be a single dictionary
 in the format given by [RFC 8478 section 5].
+
+## Extension frames
+
+An extension frame is a skippable frame, as defined in [RFC 8478 section
+3.1.2], with a Magic\_Number other than `0x184D2A5D`. An arbitrary sequence of
+extension frames may appear before or after any Zstandard frame, except that
+the file may not begin with an extension frame.
+
+This specification does not define the format or meaning of any extension
+frame. This specification also does not define which WARC record an extension
+frame should be associated with, if any. Decoders must ignore any extension
+frames they do not recognize.
 
 # Window and dictionary limits
 
