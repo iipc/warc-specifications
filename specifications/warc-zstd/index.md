@@ -203,22 +203,6 @@ Especially large window sizes may improve compression of especially large
 frames, but they carry the risk that a decoder will reject the frame if the
 window size is too large.
 
-## Encoding with libzstd
-
-When no dictionary is used, the default behavior of libzstd meets most of the
-requirements in this specification. Encoders must take care to include the
-Frame\_Content\_Size field in every frame, and to start a new frame for each
-new record.
-
-TODO: example code.
-
-## Decoding with libzstd
-
-When no dictionary is used, pretty much any way of using libzstd should work
-fine.
-
-TODO: example code.
-
 ## Random access
 
 As with GZIP, external indexes of Zstandard-compressed WARC file content may be
@@ -226,6 +210,63 @@ used to save each record's starting position in the file. An arbitrary record
 can then be decoded by loading the dictionary (if any) from the start of the
 file, then seeking to the known starting position and decoding Zstandard frames
 until the record is complete.
+
+## Encoding with libzstd
+
+The simplest way to create a Zstandard-compressed WARC file is to call
+`ZSTD_compress` separately on each record and concatenate the results. If
+encoders use other functions from libzstd, they must take care to include the
+Frame\_Content\_Size field in every frame, and to start a new frame for each
+new record.
+
+## Decoding with libzstd
+
+Most of the functions in libzstd already ignore skippable frames and
+concatenate decompressed Zstandard frames, so the only extra effort needed is
+to load the dictionary.
+
+The following code decompresses an entire WARC file. For simplicity, this code
+assumes the entire compressed file has been loaded into memory, and some
+error-handling code has been omitted.
+
+```c
+uint32_t readLE32(const uint8_t* src) {
+    return (uint32_t)src[0]
+         | (uint32_t)src[1] << 8
+         | (uint32_t)src[2] << 16
+         | (uint32_t)src[3] << 24;
+}
+
+size_t warc_zstd_decompress_file(uint8_t* dst, size_t dstCapacity,
+                           const uint8_t* src, size_t srcSize) {
+    ZSTD_DCtx* dctx = ZSTD_createDCtx();
+    if (srcSize >= 8 && readLE32(src) == 0x184D2A5D) {
+        // Dictionary frame.
+        uint32_t dictSize = readLE32(src + 4);
+        const uint8_t *dictData = src + 8;
+        if (dictSize < 4 || dictSize + 8 > srcSize) {
+            abort();
+        }
+        if (readLE32(dictData) == ZSTD_MAGIC_DICTIONARY) {
+            // Uncompressed dictionary.
+            ZSTD_DCtx_loadDictionary(dctx, dictData, dictSize);
+        } else if (readLE32(dictData) == ZSTD_MAGICNUMBER) {
+            // Compressed dictionary.
+            unsigned long long bufferSize;
+            bufferSize = ZSTD_getFrameContentSize(dictData, dictSize);
+            uint8_t* buffer = malloc(bufferSize);
+            size_t result = ZSTD_decompress(buffer, bufferSize, dictData, dictSize);
+            ZSTD_DCtx_loadDictionary(dctx, buffer, result);
+            free(buffer);
+        } else {
+            abort();
+        }
+    }
+    size_t result = ZSTD_decompressDCtx(dctx, dst, dstCapacity, src, srcSize);
+    ZSTD_freeDCtx(dctx);
+    return result;
+}
+```
 
 ## Combining files
 
