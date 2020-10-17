@@ -91,9 +91,6 @@ file must be decompressed using the decoded dictionary.
 Encoders may use an arbitrary dictionary that follows the Zstandard dictionary
 format. They should attempt to give a unique ID to each dictionary. For
 example, they may use a random dictionary ID between 32,768 and 2,147,483,647.
-This specification only requires support for dictionaries up to 8,388,608 bytes
-(8 mebibytes). Encoders are permitted to use larger dictionaries, but decoders
-may choose to reject such dictionaries with a suitable error message.
 
 ## Extension frames
 
@@ -126,16 +123,6 @@ zero.
 Zstandard frames must use the standard format defined in [RFC 8478]; they
 must not use any of the legacy Zstandard formats not described there.
 
-## Window size
-
-Each Zstandard frame has a value called Window\_Size, described in [RFC 8478
-section 3.1.1.1.2], which determines how much memory is needed to decode the
-frame. Although the Zstandard format supports window sizes up to 16 exabytes,
-sizes this large may be impractical for certain decoders. This specification
-only requires support for window sizes up to 8,388,608 bytes (8 mebibytes).
-Encoders are permitted to generate frames with larger window sizes, but
-decoders may choose to reject such frames with a suitable error message.
-
 # Dictionary frame format
 
 A dictionary frame is a skippable frame, as defined in [RFC 8478 section
@@ -150,9 +137,29 @@ If the dictionary is compressed, the User\_Data field must consist of a single
 Zstandard frame, starting with the bytes `0x28 0xB5 0x2F 0xFD`; skippable
 frames are not allowed. The Zstandard frame must be compressed without a
 dictionary, and the Frame\_Content\_Size and Content\_Checksum fields must be
-present. The same considerations apply for Window\_Size as given above. When
-the frame is decompressed, the result must be a single dictionary in the
-format given by [RFC 8478 section 5].
+present. When the frame is decompressed, the result must be a single dictionary
+in the format given by [RFC 8478 section 5].
+
+# Window and dictionary limits
+
+Each Zstandard frame has a value called Window\_Size, described in [RFC 8478
+section 3.1.1.1.2], which determines how much memory is needed to decode the
+frame. Although the Zstandard format supports window sizes up to 16 exabytes,
+sizes this large may be impractical for certain decoders. Memory requirements
+are also affected by the size of the dictionary, if any. This specification
+only requires decoders to support the following sizes:
+
+- Window sizes up to 8,388,608 bytes (2<sup>23</sup> bytes) in all Zstandard
+  frames, including Zstandard frames within dictionary frames.
+- Compressed dictionary sizes up to 8,388,608 bytes (2<sup>23</sup> bytes).
+  This refers to the size of the User\_Data field in the dictionary frame.
+- Decompressed dictionary sizes up to 8,388,608 bytes (2<sup>23</sup> bytes).
+  This refers to the size of the User\_Data field in the dictionary frame (when
+  the dictionary is not compressed) or the result of decompressing the
+  User\_Data field (when the dictionary is compressed).
+
+Encoders are permitted to generate files that exceed these limits, but decoders
+may choose to reject such files with a suitable error message.
 
 # Security considerations
 
