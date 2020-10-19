@@ -17,7 +17,7 @@ also achieving faster compression and decompression. Zstandard also offers a
 much wider range of compression levels, ranging from extremely fast compression
 with a modest size reduction to extremely slow compression with a much better
 reduction. For files containing many small records, Zstandard dictionaries can
-be used reduce file size even further, while still permitting random access to
+be used to reduce file size even further, while still permitting random access to
 individual records.
 
 ## Words of caution
