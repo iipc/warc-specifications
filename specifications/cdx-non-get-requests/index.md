@@ -1,8 +1,7 @@
 ---
 title: CDX for non-GET requests
 type: specification
-status: wild
-version: draft
+status: draft
 ---
 
 Originally CDX files were only used to index web archives containing  GET requests. As browser based capture methods
