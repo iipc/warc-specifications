@@ -199,7 +199,7 @@ is designed to facilitate this. A non-sorted CDXJ file is still valid as far as 
 searching. 
 
 When sorted, the sorting should be done based on the native byte values of the characters. This is equivalent to using the GNU sort with 
-the collation settings `LC_ALL=C`.
+the collation settings `LC_COLLATION=C`.
 
 The structure of the CDXJ is designed so that using common sorting tools (e.g. GNU sort utility) works as expected. Provided that the correct collation settings are set as described above.
 
