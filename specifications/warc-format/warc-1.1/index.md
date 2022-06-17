@@ -880,8 +880,6 @@ from which the response material was received.
 The contents of the 'response' record for other URI schemes are not
 specified in this International Standard.
 
-other URI schemes.
-
 'resource'
 ----------
 
