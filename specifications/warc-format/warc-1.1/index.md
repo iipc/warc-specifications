@@ -875,6 +875,22 @@ the contained material is a legal HTTP response.
 A WARC-IP-Address field should be used to record the network IP address
 from which the response material was received.
 
+When a 'response' is known to have been truncated, this shall be noted
+using the WARC-Truncated field.
+
+A WARC-Concurrent-To field (or fields) may be used to associate the
+'response' to a matching 'request' record or concurrently-created
+'metadata' record.
+
+The payload of a 'response' record with a target-URI of scheme 'http'
+or 'https' is defined as its 'entity-body' (as specified in \[RFC 2616]).
+If a truncated 'response' record block contains less than the full
+entity-body, the payload is considered truncated at the same position.
+
+Conventions for recording information about the 'https' secure socket
+transaction, such as certificates exchanged, consulted, or verified,
+are not in the scope of this International Standard.
+
 ### Other URI schemes
 
 The contents of the 'response' record for other URI schemes are not
