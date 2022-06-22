@@ -262,6 +262,14 @@ amount of linear white space (LWS), though a single space is preferred.
 Header fields can be extended over multiple lines by preceding each
 extra line with at least one space or tab character.
 
+> **Note:** Extending headers over multiple lines is rarely used 
+> in practice and is poorly supported by tools. This line folding 
+> mechanism was inherited from HTTP where it is now deprecated and
+> disallowed as of [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4).
+>
+> **Community recommendation:**  [#74](https://github.com/iipc/warc-specifications/issues/74)
+> Do not write WARC files with header fields spanning multiple lines.
+
 Named fields may appear in any order and field values may contain any
 UTF-8 character. Both defined- fields and extension-fields follow the
 generic named-field format. Extension-fields may be used in extensions
