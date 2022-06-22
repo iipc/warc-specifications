@@ -513,6 +513,17 @@ headers).
     attribute     = token
     value         = token | quoted-string
 
+> **Community errata:** [#38](https://github.com/iipc/warc-specifications/issues/38)
+> The grammar of `media-type` incorrectly disallows spaces which
+> makes it inconsistent with many of the examples in the standard. This
+> error was inherited from HTTP and has since been corrected by 
+> [RFC 7231](https://tools.ietf.org/html/rfc7231#section-3.1.1.1) as
+> follows.
+> 
+>     media-type = type "/" subtype *( OWS ";" OWS parameter )
+>     OWS        = *( SP / HTAB )
+>                ; optional whitespace
+
 All records with a non-empty block (non-zero Content-Length), except
 'continuation' records, should have a Content-Type field. Only if the
 media type is not given by a Content-Type field, a reader may attempt to
