@@ -312,6 +312,13 @@ Although UTF-8 characters are allowed, the 'encoded-word' mechanism of
 \[RFC2047\] may also be used when writing WARC fields and shall also be
 understood by WARC reading software.
 
+> **Note:** The 'encoded-word' mechanism is underspecified for WARC, rarely
+> implemented and largely obsoleted by unicode. It was removed from
+> HTTP in RFC 7230.
+>
+> **Community recommendation:** [#67](https://github.com/iipc/warc-specifications/issues/67)
+> Do not implement the 'encoded-word' mechanism.
+
 <small>NOTE: in WARC 1.0 standard (ISO 28500:2009), uri was defined as "<"
 <'URI' per RFC 3986> ">". This rule has been changed to meet requests
 from implementers.</small>
