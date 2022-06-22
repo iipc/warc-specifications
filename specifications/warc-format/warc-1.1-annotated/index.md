@@ -570,6 +570,16 @@ record.
     algorithm         = token
     digest-value      = token
 
+> **Note:**
+> The grammer for `digest-value` disallows the character `=` which is
+> used for padding in Base32 and `/` which is part of Base64 alphabet.
+>
+> **Community recommendation:** [#48](https://github.com/iipc/warc-specifications/issues/48)
+> When reading WARC files leniently accept the characters `=` and `/` in `digest-value`.
+>
+> When writing WARC files use Base16 encoding for digest algorithms such as
+> MD5 and SHA-256 that when encoded as Base32 would require the use of
+> padding.
 
 An example is a SHA-1 labelled Base32 (\[RFC4648\]) value:
 
