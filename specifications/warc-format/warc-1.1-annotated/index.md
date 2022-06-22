@@ -585,6 +585,12 @@ An example is a SHA-1 labelled Base32 (\[RFC4648\]) value:
 
     WARC-Block-Digest: sha1:AB2CD3EF4GH5IJ6KL7MN8OPQ
 
+> **Community errata:** [#64](https://github.com/iipc/warc-specifications/issues/64)
+> The example digest value above is not valid Base32 and is not of
+> the correct length. An alternative might be:
+>
+>     WARC-Block-Digest: sha1:AIKLJM2V2EOKR4WOIWUWRQTEMUN57P4D
+
 No particular algorithm is recommended.
 
 Any record may have a WARC-Block-Digest field.
@@ -599,6 +605,12 @@ A WARC-Payload-Digest is an optional parameter indicating the algorithm name and
 An example is a SHA-1 labelled Base32 (\[RFC4648\]) value:
 
     WARC-Payload-Digest: sha1:3EF4GH5IJ6KL7MN8OPQAB2CD
+
+> **Community errata:** [#64](https://github.com/iipc/warc-specifications/issues/64)
+> The example digest value above is not valid Base32 and is not of the
+> correct length. An alternative example might be:
+>
+>     WARC-Payload-Digest: sha1:6B7FVAKWCPC2X3O4JNUCER5EYQWYVFO7
 
 No particular algorithm is recommended.
 
