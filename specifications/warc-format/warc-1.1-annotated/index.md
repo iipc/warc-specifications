@@ -1738,6 +1738,26 @@ Example of 'metadata' record
 Example of 'revisit' record
 ---------------------------
 
+> **Community errata:** [#36](https://github.com/iipc/warc-specifications/issues/36)
+> The WARC-Profile header in this example is inconsistent with section
+> 6.7.3 and should be corrected as follows.
+> 
+>     WARC-Profile: http://netpreserve.org/warc/1.1/revisit/server-not-modified
+
+> **Community errata:** [#55](https://github.com/iipc/warc-specifications/issues/55)
+> The Content-Type header in this example is `message/http` but this is
+> inconsistent with other examples and appears to have been left as an
+> oversight in the drafting process. It should be corrected as
+> follows.
+>
+>     Content-Type: application/http;msgtype=response
+
+> **Community errata:** [#37](https://github.com/iipc/warc-specifications/issues/37)
+> The HTTP version line in this example is invalid and should be
+> corrected as follows.
+> 
+>     HTTP/1.0 304 Not Modified
+
     WARC/1.1
     WARC-Type: revisit
     WARC-Target-URI: http://www.archive.org/images/logoc.jpg
