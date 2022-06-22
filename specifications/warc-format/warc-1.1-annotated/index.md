@@ -1,12 +1,24 @@
 ---
 title: The WARC Format
-status: standard
-version: 1.1
+version: 1.1 + community annotations
 numbered: true
 latest: true
 version-of: warc-format
-previous-version: 1.0
+previous-version: 1.1
 ---
+
+<style>
+blockquote {
+    background: #ddefff;
+    border-left: 2px solid #74baff;
+}
+</style>
+
+> This is the [WARC Format 1.1](../warc-1.1/) plus **community
+> annotations**. Blue boxes have been added with notes, recommendations
+> and proposed corrections where issues have been reported by the
+> community. These annotations are not part of the standard and have
+> not been ratified.
 
 Websites and web pages emerge and disappear from the World Wide Web
 every day. For the past ten years, memory storage organizations have
