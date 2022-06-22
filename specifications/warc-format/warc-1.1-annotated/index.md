@@ -1316,6 +1316,13 @@ The MIME type of warcinfo records, WARC metadata records, and
 potentially other records types in the future, shall be
 application/warc-fields.
 
+> **Community errata:** [#50](https://github.com/iipc/warc-specifications/issues/50)
+> The sentence above could be interpreted as disallowing other types of
+> warcinfo and metadata records. However, this would be inconsistent 
+> with the wording in sections 6.2 and 6.6 which appear to intentionally
+> allow other types. In practice some tools do use other MIME types
+> for these records.
+
 A WARC file shall have a name. See Annex C for recommendations on WARC
 files names.
 
