@@ -595,6 +595,49 @@ No particular algorithm is recommended.
 
 Any record may have a WARC-Block-Digest field.
 
+> **Community recommendation:** [#80](https://github.com/iipc/warc-specifications/issues/80) 
+> As the standard does not provide any guidance as to the label and
+> encoding to use for algorithms other than SHA-1 the following
+> guidelines are offered based on common practice.
+> 
+> When writing WARC files:
+>
+> * Output the labels in lowercase as shown in the table below.
+> * Do not output the compatibility labels.
+> * Use lowercase when Base16 encoding, for example: `md5:b1946ac92492d2347c6235b4d2611184`
+> * Use uppercase when Base32 encoding, for example: `sha1:VL2MMHO4YXUKFWV63YHTWSBM3GXKSQ2N`
+>
+> When reading WARC files:
+>
+> * Normalize the label by lowercasing it and replacing 
+>   compatibility labels with the recommended label. For example, 
+>   replace `SHA-1:` with `sha1:`
+> * To determine whether the digest was encoded as Base16 or Base32
+>   check of the `digest-value` (see table below).
+>    * In the case of MD5 the Base16 and Base32 encoding are both 32
+>      characters long. Detect Base32 by the presence of a padding `=`
+>      character at the end.
+> * When comparing digests to each other first decode or normalize the
+>   base encoding.
+> * Accept both uppercase and lowercase ASCII letters when decoding
+>   Base16 or Base32.
+>
+> | Algorithm | Label       | Compat. label | Typical encoding   | Base16 length     | Base32 length     |
+> |-----------|-------------|---------------|--------------------|-------------------|-------------------|
+> | MD5       | `md5:`      |               | lowercase Base16 | 32                | 32                |
+> | SHA-1     | `sha1:`     | `sha-1:`      | uppercase Base32 | 40                | 32                |
+> | SHA-224   | `sha224:`   | `sha-224:`    |                  | 56                | 48                |
+> | SHA-256   | `sha256:`   | `sha-256:`    | lowercase Base16 | 64                | 56                |
+> | SHA-384   | `sha384:`   | `sha-384:`    |                  | 96                | 80                |
+> | SHA-512   | `sha512:`   | `sha-512:`    |                  | 128               | 104               |
+> | SHA3-224  | `sha3-224:` |               |                  | 56                | 48                |
+> | SHA3-256  | `sha3-256:` |               |                  | 64                | 56                |
+> | SHA3-384  | `sha3-384:` |               |                  | 96                | 80                |
+> | SHA3-512  | `sha3-512:` |               |                  | 128               | 104               |
+> | BLAKE2s   | `blake2s:`  |               |                  | 64                | 56                |
+> | BLAKE2b   | `blake2b:`  |               |                  | 128               | 104               |
+
+
 WARC-Payload-Digest
 -------------------
 
