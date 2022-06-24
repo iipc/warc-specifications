@@ -1,10 +1,11 @@
 ---
 title: The WARC Format
+status: standard
 version: 1.1 + community annotations
 numbered: true
 latest: true
 version-of: warc-format
-previous-version: 1.1
+previous-version: 1.0
 ---
 
 <style>
