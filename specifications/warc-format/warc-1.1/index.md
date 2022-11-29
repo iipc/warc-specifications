@@ -365,7 +365,7 @@ New named fields and new records types may be defined in extensions of
 the core format. However, it is strongly recommended to discuss any
 addition to verify that a suitable field or type doesn't already exist
 to avoid collision. Discussion should notably be held within the IIPC.
-More information on <http://bibnum.bnf.fr/warc/>.
+More information on <http://bibnum.bnf.fr/WARC/>.
 
 Named fields
 ============
