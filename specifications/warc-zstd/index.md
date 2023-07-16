@@ -31,15 +31,20 @@ consider the risks of relying on such a young format.
 # Normative references
 
 \[RFC 8478\] Collet, Y. and Kucherawy, M. Zstandard Compression and the
-application/zstd Media Type. October 2018. Available at:
+application/zstd Media Type. October 2018. (Obsoleted by RFC 8878) Available at:
 <https://tools.ietf.org/html/rfc8478>
 
-[RFC 8478]: https://tools.ietf.org/html/rfc8478
-[RFC 8478 section 3.1.1]: https://tools.ietf.org/html/rfc8478#section-3.1.1
-[RFC 8478 section 3.1.1.1.2]: https://tools.ietf.org/html/rfc8478#section-3.1.1.1.2
-[RFC 8478 section 3.1.2]: https://tools.ietf.org/html/rfc8478#section-3.1.2
-[RFC 8478 section 5]: https://tools.ietf.org/html/rfc8478#section-5
-[RFC 8478 section 7]: https://tools.ietf.org/html/rfc8478#section-7
+\[RFC 8878\] Collet, Y. and Kucherawy, M. Zstandard Compression and the 
+'application/zstd' Media Type. February 2021. 
+Available at: <https://datatracker.ietf.org/doc/html/rfc8878>
+
+
+[RFC 8878]: https://datatracker.ietf.org/doc/html/rfc8878
+[RFC 8878 section 3.1.1]: https://datatracker.ietf.org/doc/html/rfc8878#section-3.1.1
+[RFC 8878 section 3.1.1.1.2]: https://datatracker.ietf.org/doc/html/rfc8878#section-3.1.1.1.2
+[RFC 8878 section 3.1.2]: https://datatracker.ietf.org/doc/html/rfc8878#section-3.1.2
+[RFC 8878 section 5]: https://datatracker.ietf.org/doc/html/rfc8878#section-5
+[RFC 8878 section 8]: https://datatracker.ietf.org/doc/html/rfc8878#section-8
 
 \[WARC/1.0\] <https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.0/>
 
@@ -95,7 +100,7 @@ determine whether data corruption has occurred.
 Empty Zstandard frames are permissible, and will have a Frame\_Content\_Size of
 zero.
 
-Zstandard frames must use the standard format defined in [RFC 8478]; they
+Zstandard frames must use the standard format defined in [RFC 8878]; they
 must not use any of the legacy Zstandard formats not described there.
 
 ## Dictionaries
@@ -113,12 +118,12 @@ example, they may use a random dictionary ID between 32,768 and 2,147,483,647.
 
 ### Dictionary frame format
 
-A dictionary frame is a skippable frame, as defined in [RFC 8478 section
+A dictionary frame is a skippable frame, as defined in [RFC 8878 section
 3.1.2], with a Magic\_Number of `0x184D2A5D`. The User\_Data field contains a
 single dictionary which may optionally be compressed.
 
 If the dictionary is not compressed, the User\_Data field will consist of a
-single dictionary in the format given by [RFC 8478 section 5]. It will start
+single dictionary in the format given by [RFC 8878 section 5]. It will start
 with the bytes `0x37 0xA4 0x30 0xEC`.
 
 If the dictionary is compressed, the User\_Data field must consist of a single
@@ -126,7 +131,7 @@ Zstandard frame, starting with the bytes `0x28 0xB5 0x2F 0xFD`; skippable
 frames are not allowed. The Zstandard frame must be compressed without a
 dictionary, and the Frame\_Content\_Size and Content\_Checksum fields must be
 present. When the frame is decompressed, the result must be a single dictionary
-in the format given by [RFC 8478 section 5].
+in the format given by [RFC 8878 section 5].
 
 ## Extension frames
 
@@ -142,7 +147,7 @@ frames they do not recognize.
 
 # Window and dictionary limits
 
-Each Zstandard frame has a value called Window\_Size, described in [RFC 8478
+Each Zstandard frame has a value called Window\_Size, described in [RFC 8878
 section 3.1.1.1.2], which determines how much memory is needed to decode the
 frame. Although the Zstandard format supports window sizes up to 16 exabytes,
 sizes this large may be impractical for certain decoders. Memory requirements
@@ -164,7 +169,7 @@ may choose to reject such files with a suitable error message.
 # Security considerations
 
 The security considerations for this format are a combination of those for WARC
-and those for Zstandard. Users should consult [RFC 8478 section 7] for a
+and those for Zstandard. Users should consult [RFC 8878 section 8] for a
 discussion of the latter.
 
 When implementations support seeking to a record at an arbitrary position in
