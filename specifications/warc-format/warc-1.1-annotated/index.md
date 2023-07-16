@@ -631,6 +631,8 @@ Any record may have a WARC-Block-Digest field.
 > | SHA-256   | `sha256:`   | `sha-256:`    | lowercase Base16 | 64                | 56                |
 > | SHA-384   | `sha384:`   | `sha-384:`    |                  | 96                | 80                |
 > | SHA-512   | `sha512:`   | `sha-512:`    |                  | 128               | 104               |
+> | SHA-512/224 | `sha512-224:` |           |                  | 56                | 48                |
+> | SHA-512/256 | `sha512-256:` |           |                  | 64                | 56                |
 > | SHA3-224  | `sha3-224:` |               |                  | 56                | 48                |
 > | SHA3-256  | `sha3-256:` |               |                  | 64                | 56                |
 > | SHA3-384  | `sha3-384:` |               |                  | 96                | 80                |
