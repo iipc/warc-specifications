@@ -623,22 +623,25 @@ Any record may have a WARC-Block-Digest field.
 > * Accept both uppercase and lowercase ASCII letters when decoding
 >   Base16 or Base32.
 >
-> | Algorithm | Label       | Compat. label | Typical encoding   | Base16 length     | Base32 length     |
-> |-----------|-------------|---------------|--------------------|-------------------|-------------------|
-> | MD5       | `md5:`      |               | lowercase Base16 | 32                | 32                |
-> | SHA-1     | `sha1:`     | `sha-1:`      | uppercase Base32 | 40                | 32                |
-> | SHA-224   | `sha224:`   | `sha-224:`    |                  | 56                | 48                |
-> | SHA-256   | `sha256:`   | `sha-256:`    | lowercase Base16 | 64                | 56                |
-> | SHA-384   | `sha384:`   | `sha-384:`    |                  | 96                | 80                |
-> | SHA-512   | `sha512:`   | `sha-512:`    |                  | 128               | 104               |
-> | SHA-512/224 | `sha512-224:` |           |                  | 56                | 48                |
-> | SHA-512/256 | `sha512-256:` |           |                  | 64                | 56                |
-> | SHA3-224  | `sha3-224:` |               |                  | 56                | 48                |
-> | SHA3-256  | `sha3-256:` |               |                  | 64                | 56                |
-> | SHA3-384  | `sha3-384:` |               |                  | 96                | 80                |
-> | SHA3-512  | `sha3-512:` |               |                  | 128               | 104               |
-> | BLAKE2s   | `blake2s:`  |               |                  | 64                | 56                |
-> | BLAKE2b   | `blake2b:`  |               |                  | 128               | 104               |
+> | Algorithm | Label       | Compat. label | Typical encoding   | Base16 length     | Base32 length     | Cryptographic 
+> |-----------|-------------|---------------|--------------------|-------------------|-------------------|-------------|
+> | MD5       | `md5:`      |               | lowercase Base16 | 32                | 32                | Yes, but broken.
+> | SHA-1     | `sha1:`     | `sha-1:`      | uppercase Base32 | 40                | 32                | Yes, but broken.
+> | XXH3      | `xxh3:`     |               | 16               |                   |                   | No, but really fast
+> | XXH128    | `xxh128:`   |               | 32               |                   |                   | No, but really fast
+> | SHA-224   | `sha224:`   | `sha-224:`    |                  | 56                | 48                | Yes
+> | SHA-256   | `sha256:`   | `sha-256:`    | lowercase Base16 | 64                | 56                | Yes, but vulnerable to length extension 
+> | SHA-384   | `sha384:`   | `sha-384:`    |                  | 96                | 80                | Yes
+> | SHA-512   | `sha512:`   | `sha-512:`    |                  | 128               | 104               | Yes, but vulnerable to length extension
+> | SHA-512/224 | `sha512-224:` |           |                  | 56                | 48                | Yes
+> | SHA-512/256 | `sha512-256:` |           |                  | 64                | 56                | Yes
+> | SHA3-224  | `sha3-224:` |               |                  | 56                | 48                | Yes
+> | SHA3-256  | `sha3-256:` |               |                  | 64                | 56                | Yes
+> | SHA3-384  | `sha3-384:` |               |                  | 96                | 80                | Yes
+> | SHA3-512  | `sha3-512:` |               |                  | 128               | 104               | Yes
+> | BLAKE2s   | `blake2s:`  |               |                  | 64                | 56                | Yes
+> | BLAKE2b   | `blake2b:`  |               |                  | 128               | 104               | Yes
+> | BLAKE3    | `blake3:`   |               |                  | 64                |                   | Yes, and really fast
 
 
 WARC-Payload-Digest
