@@ -96,7 +96,7 @@ Comparison with ARC files
 Further Reading
 ---------------
 
-The official WARC specification is maintained by ISO. The draft versions are hosted at <http://bibnum.bnf.fr/warc/>, and mirrored here.
+The official WARC specification is maintained by ISO. The draft versions are hosted at <http://bibnum.bnf.fr/WARC/>, and mirrored here.
 
 For introductory information about the WARC format, see:
 
