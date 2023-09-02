@@ -98,11 +98,11 @@ x url in other href tages *
 y url in other src tags *
 z url found in script *
 # comment
-~~~
 
-\* in alexa-made dat file
-\** in alexa-made dat file meta-data line
-\*** future data
+*   in alexa-made dat file
+**  in alexa-made dat file meta-data line
+*** future data
+~~~
 
 Document History
 ----------------
