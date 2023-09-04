@@ -13,7 +13,7 @@ previous-version: (c.2006)
 > 
 >     CDX N b a m s k r M S V g
 > 
-> (You can see it as the default in their CDX-Writer: https://github.com/internetarchive/CDX-Writer/blob/master/cdx_writer.py#L37)
+> (You can see it as the default in their [CDX-Writer](https://github.com/internetarchive/CDX-Writer/blame/2e044a5719d45e46fdb5dbc21be3a1025e908143/cdx_writer.py#L862))
 > 
 > An older 9-field format that was in use a few years back:
 > 
