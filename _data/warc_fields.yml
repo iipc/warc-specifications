@@ -7,6 +7,9 @@
 - name: WARC-Block-Digest
   since: 1.0
   spec: WARC 1.1
+- name: WARC-Cipher-Suite
+  spec: issues/86
+  status: proposed
 - name: WARC-Concurrent-To
   since: 1.0
   spec: WARC 1.1
