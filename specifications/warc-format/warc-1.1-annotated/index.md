@@ -409,6 +409,11 @@ WARC named fields of the same type shall not be repeated in the same
 WARC record (for example, a WARC record shall not have several WARC-Date
 or several WARC-Target-URI), except as noted (e.g. WARC-Concurrent-To).
 
+> **Community recommendation:** [#95](https://github.com/iipc/warc-specifications/issues/95)
+> Extensions may define new fields that can be repeated. WARC libraries
+> that provide APIs for reading or writing arbitrary extension fields
+> should support repeated extension fields.
+
 Because new fields may be defined in extensions to the core WARC format,
 WARC processing software shall ignore fields with unrecognized names.
 
