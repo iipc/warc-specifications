@@ -768,6 +768,21 @@ All 'response', 'resource', 'request', 'revisit', ‘conversion’ and
 record may have a WARC-Target-URI field. A 'warcinfo' record shall not
 have a WARC-Target-URI field.
 
+
+> **Note:** In WARC 1.0, `uri` was defined in the grammar as
+> `"<" <'URI' per RFC 3986> ">"` however the examples in the standard
+> only included these characters for the record ID fields and not for 
+> WARC-Target-URI or WARC-Profile.
+> In WARC 1.1 these characters were moved from the definited of `uri`
+> to the individual record ID fields to make the grammar consistent
+> with the examples and match what most implementations were doing in
+> practice.
+>  
+> **Community recommendation:** Readers should remove enclosing "<" 
+> and ">" characters from the WARC-Target-URI field value if present
+> before processing the URI.
+
+
 WARC-Truncated
 --------------
 
@@ -840,6 +855,19 @@ The section 'revisit' defines two initial profile options for the
 WARC-Profile header for 'revisit' records. The WARC-Profile field is
 mandatory on 'revisit' type records and undefined for other record
 types.
+
+> **Note:** In WARC 1.0, `uri` was defined in the grammar as
+> `"<" <'URI' per RFC 3986> ">"` however the examples in the standard
+> only included these characters for the record ID fields and not for 
+> WARC-Target-URI or WARC-Profile.
+> In WARC 1.1 these characters were moved from the definited of `uri`
+> to the individual record ID fields to make the grammar consistent
+> with the examples and match what most implementations were doing in
+> practice.
+>  
+> **Community recommendation:** Readers should remove enclosing "<" 
+> and ">" characters from the WARC-Profile field value if present
+> before processing the URI.
 
 WARC-Identified-Payload-Type
 ----------------------------
