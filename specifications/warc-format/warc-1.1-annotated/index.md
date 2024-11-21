@@ -694,6 +694,12 @@ retrieval time corresponding to the hostname in the record's target-Uri.
     ipv4            = <"dotted quad">
     ipv6            = <per section 2.2 of RFC4291>
 
+> **Community recommendation:** [#100](https://github.com/iipc/warc-specifications/issues/100)
+> When recording IPv6 addresses writers should use the canonical
+> textual representation specified in [RFC5952](https://datatracker.ietf.org/doc/html/rfc5952).
+> Readers should accept any of the 
+> [forms specified in RFC4291](https://www.rfc-editor.org/rfc/rfc4291.html#section-2.2).
+
 The WARC-IP-Address field may be used on 'response', 'resource',
 'request', 'metadata', and 'revisit' records, but shall not be used on
 'warcinfo', 'conversion' or 'continuation' records.
