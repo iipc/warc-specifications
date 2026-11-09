@@ -1165,17 +1165,21 @@ optional.
 
 > **Community recommendation:** #59
 > The `hopsFromSeed` field comes from the [discovery path](https://heritrix.readthedocs.io/en/latest/glossary.html#discovery-path)
-> concept in the Heritrix web crawler. The value is a string containing
-> one character for each link or embed followed from the seed, for 
-> example "LLLE" might be an image on a page that's 3 links away from
-> a seed. The value of `hopsFromSeed` for a seed URI should be the
-> empty string.
+> concept in the Heritrix web crawler. In Heritrix, an unshortened path
+> contains one character for each hop from the seed. For example, `LLLE`
+> might be an image on a page 3 links away from a seed. The path is empty
+> at the seed.
+>
+> For paths longer than 50 hops, Heritrix keeps the last 50 hop symbols
+> and prefixes them with the number of earlier hops and a `+`. For
+> example, a path of 51 `L` hops followed by an `E` hop is written as
+> `2+` followed by 49 `L` symbols and an `E`.
 >
 > | Symbol | Meaning           | Examples                                                 |
 > |--------|----------------------------------------------------------|----------------------------------------------------------|
 > | `L`    | Link              | `<a href=...>`                                           |
 > | `E`    | Embedded          | `<img src=...>`<br>`<script src=...>`                    |
-> | `X`    | Speculative embed | `<script>var url = 'http://example.org/foo.js';</script>` |
+> | `X`    | Speculative link or embed | `<script>var url = 'http://example.org/foo.js';</script>` |
 > | `R`    | Redirect          | `HTTP/1.0 302 Found`<br>`Location: ...`                  |
 > | `P`    | Prerequisite      | robots.txt, DNS lookup                                   |
 > | `I`    | Implicit/Implied  | favicon.ico                                              |
