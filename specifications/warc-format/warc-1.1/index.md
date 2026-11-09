@@ -1642,7 +1642,8 @@ Example of 'revisit' record
 
     HTTP/1.x 304 Not Modified
     Date: Tue, 06 Mar 2017 00:43:35 GMT
-    Server: Apache/2.0.54 (Ubuntu) PHP/5.0.5-2ubuntu1.4 Connection: Keep-Alive
+    Server: Apache/2.0.54 (Ubuntu) PHP/5.0.5-2ubuntu1.4
+    Connection: Keep-Alive
     Keep-Alive: timeout=15, max=100
     ETag: "3e45-67e-2ed02ec0"
 
