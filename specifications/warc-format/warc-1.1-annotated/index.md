@@ -142,6 +142,23 @@ HTTP/1.1. June 1999 (TXT, PS, PDF, HTML, XML). Available at:
 \[RFC 3629\] Yergeau, F. UTF-8, a transformation format of ISO 10646. STD
 63, November 2003. Available at: <https://tools.ietf.org/html/rfc3629>
 
+\[RFC 3986\] Berners-Lee, T., Fielding, R., Masinter, L. Uniform Resource
+Identifier (URI): Generic Syntax. STD 66, January 2005 (TXT, HTML, XML).
+Available at: <https://www.ietf.org/rfc/rfc3986.txt>
+
+\[RFC 4027\] Josefsson, S. Domain Name System Media Types. April 2005.
+Available at: <https://tools.ietf.org/html/rfc4027>
+
+\[RFC 4291\] Hinden, R. and Deering, S. IP Version 6 Addressing
+Architecture. February 2006. Available at: <https://tools.ietf.org/html/rfc4291>
+
+\[RFC 5322\] Resnick, P. (ed.) Internet Message Format. October 2008.
+Available at: <https://tools.ietf.org/html/rfc5322>
+
+\[W3CDTF\] Date and Time Formats: note submitted to the W3C. 15 September
+1997 (W3C profile of ISO 8601:1988). Available at:
+<http://www.w3.org/TR/NOTE-datetime>
+
 Terms, definitions and abbreviated terms
 ========================================
 
